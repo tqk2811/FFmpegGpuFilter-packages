@@ -1,0 +1,16 @@
+{
+  "used_for": ["gpufx_ai_matting"],
+  "license_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleSeg/92ab2be07ee95feab8f0025352abad4da00df3a7/LICENSE",
+  "sha256_license": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "convert": "paddleseg",
+  "upstream": [
+    {
+      "file": "portrait_pp_humansegv2_lite_256x144_inference_model_with_softmax.zip",
+      "url": "https://paddleseg.bj.bcebos.com/dygraph/pp_humanseg_v2/portrait_pp_humansegv2_lite_256x144_smaller/portrait_pp_humansegv2_lite_256x144_inference_model_with_softmax.zip",
+      "sha256": "d7b6835ce8faec098d8286a53d91eed8ad22186fae9322acc653d0a0943d4b1b"
+    }
+  ],
+  "export": { "height": 144, "width": 256 },
+  "sha256_param": "cade58a0a8161cc2614cf6264f906e8c46eb85758f573a3e425414b7c44302f5",
+  "sha256_bin": "451424c38f680c41f2b1194688e0a68c261a39e49d663de91e560f74997077d7"
+}

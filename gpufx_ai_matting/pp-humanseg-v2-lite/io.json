@@ -1,0 +1,11 @@
+{
+  "kind": "matting",
+  "family": "pp-humanseg",
+  "inputs": { "image": "in0" },
+  "output": "out0",
+  "color": "rgb",
+  "mean": [0.5, 0.5, 0.5],
+  "std": [0.5, 0.5, 0.5],
+  "size": { "mode": "fixed", "height": 144, "width": 256 },
+  "matte": { "type": "softmax", "channel": 1 }
+}

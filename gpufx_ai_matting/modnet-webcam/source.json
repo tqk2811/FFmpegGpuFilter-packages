@@ -1,0 +1,20 @@
+{
+  "used_for": ["gpufx_ai_matting"],
+  "license_url": "https://raw.githubusercontent.com/ZHKKKe/MODNet/2938675e4b5c60ab5f5d7a2b2191c68256f99d70/LICENSE",
+  "sha256_license": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "convert": "modnet",
+  "upstream": [
+    {
+      "file": "modnet_webcam_portrait_matting.ckpt",
+      "url": "https://storage.openvinotoolkit.org/repositories/open_model_zoo/public/2022.2/modnet-webcam-portrait-matting/modnet_webcam_portrait_matting.ckpt",
+      "sha256": "913b82b66558db39b6286c150f809017d7528c872b156eb14333c9c6cb52108b"
+    },
+    { "file": "modnet_onnx.py", "url": "https://raw.githubusercontent.com/ZHKKKe/MODNet/2938675e4b5c60ab5f5d7a2b2191c68256f99d70/onnx/modnet_onnx.py", "sha256": "0502cad1b7ab0bf2f866179960454c1e63df096390db05e93cb40145dbc26e1f" },
+    { "file": "src/models/backbones/__init__.py", "url": "https://raw.githubusercontent.com/ZHKKKe/MODNet/2938675e4b5c60ab5f5d7a2b2191c68256f99d70/src/models/backbones/__init__.py", "sha256": "28a5fb95f7dcf9e365edbf42c6d2e8ea0ca4839e51fd7f11bd0547d2359fcd96" },
+    { "file": "src/models/backbones/mobilenetv2.py", "url": "https://raw.githubusercontent.com/ZHKKKe/MODNet/2938675e4b5c60ab5f5d7a2b2191c68256f99d70/src/models/backbones/mobilenetv2.py", "sha256": "e3cc8ad6a9933ba18a17a62d5f887c64e0721240871ea8b48742fb9a8a2c3199" },
+    { "file": "src/models/backbones/wrapper.py", "url": "https://raw.githubusercontent.com/ZHKKKe/MODNet/2938675e4b5c60ab5f5d7a2b2191c68256f99d70/src/models/backbones/wrapper.py", "sha256": "41197be7eb96b8a60dc034b55d8c9340dd682a41441dcf2ce67238955dfa5607" }
+  ],
+  "export": { "height": 512, "width": 512 },
+  "sha256_param": "c85cda86b256174a77b36d129e91960b047c636a6eee3a6f323fdeaabf16372c",
+  "sha256_bin": "60165bf3ba4ccdc0a7b6c932550c4524f4560dbc8f455a146be875543fc90377"
+}

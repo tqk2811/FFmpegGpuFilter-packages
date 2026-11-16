@@ -1,0 +1,11 @@
+{
+  "kind": "matting",
+  "family": "modnet",
+  "inputs": { "image": "in0" },
+  "output": "out0",
+  "color": "rgb",
+  "mean": [0.5, 0.5, 0.5],
+  "std": [0.5, 0.5, 0.5],
+  "size": { "mode": "short_side", "short_side": 512, "multiple": 32 },
+  "matte": { "type": "alpha", "channel": 0 }
+}
