@@ -186,6 +186,12 @@ GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `
 - [water-drop](gl-transitions/water-drop/README.md)
 - [zoom-in-circles](gl-transitions/zoom-in-circles/README.md)
 
+## gpl3
+
+Packages under the GNU GPL version 3 or later, each in its own folder with its LICENSE and source README. Unlike the rest of this folder they are not MIT.
+
+- [openshot/luma-wipe](gpl3/openshot/luma-wipe/README.md): luma wipe over the 405 OpenShot luma images
+
 ## standalone
 
 Effects of our own, with no FFmpeg or script counterpart.
