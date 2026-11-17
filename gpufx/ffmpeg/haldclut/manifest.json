@@ -1,0 +1,16 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.haldclut",
+  "name": "Hald CLUT",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Recolours the first input through a 3D lookup table given as a Hald CLUT picture on the second input.",
+  "inputs": [
+    { "name": "src", "description": "Picture to recolour" },
+    { "name": "clut", "description": "Hald CLUT picture: a square of level^3 pixels a side (for example 512x512 for level 8)" }
+  ],
+  "params": [
+    { "name": "interp", "type": "enum", "values": ["nearest", "trilinear", "tetrahedral"], "default": "tetrahedral", "description": "Interpolation between the entries of the table" }
+  ],
+  "groups": [{ "passes": [{ "shader": "shaders/haldclut.wgsl", "inputs": ["src", "clut"], "outputs": ["out"] }] }]
+}
