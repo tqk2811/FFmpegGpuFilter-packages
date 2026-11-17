@@ -1,0 +1,12 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.super2xsai",
+  "name": "Super 2xSaI",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Magnifies pixel art 2 times with the Super 2xSaI algorithm, which smooths diagonal edges.",
+  "inputs": [{ "name": "src", "description": "Picture to magnify" }],
+  "groups": [{ "passes": [
+    { "shader": "shaders/super2xsai.wgsl", "inputs": ["src"], "outputs": ["out"] }
+  ] }]
+}
