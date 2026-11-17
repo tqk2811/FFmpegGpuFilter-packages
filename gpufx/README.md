@@ -124,6 +124,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [normalize](ffmpeg/normalize/README.md)
 - [histeq](ffmpeg/histeq/README.md)
 - [greyedge](ffmpeg/greyedge/README.md)
+- [nlmeans](ffmpeg/nlmeans/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 

@@ -1,0 +1,17 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.nlmeans",
+  "name": "NL-Means",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Non-local means denoiser on one frame: each pixel becomes the average of the pixels around it whose neighbourhoods look alike.",
+  "inputs": [{ "name": "src", "description": "Picture to denoise" }],
+  "params": [
+    { "name": "s", "type": "float", "default": 1.0, "min": 1.0, "max": 30.0, "description": "Denoising strength" },
+    { "name": "p", "type": "int", "default": 7, "min": 1, "max": 21, "description": "Patch size, odd (an even value is raised by one)" },
+    { "name": "r", "type": "int", "default": 15, "min": 1, "max": 31, "description": "Research window size, odd (an even value is raised by one)" }
+  ],
+  "groups": [{ "passes": [
+    { "shader": "shaders/nlmeans.wgsl", "inputs": ["src"], "outputs": ["out"] }
+  ] }]
+}
