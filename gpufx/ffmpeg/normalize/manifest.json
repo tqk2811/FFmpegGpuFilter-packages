@@ -1,0 +1,20 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.normalize",
+  "name": "Normalize",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Stretches the R, G and B range of each frame so its darkest and brightest values reach the black and white points.",
+  "inputs": [{ "name": "src", "description": "Picture to normalize" }],
+  "params": [
+    { "name": "blackpt", "type": "color", "default": "#000000", "description": "Output color the darkest input value of each channel is mapped to" },
+    { "name": "whitept", "type": "color", "default": "#ffffff", "description": "Output color the brightest input value of each channel is mapped to" },
+    { "name": "independence", "type": "float", "default": 1.0, "min": 0.0, "max": 1.0, "description": "Proportion of per-channel to linked normalization: 0 stretches the three channels together, 1 each on its own" },
+    { "name": "strength", "type": "float", "default": 1.0, "min": 0.0, "max": 1.0, "description": "Strength, from no change (0) to full normalization (1)" }
+  ],
+  "groups": [{ "passes": [
+    { "shader": "shaders/rows.wgsl", "inputs": ["src"], "outputs": ["rows"] },
+    { "shader": "shaders/total.wgsl", "inputs": ["rows"], "outputs": ["total"] },
+    { "shader": "shaders/apply.wgsl", "inputs": ["src", "total"], "outputs": ["out"] }
+  ] }]
+}

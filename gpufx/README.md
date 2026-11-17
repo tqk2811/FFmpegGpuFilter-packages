@@ -121,6 +121,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [guided](ffmpeg/guided/README.md)
 - [morpho](ffmpeg/morpho/README.md)
 - [grayworld](ffmpeg/grayworld/README.md)
+- [normalize](ffmpeg/normalize/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 
