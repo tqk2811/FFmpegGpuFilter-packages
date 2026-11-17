@@ -1,0 +1,110 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.split-flap",
+  "name": "Split Flap",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame becomes a split-flap board: in each cell the top half of the first clip flips down on a hinge across the middle, cell after cell, its back bringing the bottom half of the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "columns",
+      "type": "int",
+      "default": 8,
+      "min": 1,
+      "max": 40,
+      "description": "Number of cell columns"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 6,
+      "min": 1,
+      "max": 40,
+      "description": "Number of cell rows"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 0.9,
+      "description": "Delay of the last cell's flip, as a part of the transition"
+    },
+    {
+      "name": "randomness",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "description": "How much the order of the cells is shuffled, from a wave across the board to random"
+    },
+    {
+      "name": "flaps",
+      "type": "int",
+      "default": 1,
+      "min": 1,
+      "max": 4,
+      "description": "Number of flaps that fall in each cell, the ones before the last showing other parts of the second clip"
+    },
+    {
+      "name": "gap",
+      "type": "float",
+      "default": 0.004,
+      "min": 0,
+      "max": 0.05,
+      "description": "Width of the gaps between the cells, as a part of the frame's shorter side"
+    },
+    {
+      "name": "perspective",
+      "type": "float",
+      "default": 0.35,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of perspective: the falling flaps grow as they come toward the viewer"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "How much the flaps darken as they turn away from the light, and their shadows"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#000000",
+      "description": "Color seen in the gaps between the cells"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/split_flap.wgsl"
+        }
+      ]
+    }
+  ]
+}

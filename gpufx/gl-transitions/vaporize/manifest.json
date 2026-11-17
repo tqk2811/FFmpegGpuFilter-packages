@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.vaporize",
+  "name": "Vaporize",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip goes up in smoke: from one side the picture turns to vapour that rises, curls into wisps and pales as it thins out, revealing the second clip underneath. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        1.0
+      ],
+      "description": "Direction the vapour rises toward (x right, y up)"
+    },
+    {
+      "name": "rise",
+      "type": "float",
+      "default": 0.4,
+      "min": 0.1,
+      "max": 0.6,
+      "description": "How high the vapour rises above the picture before it is gone, in frame heights"
+    },
+    {
+      "name": "swirl",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the vapour swirls and curls as it rises"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#ebebf0",
+      "description": "Color the vapour pales to as it thins out"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/vaporize.wgsl"
+        }
+      ]
+    }
+  ]
+}

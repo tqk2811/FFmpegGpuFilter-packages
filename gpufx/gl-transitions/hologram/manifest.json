@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.hologram",
+  "name": "Hologram",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip turns into a flickering hologram with scanlines and jittering rows, breaks up, and the hologram resolves into the second clip in full color. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tint",
+      "type": "color",
+      "default": "#33bfff",
+      "description": "Color of the hologram"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#00050d",
+      "description": "Color behind the hologram, seen between its scanlines and where it breaks up"
+    },
+    {
+      "name": "scanlines",
+      "type": "float",
+      "default": 150.0,
+      "min": 20,
+      "max": 300,
+      "description": "Number of scanlines over the frame height"
+    },
+    {
+      "name": "jitter",
+      "type": "float",
+      "default": 0.04,
+      "min": 0,
+      "max": 0.2,
+      "description": "How far rows of the hologram jump sideways, relative to the frame width"
+    },
+    {
+      "name": "flicker",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the flicker and of the rows that drop out"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/hologram.wgsl"
+        }
+      ]
+    }
+  ]
+}
