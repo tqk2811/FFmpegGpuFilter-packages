@@ -108,6 +108,36 @@ original file. Authors of the original files:
   defocus-blur            DefocusBlur.glsl            Sergey Kosarevsky                       MIT
   halftone                Halftone.glsl               gre                                     MIT
   photo-develop           PhotoDevelop.glsl           gre                                     MIT
+  chessboard              Chessboard.glsl             lql                                     MIT
+  wedge-wipe              WedgeWipe.glsl              gre                                     MIT
+  snake-block-wipe        SnakeBlockWipe.glsl         gre                                     MIT
+  aperture-wipe           ApertureWipe.glsl           gre                                     MIT
+  curved-wipe             CurvedWipe.glsl             gre                                     MIT
+  shutter-wipe            ShutterWipe.glsl            gre                                     MIT
+  iris-fold               IrisFold.glsl               gre                                     MIT
+  moire-wipe              MoireWipe.glsl              gre                                     MIT
+  tiles-wave              TilesWave.glsl              numb3r23                                MIT
+  glow-dissolve           GlowDissolve.glsl           hjm1fb                                  MIT
+  edge-glow               EdgeGlow.glsl               Woohyun Kim                             MIT
+  spotlight-wipe          SpotlightWipe.glsl          gre                                     MIT
+  curtain-rise            CurtainRise.glsl            gre                                     MIT
+  projector-throw         ProjectorThrow.glsl         gre                                     MIT
+  reeded-glass            ReededGlass.glsl            gre                                     MIT
+  pixel-stretch           PixelStretch.glsl           gre                                     MIT
+  funnel                  Funnel.glsl                 gre                                     MIT
+  nightfall               Nightfall.glsl              gre                                     MIT
+  band-wipe               BandWipe.glsl               gre                                     MIT
+  sawtooth-wipe           SawtoothWipe.glsl           gre                                     MIT
+  lens-wipe               LensWipe.glsl               gre                                     MIT
+  ink-bleed               InkBleed.glsl               gre                                     MIT
+  bloom-dissolve          BloomDissolve.glsl          gre                                     MIT
+  gooey-wipe              GooeyWipe.glsl              gre                                     MIT
+  equalizer-wipe          EqualizerWipe.glsl          gre                                     MIT
+  hologram                Hologram.glsl               gre                                     MIT
+  snapshot                Snapshot.glsl               gre                                     MIT
+  split-flap              SplitFlap.glsl              gre                                     MIT
+  vaporize                Vaporize.glsl               gre                                     MIT
+  flame-wipe              FlameWipe.glsl              gre                                     MIT
 
 --------------------------------------------------------------------------------
 MIT License

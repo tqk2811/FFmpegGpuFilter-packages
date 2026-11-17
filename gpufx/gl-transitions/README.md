@@ -112,6 +112,36 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [defocus-blur](defocus-blur/README.md) | [DefocusBlur.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DefocusBlur.glsl) | Sergey Kosarevsky | MIT |
 | [halftone](halftone/README.md) | [Halftone.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Halftone.glsl) | gre | MIT |
 | [photo-develop](photo-develop/README.md) | [PhotoDevelop.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PhotoDevelop.glsl) | gre | MIT |
+| [chessboard](chessboard/README.md) | [Chessboard.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Chessboard.glsl) | lql | MIT |
+| [wedge-wipe](wedge-wipe/README.md) | [WedgeWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WedgeWipe.glsl) | gre | MIT |
+| [snake-block-wipe](snake-block-wipe/README.md) | [SnakeBlockWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SnakeBlockWipe.glsl) | gre | MIT |
+| [aperture-wipe](aperture-wipe/README.md) | [ApertureWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ApertureWipe.glsl) | gre | MIT |
+| [curved-wipe](curved-wipe/README.md) | [CurvedWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CurvedWipe.glsl) | gre | MIT |
+| [shutter-wipe](shutter-wipe/README.md) | [ShutterWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ShutterWipe.glsl) | gre | MIT |
+| [iris-fold](iris-fold/README.md) | [IrisFold.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/IrisFold.glsl) | gre | MIT |
+| [moire-wipe](moire-wipe/README.md) | [MoireWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/MoireWipe.glsl) | gre | MIT |
+| [tiles-wave](tiles-wave/README.md) | [TilesWave.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TilesWave.glsl) | numb3r23 | MIT |
+| [glow-dissolve](glow-dissolve/README.md) | [GlowDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GlowDissolve.glsl) | hjm1fb | MIT |
+| [edge-glow](edge-glow/README.md) | [EdgeGlow.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/EdgeGlow.glsl) | Woohyun Kim | MIT |
+| [spotlight-wipe](spotlight-wipe/README.md) | [SpotlightWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SpotlightWipe.glsl) | gre | MIT |
+| [curtain-rise](curtain-rise/README.md) | [CurtainRise.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CurtainRise.glsl) | gre | MIT |
+| [projector-throw](projector-throw/README.md) | [ProjectorThrow.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ProjectorThrow.glsl) | gre | MIT |
+| [reeded-glass](reeded-glass/README.md) | [ReededGlass.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ReededGlass.glsl) | gre | MIT |
+| [pixel-stretch](pixel-stretch/README.md) | [PixelStretch.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PixelStretch.glsl) | gre | MIT |
+| [funnel](funnel/README.md) | [Funnel.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Funnel.glsl) | gre | MIT |
+| [nightfall](nightfall/README.md) | [Nightfall.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Nightfall.glsl) | gre | MIT |
+| [band-wipe](band-wipe/README.md) | [BandWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BandWipe.glsl) | gre | MIT |
+| [sawtooth-wipe](sawtooth-wipe/README.md) | [SawtoothWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SawtoothWipe.glsl) | gre | MIT |
+| [lens-wipe](lens-wipe/README.md) | [LensWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LensWipe.glsl) | gre | MIT |
+| [ink-bleed](ink-bleed/README.md) | [InkBleed.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/InkBleed.glsl) | gre | MIT |
+| [bloom-dissolve](bloom-dissolve/README.md) | [BloomDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BloomDissolve.glsl) | gre | MIT |
+| [gooey-wipe](gooey-wipe/README.md) | [GooeyWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GooeyWipe.glsl) | gre | MIT |
+| [equalizer-wipe](equalizer-wipe/README.md) | [EqualizerWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/EqualizerWipe.glsl) | gre | MIT |
+| [hologram](hologram/README.md) | [Hologram.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Hologram.glsl) | gre | MIT |
+| [snapshot](snapshot/README.md) | [Snapshot.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Snapshot.glsl) | gre | MIT |
+| [split-flap](split-flap/README.md) | [SplitFlap.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitFlap.glsl) | gre | MIT |
+| [vaporize](vaporize/README.md) | [Vaporize.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Vaporize.glsl) | gre | MIT |
+| [flame-wipe](flame-wipe/README.md) | [FlameWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FlameWipe.glsl) | gre | MIT |
 
 Not ported because an existing package already does the same:
 
