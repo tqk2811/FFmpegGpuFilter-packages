@@ -1,0 +1,147 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.zoneplate",
+  "name": "Zone Plate",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Zone plate test pattern (generator): sine rings and sweeps from a phase polynomial in x, y and time.",
+  "inputs": [
+    {
+      "name": "src",
+      "description": "Sets the size; blended in by opacity"
+    }
+  ],
+  "params": [
+    {
+      "name": "lut_precision",
+      "type": "int",
+      "default": 10,
+      "min": 4,
+      "max": 16,
+      "description": "Bits of the sine lookup table: 2^lut_precision entries per period (FFmpeg's precision; that name is reserved in WGSL)"
+    },
+    {
+      "name": "xo",
+      "type": "int",
+      "default": 0,
+      "description": "X-axis offset of the centre, in pixels"
+    },
+    {
+      "name": "yo",
+      "type": "int",
+      "default": 0,
+      "description": "Y-axis offset of the centre, in pixels"
+    },
+    {
+      "name": "to",
+      "type": "int",
+      "default": 0,
+      "description": "T-axis offset, in frames"
+    },
+    {
+      "name": "k0",
+      "type": "int",
+      "default": 0,
+      "description": "0-order phase"
+    },
+    {
+      "name": "kx",
+      "type": "int",
+      "default": 0,
+      "description": "1-order X-axis phase"
+    },
+    {
+      "name": "ky",
+      "type": "int",
+      "default": 0,
+      "description": "1-order Y-axis phase"
+    },
+    {
+      "name": "kt",
+      "type": "int",
+      "default": 0,
+      "description": "1-order T-axis phase"
+    },
+    {
+      "name": "kxt",
+      "type": "int",
+      "default": 0,
+      "description": "X-axis * T-axis product phase"
+    },
+    {
+      "name": "kyt",
+      "type": "int",
+      "default": 0,
+      "description": "Y-axis * T-axis product phase"
+    },
+    {
+      "name": "kxy",
+      "type": "int",
+      "default": 0,
+      "description": "X-axis * Y-axis product phase"
+    },
+    {
+      "name": "kx2",
+      "type": "int",
+      "default": 0,
+      "description": "2-order X-axis phase"
+    },
+    {
+      "name": "ky2",
+      "type": "int",
+      "default": 0,
+      "description": "2-order Y-axis phase"
+    },
+    {
+      "name": "kt2",
+      "type": "int",
+      "default": 0,
+      "description": "2-order T-axis phase"
+    },
+    {
+      "name": "ku",
+      "type": "int",
+      "default": 0,
+      "description": "0-order U-color phase"
+    },
+    {
+      "name": "kv",
+      "type": "int",
+      "default": 0,
+      "description": "0-order V-color phase"
+    },
+    {
+      "name": "rate",
+      "type": "float",
+      "default": 25,
+      "min": 1,
+      "max": 1000,
+      "description": "Frame rate that turns the time into FFmpeg's frame number t (the source's rate option)"
+    },
+    {
+      "name": "opacity",
+      "type": "float",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "description": "Blend over the input picture: 1 = only the generated picture, 0 = the input unchanged"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/zoneplate.wgsl",
+          "inputs": [
+            "src"
+          ],
+          "outputs": [
+            "out"
+          ]
+        }
+      ]
+    }
+  ]
+}
