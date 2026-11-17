@@ -1,0 +1,65 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.keyhole-wipe",
+  "name": "Keyhole Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A keyhole with a bevelled rim grows from a point until the second clip fills the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Center of the keyhole (0..1, y down)"
+    },
+    {
+      "name": "rim",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the bevelled rim and inner shadow (0: clean cut)"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.002,
+      "min": 0,
+      "max": 0.05,
+      "description": "Softness of the edge"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/keyhole_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
