@@ -83,6 +83,35 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [grid-flip](grid-flip/README.md) | [GridFlip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GridFlip.glsl) | TimDonselaar | MIT |
 | [vortex](vortex/README.md) | [Vortex.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Vortex.glsl) | gre | MIT |
 | [shockwave](shockwave/README.md) | [Shockwave.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Shockwave.glsl) | Gilad Levi | MIT |
+| [shatter](shatter/README.md) | [Shatter.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Shatter.glsl) | lbl | MIT |
+| [tile-blast](tile-blast/README.md) | [TileBlast.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TileBlast.glsl) | gre | MIT |
+| [puzzle](puzzle/README.md) | [Puzzle.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Puzzle.glsl) | gre | MIT |
+| [paper-fold](paper-fold/README.md) | [PaperFold.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PaperFold.glsl) | gre | MIT |
+| [unbox](unbox/README.md) | [Unbox.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Unbox.glsl) | gre | MIT |
+| [whittle](whittle/README.md) | [Whittle.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Whittle.glsl) | gre | MIT |
+| [shred](shred/README.md) | [Shred.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Shred.glsl) | gre | MIT |
+| [fall-over](fall-over/README.md) | [FallOver.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FallOver.glsl) | gre | MIT |
+| [ribbon-twist](ribbon-twist/README.md) | [RibbonTwist.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/RibbonTwist.glsl) | gre | MIT |
+| [camera-shake](camera-shake/README.md) | [CameraShake.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CameraShake.glsl) | gre | MIT |
+| [warp-speed](warp-speed/README.md) | [WarpSpeed.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WarpSpeed.glsl) | gre | MIT |
+| [tangent-motion-blur](tangent-motion-blur/README.md) | [TangentMotionBlur.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TangentMotionBlur.glsl) | chenkai | MIT |
+| [whip-spin](whip-spin/README.md) | [WhipSpin.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WhipSpin.glsl) | gre | MIT |
+| [gravity-lens](gravity-lens/README.md) | [GravityLens.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GravityLens.glsl) | gre | MIT |
+| [bottleneck](bottleneck/README.md) | [Bottleneck.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Bottleneck.glsl) | gre | MIT |
+| [power-kaleido](power-kaleido/README.md) | [PowerKaleido.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PowerKaleido.glsl) | Boundless | MIT |
+| [lissajous-tiles](lissajous-tiles/README.md) | [LissajousTiles.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LissajousTiles.glsl) | Boundless | MIT |
+| [comb](comb/README.md) | [Comb.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Comb.glsl) | gre | MIT |
+| [tv-lost-signal](tv-lost-signal/README.md) | [TvLostSignal.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TvLostSignal.glsl) | mernking | MIT |
+| [plus-wipe](plus-wipe/README.md) | [PlusWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PlusWipe.glsl) | gre | MIT |
+| [xor-wipe](xor-wipe/README.md) | [XorWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/XorWipe.glsl) | gre | MIT |
+| [circle-burst](circle-burst/README.md) | [CircleBurst.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CircleBurst.glsl) | gre | MIT |
+| [dither-dissolve](dither-dissolve/README.md) | [DitherDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DitherDissolve.glsl) | gre | MIT |
+| [film-dissolve](film-dissolve/README.md) | [FilmDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FilmDissolve.glsl) | gre | MIT |
+| [plasma-dissolve](plasma-dissolve/README.md) | [PlasmaDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PlasmaDissolve.glsl) | gre | MIT |
+| [honeycomb](honeycomb/README.md) | [Honeycomb.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Honeycomb.glsl) | gre | MIT |
+| [defocus-blur](defocus-blur/README.md) | [DefocusBlur.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DefocusBlur.glsl) | Sergey Kosarevsky | MIT |
+| [halftone](halftone/README.md) | [Halftone.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Halftone.glsl) | gre | MIT |
+| [photo-develop](photo-develop/README.md) | [PhotoDevelop.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PhotoDevelop.glsl) | gre | MIT |
 
 Not ported because an existing package already does the same:
 

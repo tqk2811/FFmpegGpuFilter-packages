@@ -79,6 +79,35 @@ original file. Authors of the original files:
   grid-flip               GridFlip.glsl               TimDonselaar                            MIT
   vortex                  Vortex.glsl                 gre                                     MIT
   shockwave               Shockwave.glsl              Gilad Levi                              MIT
+  shatter                 Shatter.glsl                lbl                                     MIT
+  tile-blast              TileBlast.glsl              gre                                     MIT
+  puzzle                  Puzzle.glsl                 gre                                     MIT
+  paper-fold              PaperFold.glsl              gre                                     MIT
+  unbox                   Unbox.glsl                  gre                                     MIT
+  whittle                 Whittle.glsl                gre                                     MIT
+  shred                   Shred.glsl                  gre                                     MIT
+  fall-over               FallOver.glsl               gre                                     MIT
+  ribbon-twist            RibbonTwist.glsl            gre                                     MIT
+  camera-shake            CameraShake.glsl            gre                                     MIT
+  warp-speed              WarpSpeed.glsl              gre                                     MIT
+  tangent-motion-blur     TangentMotionBlur.glsl      chenkai                                 MIT
+  whip-spin               WhipSpin.glsl               gre                                     MIT
+  gravity-lens            GravityLens.glsl            gre                                     MIT
+  bottleneck              Bottleneck.glsl             gre                                     MIT
+  power-kaleido           PowerKaleido.glsl           Boundless                               MIT
+  lissajous-tiles         LissajousTiles.glsl         Boundless                               MIT
+  comb                    Comb.glsl                   gre                                     MIT
+  tv-lost-signal          TvLostSignal.glsl           mernking                                MIT
+  plus-wipe               PlusWipe.glsl               gre                                     MIT
+  xor-wipe                XorWipe.glsl                gre                                     MIT
+  circle-burst            CircleBurst.glsl            gre                                     MIT
+  dither-dissolve         DitherDissolve.glsl         gre                                     MIT
+  film-dissolve           FilmDissolve.glsl           gre                                     MIT
+  plasma-dissolve         PlasmaDissolve.glsl         gre                                     MIT
+  honeycomb               Honeycomb.glsl              gre                                     MIT
+  defocus-blur            DefocusBlur.glsl            Sergey Kosarevsky                       MIT
+  halftone                Halftone.glsl               gre                                     MIT
+  photo-develop           PhotoDevelop.glsl           gre                                     MIT
 
 --------------------------------------------------------------------------------
 MIT License
