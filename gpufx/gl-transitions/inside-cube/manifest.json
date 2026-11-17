@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.inside-cube",
+  "name": "Inside Cube",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The camera stands inside a cube and turns from the wall showing the first clip to the next wall showing the second. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction the view turns, snapped to its main axis (x right, y up)"
+    },
+    {
+      "name": "fov",
+      "type": "float",
+      "default": 90.0,
+      "min": 60,
+      "max": 120,
+      "description": "Field of view along the turn, in degrees"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the walls darken as they turn, and the corner shadow"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#17171a",
+      "description": "Color of the other faces of the cube"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/inside_cube.wgsl"
+        }
+      ]
+    }
+  ]
+}

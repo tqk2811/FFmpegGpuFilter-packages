@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.curtains",
+  "name": "Curtains",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip parts in the middle like stage curtains, gathering into shaded folds as it is pulled to the sides. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "folds",
+      "type": "float",
+      "default": 7.0,
+      "min": 1,
+      "max": 16,
+      "description": "Number of folds in each curtain"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Depth of the shading on the folds"
+    },
+    {
+      "name": "bunch",
+      "type": "float",
+      "default": 0.12,
+      "min": 0,
+      "max": 0.4,
+      "description": "Width of each gathered curtain, as a part of the frame width"
+    },
+    {
+      "name": "sway",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "How much the bottom of the curtains lags behind the top"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/curtains.wgsl"
+        }
+      ]
+    }
+  ]
+}

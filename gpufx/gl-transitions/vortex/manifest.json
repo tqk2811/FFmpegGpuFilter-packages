@@ -1,0 +1,73 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.vortex",
+  "name": "Vortex",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip breaks into small squares that a tornado carries away along a spiral, from the eye outward, uncovering the second. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "grid",
+      "type": "int",
+      "default": 24,
+      "min": 4,
+      "max": 40,
+      "description": "Number of rows of squares"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Center of the tornado (0..1, y down)"
+    },
+    {
+      "name": "spin",
+      "type": "float",
+      "default": 1.0,
+      "min": -4,
+      "max": 4,
+      "description": "Turns each square makes as it flies away (negative: clockwise)"
+    },
+    {
+      "name": "randomness",
+      "type": "float",
+      "default": 0.2,
+      "min": 0,
+      "max": 1,
+      "description": "How randomly the squares leave"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/vortex.wgsl"
+        }
+      ]
+    }
+  ]
+}
