@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.mosaic",
+  "name": "Mosaic",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The view pans across a mosaic of rotated tiles from both clips and settles on the second. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "endx",
+      "type": "int",
+      "default": 2,
+      "min": -10,
+      "max": 10,
+      "description": "Tile column the view ends on"
+    },
+    {
+      "name": "endy",
+      "type": "int",
+      "default": -1,
+      "min": -10,
+      "max": 10,
+      "description": "Tile row the view ends on (counted upward)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/mosaic.wgsl"
+        }
+      ]
+    }
+  ]
+}
