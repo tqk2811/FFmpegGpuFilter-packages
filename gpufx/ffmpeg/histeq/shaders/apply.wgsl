@@ -6,7 +6,8 @@ fn unpack(c: vec4f) -> u32 {
 }
 
 fn lut(x: i32) -> i32 {
-    let cum = unpack(textureLoad(total, vec2i(x, 0), 0));
+    let tw = i32(textureDimensions(total).x);
+    let cum = unpack(textureLoad(total, vec2i(x % tw, x / tw), 0));
     let size = textureDimensions(src);
     let n = size.x * size.y;
     let intensity = u32(params.intensity * 1000.0);

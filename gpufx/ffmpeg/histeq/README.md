@@ -6,7 +6,7 @@ Global histogram equalization of each frame's luma, like FFmpeg's `histeq`.
 
 - `src`: Picture to equalize.
 
-At least 256 pixels wide; any pixel format that gpufx converts on the GPU.
+At least 256 pixels in all (16x16 or 67x4, for example); any pixel format that gpufx converts on the GPU.
 
 ## Output
 
@@ -48,9 +48,9 @@ gpufx run 'histeq.zip=strength=0.2&intensity=0.21' -i in.png -o out.png
 
 Port of FFmpeg's `histeq` (`vf_histeq.c`), with its integer math on 8-bit codes. The luma `(55 r + 182 g + 19 b) >> 8` of every pixel is counted in a 256-bin histogram; its running sum, scaled by `intensity` and mixed with the identity by `strength`, is the lookup table, and each pixel's R, G, B are scaled by `lut[luma] / luma` (by `255 / max(r, g, b)` when that would overflow). Black pixels stay black.
 
-The histogram takes three passes: the first counts, for each row and bin, the pixels of that luma (one thread per row and bin, so it reads every row 256 times), the second adds up the cumulative counts per bin, the last maps the pixels. The counts travel between passes as 32-bit integers in the four 8-bit channels of a texel, hence the 256-pixel minimum width.
+The histogram takes three passes: the first counts, for each group of rows and each bin, the pixels of that luma (one thread per group and bin, so it reads every row 256 times; a group is one row when the picture is at least 256 wide, more rows for narrower pictures), the second adds up the cumulative counts per bin, the last maps the pixels. The counts travel between passes as 32-bit integers in the four 8-bit channels of a texel, 256 per group, hence the 256-pixel minimum.
 
-Checked against FFmpeg's `histeq` on the test picture and a low-contrast copy (defaults, `strength=0.25`, `strength=1` with `intensity=0.255`): identical without antibanding. With antibanding the dither differs pixel by pixel but the channel means match within 0.1 level.
+Checked against FFmpeg's `histeq` on the test picture, a low-contrast copy, a 67x41 copy and a 1920x1080 picture (defaults, `strength=0.25`, `strength=1` with `intensity=0.255`): identical without antibanding. With antibanding the dither differs pixel by pixel but the channel means match within 0.1 level.
 
 Differences from FFmpeg:
 

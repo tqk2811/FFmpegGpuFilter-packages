@@ -1,5 +1,5 @@
-// Histeq, second pass: the thread at (k, 0) adds up the counts of every luma up to k over all
-// rows, giving the cumulative histogram.
+// Histeq, second pass: texel number k < 256 adds up the counts of every luma up to k over all
+// row groups, giving the cumulative histogram (same texel numbering as the first pass).
 fn pack(u: u32) -> vec4f {
     return vec4f(vec4u(u & 255u, (u >> 8u) & 255u, (u >> 16u) & 255u, u >> 24u)) / 255.0;
 }
@@ -11,12 +11,16 @@ fn unpack(c: vec4f) -> u32 {
 
 @compute @workgroup_size(8, 8)
 fn main(@builtin(global_invocation_id) id: vec3u) {
-    if (!gpufx_in_bounds(id) || id.x >= 256u || id.y != 0u) { return; }
-    let h = i32(textureDimensions(rows).y);
+    if (!gpufx_in_bounds(id)) { return; }
+    let s = textureDimensions(rows);
+    let k = id.y * s.x + id.x;
+    if (k >= 256u) { return; }
+    let groups = max(min(s.y, s.x * s.y / 256u), 1u);
     var n = 0u;
-    for (var y = 0; y < h; y++) {
-        for (var k = 0; k <= i32(id.x); k++) {
-            n += unpack(textureLoad(rows, vec2i(k, y), 0));
+    for (var g = 0u; g < groups; g++) {
+        for (var b = 0u; b <= k; b++) {
+            let c = g * 256u + b;
+            n += unpack(textureLoad(rows, vec2u(c % s.x, c / s.x), 0));
         }
     }
     gpufx_write(id, pack(n));
