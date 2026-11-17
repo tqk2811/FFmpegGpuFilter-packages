@@ -25,13 +25,15 @@ Written inline after the package name: `hue.zip=name=value`. Several options are
 ## Example
 
 ```sh
-ffmpeg -init_hw_device vulkan=vk:0,disable_multiplane=1 -filter_hw_device vk -i in.mp4 \n  -vf "format=nv12,gpufx=graph='hue.zip=h=90&s=1.2',hwdownload,format=nv12" out.mp4
+ffmpeg -init_hw_device vulkan=vk:0,disable_multiplane=1 -filter_hw_device vk -i in.mp4 \
+  -vf "format=nv12,gpufx=graph='hue.zip=h=90&s=1.2',hwdownload,format=nv12" out.mp4
 ```
 
 Direct3D 12 (Windows):
 
 ```sh
-ffmpeg -init_hw_device d3d12va=dx -filter_hw_device dx -i in.mp4 \n  -vf "format=nv12,gpufx=graph='hue.zip=h=90&s=1.2',hwdownload,format=nv12" out.mp4
+ffmpeg -init_hw_device d3d12va=dx -filter_hw_device dx -i in.mp4 \
+  -vf "format=nv12,gpufx=graph='hue.zip=h=90&s=1.2',hwdownload,format=nv12" out.mp4
 ```
 
 The effect runs on every backend the filter supports (Vulkan, D3D12/D3D11, Metal on macOS); see the [README](https://github.com/tqk2811/FFmpegGpuFilter/blob/master/README.md).
