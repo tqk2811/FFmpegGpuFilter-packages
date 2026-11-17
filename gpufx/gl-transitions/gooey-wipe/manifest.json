@@ -1,0 +1,68 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.gooey-wipe",
+  "name": "Gooey Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Soft, glossy blobs of liquid pop up over the first clip, swell and melt into each other, revealing the second clip until they cover the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "blobs",
+      "type": "float",
+      "default": 5.0,
+      "min": 2,
+      "max": 12,
+      "description": "Number of blobs across the frame"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How smoothly neighbouring blobs melt into each other"
+    },
+    {
+      "name": "highlight",
+      "type": "color",
+      "default": "#ffffffb3",
+      "description": "Color of the glossy highlight on the rim of the blobs (alpha: strength)"
+    },
+    {
+      "name": "shadow",
+      "type": "color",
+      "default": "#0000004d",
+      "description": "Color of the soft shadow the blobs cast on the first clip (alpha: strength)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/gooey_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.ink-bleed",
+  "name": "Ink Bleed",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip spreads over the first like drops of ink in water, blooming from a few points with curling, wispy edges and a darker rim. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "drops",
+      "type": "float",
+      "default": 4.0,
+      "min": 1,
+      "max": 8,
+      "description": "Number of ink drops"
+    },
+    {
+      "name": "tendrils",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "How far the curling tendrils reach out of the blooms"
+    },
+    {
+      "name": "rim",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How dark the rim of ink at the front of the blooms is"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 3.0,
+      "min": 0,
+      "max": 1000,
+      "description": "Random seed for the drop positions and the swirls"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/ink_bleed.wgsl"
+        }
+      ]
+    }
+  ]
+}
