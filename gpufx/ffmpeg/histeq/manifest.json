@@ -1,0 +1,19 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.histeq",
+  "name": "Histogram Equalization",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Global histogram equalization of the luma of each frame, mixed with the original by a strength.",
+  "inputs": [{ "name": "src", "description": "Picture to equalize, at least 256 pixels wide", "width": { "min": 256 } }],
+  "params": [
+    { "name": "strength", "type": "float", "default": 0.2, "min": 0.0, "max": 1.0, "description": "Mix of the equalized and the original luma: 0 leaves the picture, 1 equalizes fully" },
+    { "name": "intensity", "type": "float", "default": 0.21, "min": 0.0, "max": 1.0, "description": "Largest output luma of the equalization, as a fraction of 1000/255 (0.255 maps to full white)" },
+    { "name": "antibanding", "type": "enum", "values": ["none", "weak", "strong"], "default": "none", "description": "Random dither of the output luma between neighbouring table entries, against banding" }
+  ],
+  "groups": [{ "passes": [
+    { "shader": "shaders/rows.wgsl", "inputs": ["src"], "outputs": ["rows"] },
+    { "shader": "shaders/total.wgsl", "inputs": ["rows"], "outputs": ["total"] },
+    { "shader": "shaders/apply.wgsl", "inputs": ["src", "total"], "outputs": ["out"] }
+  ] }]
+}
