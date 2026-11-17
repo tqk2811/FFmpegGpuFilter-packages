@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.doorway",
+  "name": "Doorway",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip opens like double doors toward the viewer while the second comes forward from behind, with a floor reflection. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "reflection",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the floor reflection under the second clip"
+    },
+    {
+      "name": "perspective",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of perspective on the doors"
+    },
+    {
+      "name": "depth",
+      "type": "float",
+      "default": 3.0,
+      "min": 1,
+      "max": 10,
+      "description": "How far back the second clip starts (1: no distance)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/doorway.wgsl"
+        }
+      ]
+    }
+  ]
+}
