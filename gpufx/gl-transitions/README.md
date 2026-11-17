@@ -51,6 +51,38 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [undulating-burn-out](undulating-burn-out/README.md) | [UndulatingBurnOut.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/UndulatingBurnOut.glsl) | pthrasher | MIT |
 | [water-drop](water-drop/README.md) | [WaterDrop.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WaterDrop.glsl) | Paweł Płóciennik | MIT |
 | [zoom-in-circles](zoom-in-circles/README.md) | [ZoomInCircles.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomInCircles.glsl) | dycm8009 | MIT |
+| [color-wrap](color-wrap/README.md) | [ColorWrap.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ColorWrap.glsl) | Yoni Maltsman | MIT |
+| [hsv-fade](hsv-fade/README.md) | [HsvFade.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HsvFade.glsl) | nwoeanhinnogaehr | MIT |
+| [overexposure](overexposure/README.md) | [Overexposure.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Overexposure.glsl) | Ben Zhang | MIT |
+| [glitch-bands](glitch-bands/README.md) | [GlitchBands.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GlitchBands.glsl) | Yoni Maltsman | MIT |
+| [diamond-wipe](diamond-wipe/README.md) | [DiamondWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DiamondWipe.glsl) | gre | MIT |
+| [leaf-wipe](leaf-wipe/README.md) | [LeafWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LeafWipe.glsl) | @Flexi23 | MIT |
+| [spiral-wipe](spiral-wipe/README.md) | [SpiralWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SpiralWipe.glsl) | gre | MIT |
+| [star-wipe](star-wipe/README.md) | [StarWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StarWipe.glsl) | Ben Lucas | MIT |
+| [keyhole-wipe](keyhole-wipe/README.md) | [KeyholeWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/KeyholeWipe.glsl) | gre | MIT |
+| [static-wipe](static-wipe/README.md) | [StaticWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StaticWipe.glsl) | Ben Lucas | MIT |
+| [luminance-melt](luminance-melt/README.md) | [LuminanceMelt.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LuminanceMelt.glsl) | 0gust1 | MIT |
+| [fisheye](fisheye/README.md) | [Fisheye.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Fisheye.glsl) | gre | MIT |
+| [zoom-in-out](zoom-in-out/README.md) | [ZoomInOut.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomInOut.glsl) | OllyOllyOlly | MIT |
+| [tunnel](tunnel/README.md) | [Tunnel.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Tunnel.glsl) | gre | MIT |
+| [revolve](revolve/README.md) | [Revolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Revolve.glsl) | bread | MIT |
+| [whip-pan](whip-pan/README.md) | [WhipPan.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WhipPan.glsl) | gre | MIT |
+| [rotate-scale-vanish](rotate-scale-vanish/README.md) | [RotateScaleVanish.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/RotateScaleVanish.glsl) | Mark Craig | MIT |
+| [tv-turn-off](tv-turn-off/README.md) | [TvTurnOff.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TvTurnOff.glsl) | gre | MIT |
+| [tv-roll](tv-roll/README.md) | [TvRoll.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TvRoll.glsl) | gre | MIT |
+| [eye-blink](eye-blink/README.md) | [EyeBlink.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/EyeBlink.glsl) | gre | MIT |
+| [simple-flip](simple-flip/README.md) | [SimpleFlip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SimpleFlip.glsl) | nwoeanhinnogaehr | MIT |
+| [fold](fold/README.md) | [Fold.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Fold.glsl) | nwoeanhinnogaehr | MIT |
+| [accordion](accordion/README.md) | [Accordion.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Accordion.glsl) | gre | MIT |
+| [book-flip](book-flip/README.md) | [BookFlip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BookFlip.glsl) | hong | MIT |
+| [card-swipe](card-swipe/README.md) | [CardSwipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CardSwipe.glsl) | gre | MIT |
+| [curtains](curtains/README.md) | [Curtains.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Curtains.glsl) | gre | MIT |
+| [inside-cube](inside-cube/README.md) | [InsideCube.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/InsideCube.glsl) | gre | MIT |
+| [prisms](prisms/README.md) | [Prisms.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Prisms.glsl) | gre | MIT |
+| [sphere](sphere/README.md) | [Sphere.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Sphere.glsl) | gre | MIT |
+| [grid-flip](grid-flip/README.md) | [GridFlip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GridFlip.glsl) | TimDonselaar | MIT |
+| [vortex](vortex/README.md) | [Vortex.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Vortex.glsl) | gre | MIT |
+| [shockwave](shockwave/README.md) | [Shockwave.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Shockwave.glsl) | Gilad Levi | MIT |
 
 Not ported because an existing package already does the same:
 

@@ -47,6 +47,38 @@ original file. Authors of the original files:
   undulating-burn-out     UndulatingBurnOut.glsl      pthrasher                               MIT
   water-drop              WaterDrop.glsl              Paweł Płóciennik                        MIT
   zoom-in-circles         ZoomInCircles.glsl          dycm8009                                MIT
+  color-wrap              ColorWrap.glsl              Yoni Maltsman                           MIT
+  hsv-fade                HsvFade.glsl                nwoeanhinnogaehr                        MIT
+  overexposure            Overexposure.glsl           Ben Zhang                               MIT
+  glitch-bands            GlitchBands.glsl            Yoni Maltsman                           MIT
+  diamond-wipe            DiamondWipe.glsl            gre                                     MIT
+  leaf-wipe               LeafWipe.glsl               @Flexi23                                MIT
+  spiral-wipe             SpiralWipe.glsl             gre                                     MIT
+  star-wipe               StarWipe.glsl               Ben Lucas                               MIT
+  keyhole-wipe            KeyholeWipe.glsl            gre                                     MIT
+  static-wipe             StaticWipe.glsl             Ben Lucas                               MIT
+  luminance-melt          LuminanceMelt.glsl          0gust1                                  MIT
+  fisheye                 Fisheye.glsl                gre                                     MIT
+  zoom-in-out             ZoomInOut.glsl              OllyOllyOlly                            MIT
+  tunnel                  Tunnel.glsl                 gre                                     MIT
+  revolve                 Revolve.glsl                bread                                   MIT
+  whip-pan                WhipPan.glsl                gre                                     MIT
+  rotate-scale-vanish     RotateScaleVanish.glsl      Mark Craig                              MIT
+  tv-turn-off             TvTurnOff.glsl              gre                                     MIT
+  tv-roll                 TvRoll.glsl                 gre                                     MIT
+  eye-blink               EyeBlink.glsl               gre                                     MIT
+  simple-flip             SimpleFlip.glsl             nwoeanhinnogaehr                        MIT
+  fold                    Fold.glsl                   nwoeanhinnogaehr                        MIT
+  accordion               Accordion.glsl              gre                                     MIT
+  book-flip               BookFlip.glsl               hong                                    MIT
+  card-swipe              CardSwipe.glsl              gre                                     MIT
+  curtains                Curtains.glsl               gre                                     MIT
+  inside-cube             InsideCube.glsl             gre                                     MIT
+  prisms                  Prisms.glsl                 gre                                     MIT
+  sphere                  Sphere.glsl                 gre                                     MIT
+  grid-flip               GridFlip.glsl               TimDonselaar                            MIT
+  vortex                  Vortex.glsl                 gre                                     MIT
+  shockwave               Shockwave.glsl              Gilad Levi                              MIT
 
 --------------------------------------------------------------------------------
 MIT License

@@ -191,6 +191,38 @@ GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `
 Packages under the GNU GPL version 3 or later, each in its own folder with its LICENSE and source README. Unlike the rest of this folder they are not MIT.
 
 - [openshot/luma-wipe](gpl3/openshot/luma-wipe/README.md): luma wipe over the 405 OpenShot luma images
+- [color-wrap](gl-transitions/color-wrap/README.md)
+- [hsv-fade](gl-transitions/hsv-fade/README.md)
+- [overexposure](gl-transitions/overexposure/README.md)
+- [glitch-bands](gl-transitions/glitch-bands/README.md)
+- [diamond-wipe](gl-transitions/diamond-wipe/README.md)
+- [leaf-wipe](gl-transitions/leaf-wipe/README.md)
+- [spiral-wipe](gl-transitions/spiral-wipe/README.md)
+- [star-wipe](gl-transitions/star-wipe/README.md)
+- [keyhole-wipe](gl-transitions/keyhole-wipe/README.md)
+- [static-wipe](gl-transitions/static-wipe/README.md)
+- [luminance-melt](gl-transitions/luminance-melt/README.md)
+- [fisheye](gl-transitions/fisheye/README.md)
+- [zoom-in-out](gl-transitions/zoom-in-out/README.md)
+- [tunnel](gl-transitions/tunnel/README.md)
+- [revolve](gl-transitions/revolve/README.md)
+- [whip-pan](gl-transitions/whip-pan/README.md)
+- [rotate-scale-vanish](gl-transitions/rotate-scale-vanish/README.md)
+- [tv-turn-off](gl-transitions/tv-turn-off/README.md)
+- [tv-roll](gl-transitions/tv-roll/README.md)
+- [eye-blink](gl-transitions/eye-blink/README.md)
+- [simple-flip](gl-transitions/simple-flip/README.md)
+- [fold](gl-transitions/fold/README.md)
+- [accordion](gl-transitions/accordion/README.md)
+- [book-flip](gl-transitions/book-flip/README.md)
+- [card-swipe](gl-transitions/card-swipe/README.md)
+- [curtains](gl-transitions/curtains/README.md)
+- [inside-cube](gl-transitions/inside-cube/README.md)
+- [prisms](gl-transitions/prisms/README.md)
+- [sphere](gl-transitions/sphere/README.md)
+- [grid-flip](gl-transitions/grid-flip/README.md)
+- [vortex](gl-transitions/vortex/README.md)
+- [shockwave](gl-transitions/shockwave/README.md)
 
 ## standalone
 
