@@ -1,0 +1,20 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.eq",
+  "name": "Eq",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Brightness, contrast, saturation and gamma as FFmpeg's eq filter computes them on Y'CbCr.",
+  "inputs": [{ "name": "src" }],
+  "params": [
+    { "name": "contrast", "type": "float", "default": 1, "min": -1000, "max": 1000, "description": "Contrast of the luma around its middle" },
+    { "name": "brightness", "type": "float", "default": 0, "min": -1, "max": 1, "description": "Value added to the luma" },
+    { "name": "saturation", "type": "float", "default": 1, "min": 0, "max": 3, "description": "Gain of the chroma (0 = gray)" },
+    { "name": "gamma", "type": "float", "default": 1, "min": 0.1, "max": 10, "description": "Gamma of the luma" },
+    { "name": "gamma_r", "type": "float", "default": 1, "min": 0.1, "max": 10, "description": "Gamma for red (applied to Cr)" },
+    { "name": "gamma_g", "type": "float", "default": 1, "min": 0.1, "max": 10, "description": "Gamma for green (applied to the luma and both chroma)" },
+    { "name": "gamma_b", "type": "float", "default": 1, "min": 0.1, "max": 10, "description": "Gamma for blue (applied to Cb)" },
+    { "name": "gamma_weight", "type": "float", "default": 1, "min": 0, "max": 1, "description": "How much of the gamma curve is used (0 = none)" }
+  ],
+  "groups": [{ "passes": [{ "shader": "shaders/eq.wgsl" }] }]
+}

@@ -111,6 +111,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [yaepblur](ffmpeg/yaepblur/README.md)
 - [zoom-pan](ffmpeg/zoom-pan/README.md)
 - [zoom-canvas](ffmpeg/zoom-canvas/README.md)
+- [eq](ffmpeg/eq/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 
