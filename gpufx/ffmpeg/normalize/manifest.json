@@ -5,7 +5,7 @@
   "used_for": ["gpufx"],
   "version": "1.0.0",
   "description": "Stretches the R, G and B range of each frame so its darkest and brightest values reach the black and white points.",
-  "inputs": [{ "name": "src", "description": "Picture to normalize" }],
+  "inputs": [{ "name": "src", "description": "Picture to normalize", "width": { "min": 6 } }],
   "params": [
     { "name": "blackpt", "type": "color", "default": "#000000", "description": "Output color the darkest input value of each channel is mapped to" },
     { "name": "whitept", "type": "color", "default": "#ffffff", "description": "Output color the brightest input value of each channel is mapped to" },
