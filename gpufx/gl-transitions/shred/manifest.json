@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.shred",
+  "name": "Shred",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is cut into paper strips that drop away at uneven speeds, tilting as they fall. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "strips",
+      "type": "int",
+      "default": 20,
+      "min": 4,
+      "max": 60,
+      "description": "Number of strips"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 0.8,
+      "description": "Spread of the start times, as a part of the transition"
+    },
+    {
+      "name": "tilt",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 0.3,
+      "description": "Largest tilt of a falling strip, in radians"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the cut edges and shadow"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/shred.wgsl"
+        }
+      ]
+    }
+  ]
+}

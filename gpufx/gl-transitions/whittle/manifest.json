@@ -1,0 +1,60 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.whittle",
+  "name": "Whittle",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Straight cuts are scored across the first clip one after another, each piece beyond a cut sliding away, until a small polygon slides off last and uncovers the second. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "cuts",
+      "type": "int",
+      "default": 5,
+      "min": 2,
+      "max": 6,
+      "description": "Number of cuts before the last piece slides away"
+    },
+    {
+      "name": "score",
+      "type": "color",
+      "default": "#fff7e6d9",
+      "description": "Color of the score line along each cut (alpha: intensity)"
+    },
+    {
+      "name": "shadow",
+      "type": "color",
+      "default": "#00000073",
+      "description": "Color of the shadow the lifted pieces cast"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/whittle.wgsl"
+        }
+      ]
+    }
+  ]
+}

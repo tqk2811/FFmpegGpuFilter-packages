@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.unbox",
+  "name": "Unbox",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip is tossed in folded up as an open card box, lands with a bounce, then its walls fall open flat until it covers the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "depth",
+      "type": "float",
+      "default": 0.22,
+      "min": 0.1,
+      "max": 0.35,
+      "description": "Height of the walls, as a part of the shorter side"
+    },
+    {
+      "name": "perspective",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the perspective"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the faces darken, and their shadows"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#ede8db",
+      "description": "Color of the back of the card"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/unbox.wgsl"
+        }
+      ]
+    }
+  ]
+}
