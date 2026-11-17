@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.perlin",
+  "name": "Perlin",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip appears through blobs of noise. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "scale",
+      "type": "float",
+      "default": 4.0,
+      "min": 0.1,
+      "max": 100,
+      "description": "Scale of the noise (higher: smaller blobs)"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.01,
+      "min": 0,
+      "max": 0.5,
+      "description": "Softness of the blob edges"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 12.9898,
+      "min": 0,
+      "max": 1000,
+      "description": "Random seed"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/perlin.wgsl"
+        }
+      ]
+    }
+  ]
+}
