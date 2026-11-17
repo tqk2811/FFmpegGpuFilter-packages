@@ -1,0 +1,14 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.transpose",
+  "name": "Transpose",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Rotates the picture by 90 degrees, optionally flipped, swapping its width and height.",
+  "inputs": [{ "name": "src" }],
+  "params": [
+    { "name": "dir", "type": "enum", "values": ["cclock_flip", "clock", "cclock", "clock_flip"], "default": "cclock_flip", "description": "cclock_flip = 90 degrees counter-clockwise and flipped vertically, clock = 90 degrees clockwise, cclock = 90 degrees counter-clockwise, clock_flip = 90 degrees clockwise and flipped vertically" },
+    { "name": "passthrough", "type": "enum", "values": ["none", "portrait", "landscape"], "default": "none", "description": "Leave the picture as it is when it is already portrait (height >= width) or landscape (width >= height)" }
+  ],
+  "groups": [{ "passes": [{ "shader": "shaders/transpose.wgsl" }] }]
+}
