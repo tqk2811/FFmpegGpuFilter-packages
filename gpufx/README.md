@@ -123,6 +123,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [grayworld](ffmpeg/grayworld/README.md)
 - [normalize](ffmpeg/normalize/README.md)
 - [histeq](ffmpeg/histeq/README.md)
+- [greyedge](ffmpeg/greyedge/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 

@@ -1,0 +1,20 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.greyedge",
+  "name": "Grey Edge",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Automatic white balance that estimates the light color from the edges of the picture (grey edge assumption).",
+  "inputs": [{ "name": "src", "description": "Picture to correct, at least 3 pixels wide", "width": { "min": 3 } }],
+  "params": [
+    { "name": "difford", "type": "int", "default": 1, "min": 0, "max": 2, "description": "Order of the Gaussian derivative: 0 uses the smoothed picture (grey world, or max-RGB with minknorm 0), 1 the gradient, 2 the second derivatives" },
+    { "name": "minknorm", "type": "int", "default": 1, "min": 0, "max": 20, "description": "Minkowski norm of the estimate: 0 takes the maximum (max-RGB), 1 the mean, higher values lean towards the maximum" },
+    { "name": "sigma", "type": "float", "default": 1.0, "min": 0.0, "max": 10.0, "description": "Standard deviation of the Gaussian, in pixels; must be at least 1/6 when difford is above 0, else the picture is left as it is" }
+  ],
+  "groups": [{ "passes": [
+    { "shader": "shaders/norm.wgsl", "inputs": ["src"], "outputs": ["nr", "ng", "nb"] },
+    { "shader": "shaders/rows.wgsl", "inputs": ["nr", "ng", "nb"], "outputs": ["rows"] },
+    { "shader": "shaders/total.wgsl", "inputs": ["rows"], "outputs": ["total"] },
+    { "shader": "shaders/apply.wgsl", "inputs": ["src", "total"], "outputs": ["out"] }
+  ] }]
+}
