@@ -1,0 +1,57 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.polka-dots-curtain",
+  "name": "Polka Dots Curtain",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip appears through polka dots that grow outward from a point. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "dots",
+      "type": "float",
+      "default": 20.0,
+      "min": 1,
+      "max": 100,
+      "description": "Number of dots across the frame"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.0,
+        1.0
+      ],
+      "description": "Point the dots grow from (0..1, y down)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/polka_dots_curtain.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.directional-warp",
+  "name": "Directional Warp",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A diagonal wipe with a warped, smeared edge. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Softness of the edge"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        -1.0,
+        1.0
+      ],
+      "description": "Direction of the wipe (gl-transitions coordinates: x right, y up)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/directional_warp.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.squares-wipe",
+  "name": "Squares Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Squares grow along a diagonal sweep to reveal the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "squares",
+      "type": "vec2",
+      "default": [
+        10.0,
+        10.0
+      ],
+      "description": "Number of squares (columns, rows)"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        -0.5
+      ],
+      "description": "Direction of the sweep (gl-transitions coordinates: x right, y up)"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 1.6,
+      "min": 0,
+      "max": 5,
+      "description": "Softness of the sweep"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/squares_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
