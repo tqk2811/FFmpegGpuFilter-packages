@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.film-dissolve",
+  "name": "Film Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A cross-dissolve in linear light, as light adds up on film, with the highlights of each clip shining through the other. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "overlap",
+      "type": "float",
+      "default": 0.25,
+      "min": 0,
+      "max": 1,
+      "description": "Extra light where the clips overlap mid-dissolve"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Easing (0: linear, 1: in and out)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/film_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

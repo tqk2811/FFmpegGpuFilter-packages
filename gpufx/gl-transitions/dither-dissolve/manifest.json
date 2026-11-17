@@ -1,0 +1,48 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.dither-dissolve",
+  "name": "Dither Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip appears through an 8x8 ordered dither pattern, like a retro computer screen. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "dot_size",
+      "type": "float",
+      "default": 0.02,
+      "min": 0.002,
+      "max": 0.05,
+      "description": "Size of a dither dot, relative to the height"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/dither_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

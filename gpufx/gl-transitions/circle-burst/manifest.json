@@ -1,0 +1,75 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.circle-burst",
+  "name": "Circle Burst",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Discs of three solid colors burst out of a point one after another, then a hole opens in the last one onto the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Point the discs burst out of (0..1, y down)"
+    },
+    {
+      "name": "color1",
+      "type": "color",
+      "default": "#fcc94a",
+      "description": "Color of the first disc"
+    },
+    {
+      "name": "color2",
+      "type": "color",
+      "default": "#f26154",
+      "description": "Color of the second disc"
+    },
+    {
+      "name": "color3",
+      "type": "color",
+      "default": "#21264d",
+      "description": "Color of the third disc"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "description": "Delay between the discs (0: a single circle)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/circle_burst.wgsl"
+        }
+      ]
+    }
+  ]
+}
