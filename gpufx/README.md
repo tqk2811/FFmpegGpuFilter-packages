@@ -132,6 +132,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [zoneplate](ffmpeg/zoneplate/README.md)
 - [remap](ffmpeg/remap/README.md)
 - [vaguedenoiser](ffmpeg/vaguedenoiser/README.md)
+- [fftdnoiz](ffmpeg/fftdnoiz/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 
