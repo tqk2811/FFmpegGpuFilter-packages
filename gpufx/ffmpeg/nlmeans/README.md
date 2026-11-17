@@ -46,9 +46,9 @@ gpufx run 'nlmeans.zip=s=4&p=7&r=15' -i in.png -o out.png
 
 ## Notes
 
-Port of FFmpeg's `nlmeans` (`vf_nlmeans.c`), on each R, G, B channel as FFmpeg does on `gbrp`. For every pixel of the `r` x `r` research window (inside the picture) the sum of squared 8-bit differences between its `p` x `p` patch and the pixel's own patch gives the weight `exp(-ssd / (10 s)^2)`, 0 from FFmpeg's cut-off `log(255) * (10 s)^2` on; the pixel itself weighs 1. Patch pixels outside the picture take the nearest edge pixel. Alpha is passed through. One pass, which reads `r^2 * p^2 * 2` texels per pixel (about 22 000 with the defaults) instead of FFmpeg's integral images, so it is heavy: about 0.4 s for a 1920x1080 frame with the defaults on a laptop RTX 4060, far from real time; smaller `r` and `p` cost much less.
+Port of FFmpeg's `nlmeans` (`vf_nlmeans.c`), on each R, G, B channel as FFmpeg does on `gbrp`. For every pixel of the `r` x `r` research window (inside the picture) the sum of squared 8-bit differences between its `p` x `p` patch and the pixel's own patch gives the weight `exp(-ssd / (10 s)^2)`, 0 from FFmpeg's cut-off `log(255) * (10 s)^2` on; the pixel itself weighs 1. Patch pixels outside the picture take the nearest edge pixel. Alpha is passed through. One pass. A workgroup loads its 8x8 tile with the patch and research margins into workgroup memory, and for each offset of the research window sums the squared differences along the patch rows once per tile row; each pixel then adds up the `p` row sums of its patch. The sums are integers, so the weights are those of the direct sum. About 0.11 s for a 1920x1080 frame with the defaults on a laptop RTX 4060 (16 ms with `p=3:r=7`, 1.4 s with `p=21:r=31`), still far from real time.
 
-Checked against FFmpeg's `format=gbrp,nlmeans` on a noisy test picture (defaults; `s=4:p=5:r=9`; `s=10:p=3:r=21`): identical except a few pixels 1 level apart.
+Checked against FFmpeg's `format=gbrp,nlmeans` on a noisy test picture (643x361 and 1920x1080; defaults; `s=4:p=5:r=9`; `s=10:p=3:r=21`; `s=6:p=21:r=31`; `s=3:p=6:r=4`): identical except a few pixels 1 level apart.
 
 Differences from FFmpeg:
 
