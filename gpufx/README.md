@@ -136,6 +136,29 @@ GPU ports of the transitions of [tqk2811/TqkLibrary.FFmpegTransition](tqk2811/Tq
 - [dip-to-color](tqk2811/TqkLibrary.FFmpegTransition/dip-to-color/README.md)
 - [crossfade](tqk2811/TqkLibrary.FFmpegTransition/crossfade/README.md)
 
+## gl-transitions
+
+GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `pagecurl` is BSD 3-Clause).
+
+- [cube](gl-transitions/cube/README.md)
+- [pagecurl](gl-transitions/pagecurl/README.md)
+- [ripple](gl-transitions/ripple/README.md)
+- [swirl](gl-transitions/swirl/README.md)
+- [doorway](gl-transitions/doorway/README.md)
+- [burn](gl-transitions/burn/README.md)
+- [crosswarp](gl-transitions/crosswarp/README.md)
+- [crosszoom](gl-transitions/crosszoom/README.md)
+- [dreamy](gl-transitions/dreamy/README.md)
+- [kaleidoscope](gl-transitions/kaleidoscope/README.md)
+- [glitch-displace](gl-transitions/glitch-displace/README.md)
+- [morph](gl-transitions/morph/README.md)
+- [mosaic](gl-transitions/mosaic/README.md)
+- [polar-function](gl-transitions/polar-function/README.md)
+- [squeeze](gl-transitions/squeeze/README.md)
+- [heart](gl-transitions/heart/README.md)
+- [bounce](gl-transitions/bounce/README.md)
+- [film-burn](gl-transitions/film-burn/README.md)
+
 ## standalone
 
 Effects of our own, with no FFmpeg or script counterpart.
