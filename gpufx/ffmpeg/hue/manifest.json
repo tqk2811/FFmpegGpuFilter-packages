@@ -1,0 +1,15 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.hue",
+  "name": "Hue",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Rotates the hue and scales the saturation of the chroma, and shifts the brightness, as FFmpeg's hue filter.",
+  "inputs": [{ "name": "src" }],
+  "params": [
+    { "name": "h", "type": "float", "default": 0, "min": -3600, "max": 3600, "description": "Hue angle in degrees" },
+    { "name": "s", "type": "float", "default": 1, "min": -10, "max": 10, "description": "Saturation (0 = gray, negative also inverts the hue)" },
+    { "name": "b", "type": "float", "default": 0, "min": -10, "max": 10, "description": "Brightness: each unit adds 25.6 luma levels" }
+  ],
+  "groups": [{ "passes": [{ "shader": "shaders/hue.wgsl" }] }]
+}
