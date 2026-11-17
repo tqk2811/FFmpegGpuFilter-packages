@@ -1,0 +1,17 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.rotate",
+  "name": "Rotate",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Rotates the picture by any angle around its centre, filling the uncovered area with a colour.",
+  "inputs": [{ "name": "src" }],
+  "params": [
+    { "name": "angle", "type": "float", "default": 0, "min": -100000, "max": 100000, "description": "Clockwise angle in radians (`a`)" },
+    { "name": "ow", "type": "int", "default": 0, "min": -1, "max": 16384, "description": "Output width; 0 = the input's width, -1 = wide enough for the picture rotated by the starting angle (`rotw(a)`)" },
+    { "name": "oh", "type": "int", "default": 0, "min": -1, "max": 16384, "description": "Output height; 0 = the input's height, -1 = tall enough for the picture rotated by the starting angle (`roth(a)`)" },
+    { "name": "fillcolor", "type": "color", "default": "#000000", "description": "Colour of the area the picture does not cover (with alpha)" },
+    { "name": "bilinear", "type": "bool", "default": true, "description": "Bilinear interpolation; 0 = nearest pixel" }
+  ],
+  "groups": [{ "passes": [{ "shader": "shaders/rotate.wgsl" }] }]
+}
