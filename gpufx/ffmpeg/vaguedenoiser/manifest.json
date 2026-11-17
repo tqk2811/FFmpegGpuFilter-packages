@@ -1,0 +1,676 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.vaguedenoiser",
+  "name": "Vague Denoiser",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Wavelet denoiser on one frame: shrinks the small wavelet coefficients of each channel.",
+  "inputs": [
+    {
+      "name": "src",
+      "description": "Picture to denoise"
+    }
+  ],
+  "params": [
+    {
+      "name": "threshold",
+      "type": "float",
+      "default": 2.0,
+      "min": 0.0,
+      "max": 255.0,
+      "description": "Filtering strength: coefficients up to this size are shrunk"
+    },
+    {
+      "name": "method",
+      "type": "enum",
+      "values": [
+        "hard",
+        "soft",
+        "garrote"
+      ],
+      "default": "garrote",
+      "description": "Shrinking of the coefficients above the threshold: kept, moved toward 0 by the threshold, or non-negative garrote"
+    },
+    {
+      "name": "nsteps",
+      "type": "int",
+      "default": 6,
+      "min": 1,
+      "max": 10,
+      "description": "Number of wavelet decomposition steps (lowered for small pictures as FFmpeg does)"
+    },
+    {
+      "name": "percent",
+      "type": "float",
+      "default": 85.0,
+      "min": 0.0,
+      "max": 100.0,
+      "description": "Percent of full denoising of the coefficients below the threshold"
+    },
+    {
+      "name": "planes",
+      "type": "int",
+      "default": 15,
+      "min": 0,
+      "max": 15,
+      "description": "Channels to filter, FFmpeg's bits on gbrp: 1 green, 2 blue, 4 red"
+    },
+    {
+      "name": "threshold_type",
+      "type": "enum",
+      "values": [
+        "universal",
+        "bayes"
+      ],
+      "default": "universal",
+      "description": "Threshold: the same for the whole picture (VisuShrink), or one per sub-band from its energy (BayesShrink)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/first.wgsl",
+          "entry": "fh0",
+          "inputs": [
+            "src"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv0",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh1",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv1",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh2",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv2",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh3",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv3",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh4",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv4",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh5",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv5",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh6",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv6",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh7",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv7",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh8",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv8",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "fh9",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "fv9",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "rows",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "sr",
+            "sg",
+            "sb"
+          ]
+        },
+        {
+          "shader": "shaders/tot.wgsl",
+          "inputs": [
+            "sr",
+            "sg",
+            "sb"
+          ],
+          "outputs": [
+            "tr",
+            "tg",
+            "tb"
+          ]
+        },
+        {
+          "shader": "shaders/thr.wgsl",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab",
+            "tr",
+            "tg",
+            "tb"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv9",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih9",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv8",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih8",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv7",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih7",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv6",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih6",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv5",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih5",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv4",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih4",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv3",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih3",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv2",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih2",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv1",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/a.wgsl",
+          "entry": "ih1",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab"
+          ],
+          "outputs": [
+            "br",
+            "bg",
+            "bb"
+          ]
+        },
+        {
+          "shader": "shaders/b.wgsl",
+          "entry": "iv0",
+          "inputs": [
+            "br",
+            "bg",
+            "bb"
+          ],
+          "outputs": [
+            "ar",
+            "ag",
+            "ab"
+          ]
+        },
+        {
+          "shader": "shaders/last.wgsl",
+          "inputs": [
+            "ar",
+            "ag",
+            "ab",
+            "src"
+          ],
+          "outputs": [
+            "out"
+          ]
+        }
+      ]
+    }
+  ]
+}
