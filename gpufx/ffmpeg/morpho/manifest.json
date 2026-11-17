@@ -1,0 +1,19 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.morpho",
+  "name": "Morpho",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Erosion, dilation, opening, closing, gradient, top-hat and black-hat with a structuring element given as a picture.",
+  "inputs": [
+    { "name": "src", "description": "Picture to filter" },
+    { "name": "structure", "description": "Structuring element: its pixels above 0 are part of it, centred on pixel ((w - 1) / 2, (h - 1) / 2); up to 63x63 is read" }
+  ],
+  "params": [
+    { "name": "mode", "type": "enum", "values": ["erode", "dilate", "open", "close", "gradient", "tophat", "blackhat"], "default": "erode", "description": "Morphological transform" }
+  ],
+  "groups": [{ "passes": [
+    { "shader": "shaders/first.wgsl", "inputs": ["src", "structure"], "outputs": ["eroded", "dilated"] },
+    { "shader": "shaders/second.wgsl", "inputs": ["src", "structure", "eroded", "dilated"], "outputs": ["out"] }
+  ] }]
+}

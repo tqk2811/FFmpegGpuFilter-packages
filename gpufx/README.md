@@ -119,6 +119,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [pad](ffmpeg/pad/README.md)
 - [rotate](ffmpeg/rotate/README.md)
 - [guided](ffmpeg/guided/README.md)
+- [morpho](ffmpeg/morpho/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 
