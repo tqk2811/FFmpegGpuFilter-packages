@@ -1,0 +1,16 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.crop",
+  "name": "Crop",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Cuts a rectangle out of the picture; the output has the size of the rectangle.",
+  "inputs": [{ "name": "src" }],
+  "params": [
+    { "name": "w", "type": "int", "default": 0, "min": 0, "max": 16384, "description": "Width of the rectangle in pixels; 0 = the input's width (`out_w`)" },
+    { "name": "h", "type": "int", "default": 0, "min": 0, "max": 16384, "description": "Height of the rectangle in pixels; 0 = the input's height (`out_h`)" },
+    { "name": "x", "type": "int", "default": -1, "min": -1, "max": 16384, "description": "Left edge of the rectangle; -1 = centred" },
+    { "name": "y", "type": "int", "default": -1, "min": -1, "max": 16384, "description": "Top edge of the rectangle; -1 = centred" }
+  ],
+  "groups": [{ "passes": [{ "shader": "shaders/crop.wgsl" }] }]
+}
