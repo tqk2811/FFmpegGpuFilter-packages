@@ -1,0 +1,80 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.cube",
+  "name": "Cube",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The two clips are faces of a box that turns a quarter turn in perspective above a reflective floor. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "persp",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of perspective"
+    },
+    {
+      "name": "unzoom",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "description": "How far the camera pulls back mid-turn, as a part of the frame"
+    },
+    {
+      "name": "reflection",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the reflection"
+    },
+    {
+      "name": "floating",
+      "type": "float",
+      "default": 3.0,
+      "min": 0,
+      "max": 20,
+      "description": "Gap between the box and its reflection, in percent of the frame height"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the faces darken as they turn away, and the shadow on the floor"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/cube.wgsl"
+        }
+      ]
+    }
+  ]
+}
