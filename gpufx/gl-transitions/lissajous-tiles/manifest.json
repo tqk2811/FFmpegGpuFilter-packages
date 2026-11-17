@@ -1,0 +1,87 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.lissajous-tiles",
+  "name": "Lissajous Tiles",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture breaks into tiles that swirl along Lissajous curves and flip one by one to the second clip before settling back. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "speed",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 3,
+      "description": "Speed of the tiles along their curves"
+    },
+    {
+      "name": "freq",
+      "type": "vec2",
+      "default": [
+        2.0,
+        3.0
+      ],
+      "description": "Number of loops of the curve, horizontally and vertically"
+    },
+    {
+      "name": "offset",
+      "type": "float",
+      "default": 2.0,
+      "min": 0,
+      "max": 10,
+      "description": "Extra vertical speed, which bends the curve"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 2,
+      "description": "Size of the curve, relative to the frame"
+    },
+    {
+      "name": "fade",
+      "type": "float",
+      "default": 3.0,
+      "min": 0,
+      "max": 10,
+      "description": "Spread of the tile-by-tile switch"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#1a1a1a",
+      "description": "Color between the tiles (`#00000000` leaves it transparent, as in the original)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/lissajous_tiles.wgsl"
+        }
+      ]
+    }
+  ]
+}

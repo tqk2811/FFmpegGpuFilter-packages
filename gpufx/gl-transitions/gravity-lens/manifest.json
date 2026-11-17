@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.gravity-lens",
+  "name": "Gravity Lens",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A dark disk grows, bending the first clip around it like a heavy mass bends light, swallows the frame, then shrinks back, unbending the second. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Center of the disk (0..1, y down)"
+    },
+    {
+      "name": "strength",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1.5,
+      "description": "How strongly the light bends"
+    },
+    {
+      "name": "glow",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness of the lensed rings"
+    },
+    {
+      "name": "hole",
+      "type": "color",
+      "default": "#050505",
+      "description": "Color of the disk (the original is black; a near black keeps it from reading as an empty frame)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/gravity_lens.wgsl"
+        }
+      ]
+    }
+  ]
+}

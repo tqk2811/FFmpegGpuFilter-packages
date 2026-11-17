@@ -1,0 +1,54 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.comb",
+  "name": "Comb",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame is cut into interleaved strips that slide in opposite directions, pushing the first clip out and the second in. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "strips",
+      "type": "int",
+      "default": 10,
+      "min": 2,
+      "max": 40,
+      "description": "Number of strips"
+    },
+    {
+      "name": "vertical",
+      "type": "bool",
+      "default": false,
+      "description": "Cut into columns that slide up and down"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/comb.wgsl"
+        }
+      ]
+    }
+  ]
+}

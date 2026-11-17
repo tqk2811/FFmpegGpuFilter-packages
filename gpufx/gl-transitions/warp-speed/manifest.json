@@ -1,0 +1,79 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.warp-speed",
+  "name": "Warp Speed",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The camera jumps to light speed: star streaks shoot out while the first clip is pulled into a radial smear, then after a flash the second emerges. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Point the camera flies toward (0..1, y down)"
+    },
+    {
+      "name": "streaks",
+      "type": "float",
+      "default": 160.0,
+      "min": 20,
+      "max": 400,
+      "description": "Number of star streaks"
+    },
+    {
+      "name": "streak_color",
+      "type": "color",
+      "default": "#c7e0ff",
+      "description": "Color of the streaks and the flash"
+    },
+    {
+      "name": "strength",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Length of the streaks and the smear"
+    },
+    {
+      "name": "flash",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness of the flash at the peak"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/warp_speed.wgsl"
+        }
+      ]
+    }
+  ]
+}
