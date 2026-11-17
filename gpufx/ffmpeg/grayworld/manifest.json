@@ -1,0 +1,14 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.grayworld",
+  "name": "Gray World",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Automatic white balance under the gray world assumption, in a logarithmic LMS color space.",
+  "inputs": [{ "name": "src", "description": "Picture to correct, taken as linear RGB" }],
+  "groups": [{ "passes": [
+    { "shader": "shaders/rows.wgsl", "inputs": ["src"], "outputs": ["rows"] },
+    { "shader": "shaders/total.wgsl", "inputs": ["rows"], "outputs": ["total"] },
+    { "shader": "shaders/apply.wgsl", "inputs": ["src", "total"], "outputs": ["out"] }
+  ] }]
+}
