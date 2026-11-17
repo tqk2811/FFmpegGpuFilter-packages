@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.curved-wipe",
+  "name": "Curved Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is pulled away by its middle: the wipe edge bulges into a smooth curve that leads the way, then flattens as it reaches the far side. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        1.0
+      ],
+      "description": "Direction the edge moves toward (x right, y up)"
+    },
+    {
+      "name": "curvature",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How far the middle of the edge leads its sides"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.02,
+      "min": 0,
+      "max": 0.2,
+      "description": "Softness of the edge"
+    },
+    {
+      "name": "shadow",
+      "type": "color",
+      "default": "#00000066",
+      "description": "Color of the soft shadow the lifted edge casts on the second clip (alpha: strength, 0 for none)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/curved_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

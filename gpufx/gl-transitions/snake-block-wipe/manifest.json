@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.snake-block-wipe",
+  "name": "Snake Block Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Blocks switch to the second clip one at a time, row after row from the top, each row running the opposite way to the one before, like a snake winding across the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "columns",
+      "type": "int",
+      "default": 8,
+      "min": 1,
+      "max": 40,
+      "description": "Number of block columns"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 6,
+      "min": 1,
+      "max": 40,
+      "description": "Number of block rows"
+    },
+    {
+      "name": "vertical",
+      "type": "bool",
+      "default": false,
+      "description": "Wind down the columns from the left instead of along the rows"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 4,
+      "description": "How long each block takes to fade in, in turns of one block (0 switches it at once)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/snake_block_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

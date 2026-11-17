@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.iris-fold",
+  "name": "Iris Fold",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Folded paper strips of the second clip slide in one after another around a shrinking polygonal hole, each turned a little from the last so their creased edges spiral inward, until the hole closes on the center. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "sides",
+      "type": "int",
+      "default": 5,
+      "min": 3,
+      "max": 6,
+      "description": "Number of sides of the hole"
+    },
+    {
+      "name": "rounds",
+      "type": "int",
+      "default": 3,
+      "min": 2,
+      "max": 5,
+      "description": "Number of rounds of strips around the hole"
+    },
+    {
+      "name": "twist",
+      "type": "float",
+      "default": 0.16,
+      "min": -0.3,
+      "max": 0.3,
+      "description": "How much each strip turns from the one before, in radians"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the creases' highlights and of the strips' shadows"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/iris_fold.wgsl"
+        }
+      ]
+    }
+  ]
+}

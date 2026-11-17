@@ -1,0 +1,65 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.wedge-wipe",
+  "name": "Wedge Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Two hands sweep away from each other around a point, opening a widening wedge onto the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "angle",
+      "type": "float",
+      "default": 0.0,
+      "min": -180,
+      "max": 180,
+      "description": "Direction the wedge opens from, in degrees clockwise from 12 o'clock"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.01,
+      "min": 0,
+      "max": 0.2,
+      "description": "Softness of the hands' edges"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Point the hands turn around (0..1, y down)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/wedge_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
