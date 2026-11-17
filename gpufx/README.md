@@ -116,6 +116,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [haldclut](ffmpeg/haldclut/README.md)
 - [transpose](ffmpeg/transpose/README.md)
 - [crop](ffmpeg/crop/README.md)
+- [pad](ffmpeg/pad/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 

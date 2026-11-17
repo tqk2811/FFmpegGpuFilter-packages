@@ -1,0 +1,17 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.pad",
+  "name": "Pad",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Places the picture on a larger canvas of one colour; the output has the size of the canvas.",
+  "inputs": [{ "name": "src" }],
+  "params": [
+    { "name": "w", "type": "int", "default": 0, "min": 0, "max": 16384, "description": "Width of the canvas in pixels; 0 = the input's width" },
+    { "name": "h", "type": "int", "default": 0, "min": 0, "max": 16384, "description": "Height of the canvas in pixels; 0 = the input's height" },
+    { "name": "x", "type": "int", "default": 0, "min": -1, "max": 16384, "description": "Left edge of the picture on the canvas; -1 = centred" },
+    { "name": "y", "type": "int", "default": 0, "min": -1, "max": 16384, "description": "Top edge of the picture on the canvas; -1 = centred" },
+    { "name": "color", "type": "color", "default": "#000000", "description": "Colour of the canvas (with alpha)" }
+  ],
+  "groups": [{ "passes": [{ "shader": "shaders/pad.wgsl" }] }]
+}
