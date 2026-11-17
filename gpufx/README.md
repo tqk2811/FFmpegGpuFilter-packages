@@ -130,6 +130,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [xbr](ffmpeg/xbr/README.md)
 - [hqx](ffmpeg/hqx/README.md)
 - [zoneplate](ffmpeg/zoneplate/README.md)
+- [remap](ffmpeg/remap/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 

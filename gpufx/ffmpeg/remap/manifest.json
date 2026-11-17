@@ -1,0 +1,57 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.remap",
+  "name": "Remap",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Moves pixels by two maps: each output pixel takes the source pixel at the X and Y coordinates the maps hold.",
+  "inputs": [
+    {
+      "name": "src",
+      "description": "Picture to remap"
+    },
+    {
+      "name": "xmap",
+      "description": "X coordinate of the source pixel for each output pixel, in its first channel (16-bit gray, as FFmpeg's xmap)"
+    },
+    {
+      "name": "ymap",
+      "description": "Y coordinate of the source pixel for each output pixel, in its first channel; same size as xmap"
+    }
+  ],
+  "params": [
+    {
+      "name": "fill",
+      "type": "color",
+      "default": "#000000",
+      "description": "Color of the output pixels whose coordinates fall outside the source"
+    },
+    {
+      "name": "map_max",
+      "type": "float",
+      "default": 65535,
+      "min": 1,
+      "max": 65535,
+      "description": "Map code of a full-scale value: 65535 for 16-bit maps, 255 for 8-bit maps"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/remap.wgsl",
+          "inputs": [
+            "src",
+            "xmap",
+            "ymap"
+          ],
+          "outputs": [
+            "out"
+          ]
+        }
+      ]
+    }
+  ]
+}
