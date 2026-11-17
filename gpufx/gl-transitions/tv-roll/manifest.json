@@ -1,0 +1,62 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.tv-roll",
+  "name": "TV Roll",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture rolls faster and faster like an old TV losing its vertical hold, then slows down and locks on the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "rolls",
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 8,
+      "description": "Number of frames that roll by"
+    },
+    {
+      "name": "bar_height",
+      "type": "float",
+      "default": 0.12,
+      "min": 0,
+      "max": 0.5,
+      "description": "Height of the bar between the frames"
+    },
+    {
+      "name": "bar_color",
+      "type": "color",
+      "default": "#000000",
+      "description": "Color of the bar between the frames"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/tv_roll.wgsl"
+        }
+      ]
+    }
+  ]
+}

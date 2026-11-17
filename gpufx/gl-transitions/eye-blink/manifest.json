@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.eye-blink",
+  "name": "Eye Blink",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Curved eyelids close over the first clip, which blurs and dims, then open on the second as it comes back into focus. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the picture blurs and dims while the eyes are closed"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.12,
+      "min": 0.01,
+      "max": 0.3,
+      "description": "Width of the soft shadow along the eyelid rims"
+    },
+    {
+      "name": "blinks",
+      "type": "int",
+      "default": 1,
+      "min": 1,
+      "max": 2,
+      "description": "Number of blinks: 1, or 2 for a quick double blink"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#050303",
+      "description": "Color of the eyelids"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/eye_blink.wgsl"
+        }
+      ]
+    }
+  ]
+}
