@@ -1,0 +1,79 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.heart",
+  "name": "Heart",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A heart grows from the center with a little heartbeat to reveal the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Center of the heart (0..1, y down)"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.006,
+      "min": 0,
+      "max": 0.1,
+      "description": "Softness of the heart's edge"
+    },
+    {
+      "name": "pulse",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the heartbeat as the heart grows"
+    },
+    {
+      "name": "glow_color",
+      "type": "color",
+      "default": "#ffd9e6",
+      "description": "Color of the light along the heart's edge"
+    },
+    {
+      "name": "glow",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the glow (0 for a clean edge)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/heart.wgsl"
+        }
+      ]
+    }
+  ]
+}
