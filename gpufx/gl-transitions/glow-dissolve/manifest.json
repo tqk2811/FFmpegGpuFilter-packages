@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.glow-dissolve",
+  "name": "Glow Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip spreads over the first from its dark parts to its bright ones, behind a hot glowing edge. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "line_width",
+      "type": "float",
+      "default": 0.1,
+      "min": 0.01,
+      "max": 0.5,
+      "description": "Width of the glowing edge"
+    },
+    {
+      "name": "spread_color",
+      "type": "color",
+      "default": "#ff0000",
+      "description": "Color of the outer part of the edge"
+    },
+    {
+      "name": "hot_color",
+      "type": "color",
+      "default": "#e6e633",
+      "description": "Color of the hottest part of the edge"
+    },
+    {
+      "name": "power",
+      "type": "float",
+      "default": 5.0,
+      "min": 0.5,
+      "max": 10,
+      "description": "Contrast of the edge colors"
+    },
+    {
+      "name": "intensity",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 4,
+      "description": "Brightness of the edge"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/glow_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

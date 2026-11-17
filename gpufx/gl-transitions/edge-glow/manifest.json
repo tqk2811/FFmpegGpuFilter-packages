@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.edge-glow",
+  "name": "Edge Glow",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip fades into its own glowing edges on black, which turn into the edges of the second clip and fill back in. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "thickness",
+      "type": "float",
+      "default": 1.5,
+      "min": 0.5,
+      "max": 8,
+      "description": "Distance between the samples that find the edges, in pixels"
+    },
+    {
+      "name": "brightness",
+      "type": "float",
+      "default": 8.0,
+      "min": 1,
+      "max": 30,
+      "description": "Brightness of the edges"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/edge_glow.wgsl"
+        }
+      ]
+    }
+  ]
+}
