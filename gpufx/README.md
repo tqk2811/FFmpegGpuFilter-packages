@@ -128,6 +128,7 @@ Equivalents of FFmpeg built-in filters and `xfade` transitions.
 - [epx](ffmpeg/epx/README.md)
 - [super2xsai](ffmpeg/super2xsai/README.md)
 - [xbr](ffmpeg/xbr/README.md)
+- [hqx](ffmpeg/hqx/README.md)
 
 ## tqk2811/FFmpegArgs.TanersenerSlideShow
 

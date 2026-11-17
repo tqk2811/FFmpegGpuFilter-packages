@@ -1,0 +1,15 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.hqx",
+  "name": "hqx",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Magnifies pixel art 2, 3 or 4 times with the hqx (hq2x/hq3x/hq4x) algorithm.",
+  "inputs": [{ "name": "src", "description": "Picture to magnify" }],
+  "params": [
+    { "name": "n", "type": "int", "default": 3, "min": 2, "max": 4, "description": "Scale factor; sets the output size, so it must not change while the stream runs" }
+  ],
+  "groups": [{ "passes": [
+    { "shader": "shaders/hqx.wgsl", "inputs": ["src"], "outputs": ["out"] }
+  ] }]
+}
