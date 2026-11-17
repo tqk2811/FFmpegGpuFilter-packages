@@ -1,0 +1,15 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.epx",
+  "name": "EPX",
+  "used_for": ["gpufx"],
+  "version": "1.0.0",
+  "description": "Magnifies pixel art 2 or 3 times with the EPX (Scale2x/Scale3x) algorithm, which keeps edges sharp.",
+  "inputs": [{ "name": "src", "description": "Picture to magnify" }],
+  "params": [
+    { "name": "n", "type": "int", "default": 3, "min": 2, "max": 3, "description": "Scale factor; sets the output size, so it must not change while the stream runs" }
+  ],
+  "groups": [{ "passes": [
+    { "shader": "shaders/epx.wgsl", "inputs": ["src"], "outputs": ["out"] }
+  ] }]
+}
