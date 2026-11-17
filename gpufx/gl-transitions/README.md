@@ -24,8 +24,37 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [heart](heart/README.md) | [HeartWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HeartWipe.glsl) | gre | MIT |
 | [bounce](bounce/README.md) | [Bounce.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Bounce.glsl) | Adrian Purser | MIT |
 | [film-burn](film-burn/README.md) | [FilmBurn.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FilmBurn.glsl) | Anastasia Dunbar | MIT |
+| [butterfly-wave-scrawler](butterfly-wave-scrawler/README.md) | [ButterflyWaveScrawler.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ButterflyWaveScrawler.glsl) | mandubian | MIT |
+| [color-distance](color-distance/README.md) | [ColorDistance.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ColorDistance.glsl) | P-Seebauer | MIT |
+| [color-phase](color-phase/README.md) | [ColorPhase.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ColorPhase.glsl) | gre | MIT |
+| [crazy-parametric-fun](crazy-parametric-fun/README.md) | [CrazyParametricFun.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CrazyParametricFun.glsl) | mandubian | MIT |
+| [crosshatch](crosshatch/README.md) | [Crosshatch.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Crosshatch.glsl) | pthrasher | MIT |
+| [directional-warp](directional-warp/README.md) | [DirectionalWarp.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DirectionalWarp.glsl) | pschroen | MIT |
+| [fly-eye](fly-eye/README.md) | [FlyEye.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FlyEye.glsl) | gre | MIT |
+| [glitch-memories](glitch-memories/README.md) | [GlitchMemories.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GlitchMemories.glsl) | Gunnar Roth (based on work by natewave) | MIT |
+| [multiply-blend](multiply-blend/README.md) | [MultiplyBlend.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/MultiplyBlend.glsl) | Fernando Kuteken | MIT |
+| [pinwheel](pinwheel/README.md) | [Pinwheel.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Pinwheel.glsl) | Mr Speaker | MIT |
+| [polka-dots-curtain](polka-dots-curtain/README.md) | [PolkaDotsCurtain.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PolkaDotsCurtain.glsl) | bobylito | MIT |
+| [random-squares](random-squares/README.md) | [RandomSquares.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/RandomSquares.glsl) | gre | MIT |
+| [window-blinds](window-blinds/README.md) | [WindowBlinds.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WindowBlinds.glsl) | Fabien Benetou | MIT |
+| [squares-wipe](squares-wipe/README.md) | [SquaresWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SquaresWipe.glsl) | gre | MIT |
+| [bowtie](bowtie/README.md) | [BowTie.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BowTie.glsl) | KMojek | MIT |
+| [bowtie-horizontal](bowtie-horizontal/README.md) | [BowTieHorizontal.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BowTieHorizontal.glsl) | huynx | MIT |
+| [doom-melt](doom-melt/README.md) | [DoomMelt.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DoomMelt.glsl) | Zeh Fernando | MIT |
+| [dreamy-zoom](dreamy-zoom/README.md) | [DreamyZoom.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DreamyZoom.glsl) | Zeh Fernando | MIT |
+| [hexagonalize](hexagonalize/README.md) | [Hexagonalize.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Hexagonalize.glsl) | Fernando Kuteken | MIT |
+| [perlin](perlin/README.md) | [PerlinDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PerlinDissolve.glsl) | Rich Harris | MIT |
+| [rotate-scale-fade](rotate-scale-fade/README.md) | [RotateScaleFade.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/RotateScaleFade.glsl) | Fernando Kuteken | MIT |
+| [rolls](rolls/README.md) | [Rolls.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Rolls.glsl) | Mark Craig | MIT |
+| [swap](swap/README.md) | [Swap.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Swap.glsl) | gre | MIT |
+| [tv-static](tv-static/README.md) | [TvStatic.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TvStatic.glsl) | Brandon Anzaldi | MIT |
+| [undulating-burn-out](undulating-burn-out/README.md) | [UndulatingBurnOut.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/UndulatingBurnOut.glsl) | pthrasher | MIT |
+| [water-drop](water-drop/README.md) | [WaterDrop.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WaterDrop.glsl) | Paweł Płóciennik | MIT |
+| [zoom-in-circles](zoom-in-circles/README.md) | [ZoomInCircles.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomInCircles.glsl) | dycm8009 | MIT |
 
 Not ported because an existing package already does the same:
 
 - `RadialWipe.glsl` (Radial): the `radial` mode of [xfade](../ffmpeg/xfade/README.md) and [clock-wipe](../tqk2811/TqkLibrary.FFmpegTransition/clock-wipe/README.md).
 - `WindowSlices.glsl` (windowslice): the `hlslice` mode of [xfade](../ffmpeg/xfade/README.md).
+- `SimpleZoom.glsl`: the `zoomin` mode of [xfade](../ffmpeg/xfade/README.md).
+- `Directional.glsl`, `DirectionalWipe.glsl`, `Fade.glsl`, `FadeColor.glsl`, `FadeGrayscale.glsl`, `CircleOpen.glsl`, `Pixelize.glsl`, `Wind.glsl`, `HorizontalOpen/Close.glsl`, `VerticalOpen/Close.glsl`: the slide, wipe, fade, fadeblack/fadewhite, fadegrays, circleopen, pixelize, wind, horzopen/horzclose and vertopen/vertclose modes of [xfade](../ffmpeg/xfade/README.md).

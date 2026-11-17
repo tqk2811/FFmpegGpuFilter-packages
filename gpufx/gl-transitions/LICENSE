@@ -20,6 +20,33 @@ original file. Authors of the original files:
   heart           HeartWipe.glsl         gre                         MIT
   bounce          Bounce.glsl            Adrian Purser               MIT
   film-burn       FilmBurn.glsl          Anastasia Dunbar            MIT
+  butterfly-wave-scrawler ButterflyWaveScrawler.glsl  mandubian                               MIT
+  color-distance          ColorDistance.glsl          P-Seebauer                              MIT
+  color-phase             ColorPhase.glsl             gre                                     MIT
+  crazy-parametric-fun    CrazyParametricFun.glsl     mandubian                               MIT
+  crosshatch              Crosshatch.glsl             pthrasher                               MIT
+  directional-warp        DirectionalWarp.glsl        pschroen                                MIT
+  fly-eye                 FlyEye.glsl                 gre                                     MIT
+  glitch-memories         GlitchMemories.glsl         Gunnar Roth (based on work by natewave) MIT
+  multiply-blend          MultiplyBlend.glsl          Fernando Kuteken                        MIT
+  pinwheel                Pinwheel.glsl               Mr Speaker                              MIT
+  polka-dots-curtain      PolkaDotsCurtain.glsl       bobylito                                MIT
+  random-squares          RandomSquares.glsl          gre                                     MIT
+  window-blinds           WindowBlinds.glsl           Fabien Benetou                          MIT
+  squares-wipe            SquaresWipe.glsl            gre                                     MIT
+  bowtie                  BowTie.glsl                 KMojek                                  MIT
+  bowtie-horizontal       BowTieHorizontal.glsl       huynx                                   MIT
+  doom-melt               DoomMelt.glsl               Zeh Fernando                            MIT
+  dreamy-zoom             DreamyZoom.glsl             Zeh Fernando                            MIT
+  hexagonalize            Hexagonalize.glsl           Fernando Kuteken                        MIT
+  perlin                  PerlinDissolve.glsl         Rich Harris                             MIT
+  rotate-scale-fade       RotateScaleFade.glsl        Fernando Kuteken                        MIT
+  rolls                   Rolls.glsl                  Mark Craig                              MIT
+  swap                    Swap.glsl                   gre                                     MIT
+  tv-static               TvStatic.glsl               Brandon Anzaldi                         MIT
+  undulating-burn-out     UndulatingBurnOut.glsl      pthrasher                               MIT
+  water-drop              WaterDrop.glsl              Paweł Płóciennik                        MIT
+  zoom-in-circles         ZoomInCircles.glsl          dycm8009                                MIT
 
 --------------------------------------------------------------------------------
 MIT License
