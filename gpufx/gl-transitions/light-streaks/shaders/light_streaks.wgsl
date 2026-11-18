@@ -47,8 +47,9 @@ fn light_weight(m: f32, incoming: bool) -> f32 {
 fn transition(uv: vec2f, progress: f32) -> vec4f {
     let ratio = globals.size.x / globals.size.y;
     let p = progress;
-    // Eased in on the first clip, and quickly out after the switch so the second lands sharp.
-    let amount = select(pow(2.0 - 2.0 * p, 3.0), smoothstep(0.0, 0.5, p), p < 0.5);
+    // Eased in on the first clip, and out after the switch so the second lands sharp. The original
+    // eases out with a cube, which leaves the second clip untouched by 0.75; a square keeps it moving.
+    let amount = select(pow(2.0 - 2.0 * p, 2.0), smoothstep(0.0, 0.5, p), p < 0.5);
     let peak = amount * amount * amount;
     let m = smoothstep(0.44, 0.56, p);
     let axis = select(vec2f(1.0, 0.0), vec2f(0.0, 1.0), params.vertical != 0u);

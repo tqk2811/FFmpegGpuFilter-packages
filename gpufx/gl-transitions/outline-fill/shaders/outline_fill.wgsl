@@ -37,7 +37,9 @@ fn transition(uv: vec2f, progress: f32) -> vec4f {
     let th = mix(0.02, 0.24, clamp(params.threshold, 0.0, 1.0));
     let e = mix(progress, progress * progress * (3.0 - 2.0 * progress), 0.5);
     let front = mix(-0.1, 1.12, e);
-    var m = smoothstep(0.88, 1.12, front);
+    // On a picture without outlines the original shows the first clip untouched until 0.7; a faint
+    // wash of the second clip, at most a tenth, rises with the front so the frame always moves.
+    var m = max(smoothstep(0.88, 1.12, front), 0.1 * smoothstep(-0.1, 1.12, front));
     var wet = smoothstep(0.88, 1.12, front - 0.12);
     var diff = 0.0;
     let spin = 3.1416 * vnoise(uv * vec2f(ratio, 1.0) * 6.0);
