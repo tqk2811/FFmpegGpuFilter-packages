@@ -11,6 +11,7 @@
     { "name": "ow", "type": "int", "default": 0, "min": -1, "max": 16384, "description": "Output width; 0 = the input's width, -1 = wide enough for the picture rotated by the starting angle (`rotw(a)`)" },
     { "name": "oh", "type": "int", "default": 0, "min": -1, "max": 16384, "description": "Output height; 0 = the input's height, -1 = tall enough for the picture rotated by the starting angle (`roth(a)`)" },
     { "name": "fillcolor", "type": "color", "default": "#000000", "description": "Colour of the area the picture does not cover (with alpha)" },
+    { "name": "nofill", "type": "bool", "default": false, "description": "FFmpeg's `fillcolor=none`: leave the uncovered area unpainted instead of filling it with `fillcolor`" },
     { "name": "bilinear", "type": "bool", "default": true, "description": "Bilinear interpolation; 0 = nearest pixel" }
   ],
   "groups": [{ "passes": [{ "shader": "shaders/rotate.wgsl" }] }]

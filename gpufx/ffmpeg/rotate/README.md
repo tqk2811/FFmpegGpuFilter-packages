@@ -22,6 +22,7 @@ Written inline after the package name: `rotate.zip=name=value`. Several options 
 | `ow` | int | `0` | -1 to 16384 | Output width; 0 = the input's width, -1 = wide enough for the picture rotated by the starting angle (`rotw(a)`) |
 | `oh` | int | `0` | -1 to 16384 | Output height; 0 = the input's height, -1 = tall enough for the picture rotated by the starting angle (`roth(a)`) |
 | `fillcolor` | color | `#000000` |  | Colour of the area the picture does not cover (with alpha) |
+| `nofill` | bool | `0` | 0 or 1 | FFmpeg's `fillcolor=none`: leave the uncovered area unpainted instead of filling it with `fillcolor` |
 | `bilinear` | bool | `1` | 0 or 1 | Bilinear interpolation; 0 = nearest pixel |
 
 ## Example
@@ -48,11 +49,11 @@ gpufx run 'rotate.zip=angle=PI/6' -i in.png -o out.png
 
 ## Notes
 
-Port of FFmpeg's `rotate` (`vf_rotate.c`). One pass: each output pixel reads the input at its position turned back by `angle` around the centres of both pictures, bilinear or nearest. As in FFmpeg, a position within one pixel outside the picture still reads the clamped edge pixel; farther ones get `fillcolor`. The `transform` package is a different effect (zoom and rotate keeping the size, angle in degrees).
+Port of FFmpeg's `rotate` (`vf_rotate.c`). One pass: each output pixel reads the input at its position turned back by `angle` around the centres of both pictures, bilinear or nearest. As in FFmpeg, a position within one pixel outside the picture still reads the clamped edge pixel; farther ones get `fillcolor`, or are not written with `nofill=1` (FFmpeg's `fillcolor=none`). The `transform` package is a different effect (zoom and rotate keeping the size, angle in degrees).
 
-Checked against FFmpeg's `rotate` with bilinear and nearest sampling, `rotw`/`roth` sizes and a fill colour: at most 1 8-bit level apart, except a handful of pixels on the picture's border where FFmpeg's 16.16 fixed-point positions fall on the other side of a pixel boundary.
+Checked against FFmpeg's `rotate` with bilinear and nearest sampling, `rotw`/`roth` sizes, a fill colour and `fillcolor=none`: at most 1 8-bit level apart, except a handful of pixels on the picture's border where FFmpeg's 16.16 fixed-point positions fall on the other side of a pixel boundary.
 
 Differences from FFmpeg:
 
 - `angle`, `ow` and `oh` are numbers (or the FFmpeg expressions of the option), not `vf_rotate`'s own expressions; write `-1` for `rotw(a)`/`roth(a)`.
-- `fillcolor` is `#rrggbb` or `#rrggbbaa`; FFmpeg's `none` (leave the area unpainted) is not ported, a transparent colour comes closest.
+- `fillcolor` is `#rrggbb` or `#rrggbbaa`; FFmpeg's `fillcolor=none` is written `nofill=1`. The area keeps whatever the output texture holds, as FFmpeg keeps whatever its output buffer holds: transparent black on a new texture, possibly an earlier frame's pixels on a reused one. Like FFmpeg's, it is meant for an output that covers it afterwards; a transparent `fillcolor` gives a fixed result.

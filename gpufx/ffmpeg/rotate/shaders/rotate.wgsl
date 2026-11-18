@@ -27,7 +27,8 @@ fn main(@builtin(global_invocation_id) id: vec3u) {
     // it clamped to the edge, so the border of the rotated picture is one pixel wider.
     let i = vec2i(floor(p));
     if (any(i < vec2i(-1)) || any(i > vec2i(s))) {
-        gpufx_write(id, params.fillcolor);
+        // fillcolor=none: the pixel is not written, as FFmpeg leaves it unpainted.
+        if (params.nofill == 0u) { gpufx_write(id, params.fillcolor); }
         return;
     }
     let m = vec2i(s) - 1;
