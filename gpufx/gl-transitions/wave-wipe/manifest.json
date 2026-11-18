@@ -1,0 +1,85 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.wave-wipe",
+  "name": "Wave Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A breaking wave crashes across the frame, its lip curling over in front of its face and throwing foam and spray ahead, its shadow darkening the first clip; the second clip is left behind it, tinted and bent by the water, clearing as the wave passes. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction the wave travels toward (x right, y up)"
+    },
+    {
+      "name": "curl",
+      "type": "float",
+      "default": 0.3,
+      "min": 0.1,
+      "max": 0.45,
+      "description": "Size of the curling lip, in wave heights: how far it overhangs ahead of the face"
+    },
+    {
+      "name": "foam",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of foam on the crest and spray thrown ahead of it"
+    },
+    {
+      "name": "refraction",
+      "type": "float",
+      "default": 0.04,
+      "min": 0,
+      "max": 0.1,
+      "description": "How much the water bends the second clip behind the wave"
+    },
+    {
+      "name": "water",
+      "type": "color",
+      "default": "#0d5c75bf",
+      "description": "Color of the water tinting the second clip behind the wave (alpha: strength)"
+    },
+    {
+      "name": "foam_color",
+      "type": "color",
+      "default": "#ffffff",
+      "description": "Color of the foam and spray (alpha: strength)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/wave_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
