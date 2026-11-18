@@ -1,0 +1,84 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.gallery",
+  "name": "Gallery",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The camera pulls back from the first clip to show it as a slide hanging in a row on a wall in perspective, the row glides along as each slide turns away from the center, and the camera moves back in on the second slide until it fills the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "reverse",
+      "type": "bool",
+      "default": false,
+      "description": "Bring the second slide in from the left instead of the right"
+    },
+    {
+      "name": "tilt",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the slides turn as they leave the center"
+    },
+    {
+      "name": "gap",
+      "type": "float",
+      "default": 0.15,
+      "min": 0,
+      "max": 1,
+      "description": "Space between two slides, in slide widths"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 2.0,
+      "min": 0.2,
+      "max": 3,
+      "description": "How far the camera pulls back"
+    },
+    {
+      "name": "reflection",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the reflection of the slides on the floor"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#121214",
+      "description": "Color of the wall and the floor around the slides"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/gallery.wgsl"
+        }
+      ]
+    }
+  ]
+}

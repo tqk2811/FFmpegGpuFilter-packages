@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.shore-wash",
+  "name": "Shore Wash",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A thin sheet of water runs up over the first clip like the last of a wave on a beach, its lobed front edged with bubbly foam; it slows, stops just past the far edge and drains back, leaving the second clip wet and glossy as it dries. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        1.0
+      ],
+      "description": "Direction the water runs up toward (x right, y up)"
+    },
+    {
+      "name": "foam",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of foam on the front and left behind"
+    },
+    {
+      "name": "refraction",
+      "type": "float",
+      "default": 0.02,
+      "min": 0,
+      "max": 0.05,
+      "description": "How much the sheet of water bends the picture under it"
+    },
+    {
+      "name": "water",
+      "type": "color",
+      "default": "#1a999e66",
+      "description": "Color of the water (alpha: strength)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/shore_wash.wgsl"
+        }
+      ]
+    }
+  ]
+}

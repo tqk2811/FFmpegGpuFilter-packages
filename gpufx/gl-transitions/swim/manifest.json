@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.swim",
+  "name": "Swim",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip turns into a fish and swims out of the frame head first: its body narrows into a forked tail, a bending wave runs from its head to its tail and swings wider beat by beat, lighting and shading its flanks as it bends and driving it faster until it is gone, revealing the second clip under its soft shadow. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "swing",
+      "type": "float",
+      "default": 0.12,
+      "min": 0,
+      "max": 0.25,
+      "description": "How far the tail swings, as a part of the frame's short side"
+    },
+    {
+      "name": "beats",
+      "type": "float",
+      "default": 2.5,
+      "min": 1,
+      "max": 4,
+      "description": "Number of tail beats"
+    },
+    {
+      "name": "taper",
+      "type": "float",
+      "default": 0.65,
+      "min": 0,
+      "max": 0.9,
+      "description": "How much the body narrows toward the tail"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the shading on the bends and of the shadow"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/swim.wgsl"
+        }
+      ]
+    }
+  ]
+}
