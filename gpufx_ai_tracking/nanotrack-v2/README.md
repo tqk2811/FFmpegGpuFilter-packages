@@ -23,5 +23,6 @@ all of it; `source.json` pins every file by sha256.
 
 ## License
 
-See the `LICENSE` file in this package (Apache License 2.0, the license of NanoTrack in the SiamTrackers
+See the `LICENSE` file inside the package zip (put there with the models by the conversion script, not kept in
+this folder; Apache License 2.0, the license of NanoTrack in the SiamTrackers
 repository, which covers its code and its pre-trained models). Read it before redistributing the package.
