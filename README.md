@@ -9,10 +9,12 @@ which mounts this repository as a git submodule at `packages/`.
 | `gpufx_ai_framerate/` | Model descriptions for `gpufx_ai_framerate` (RIFE) |
 | `gpufx_ai_matting/` | Model descriptions for background removal, `gpufx_ai_matting` (MODNet, PP-HumanSeg) |
 | `gpufx_ai_upscale/` | Model descriptions for `gpufx_ai_upscale` (Real-ESRGAN) |
+| `gpufx_ai_tracking/` | Tracker descriptions for object tracking, `gpufx_ai_tracking` (NanoTrack) |
 
 The model files themselves are not stored here: `scripts/fetch-models.sh` in FFmpegGpuFilter downloads and
 converts them from the pinned URLs in each `source.json`; the matting models have no ncnn release, so
-`scripts/convert-matting-models.py` builds them from their upstream files instead.
+`scripts/convert-matting-models.py` builds them from their upstream files instead, and
+`scripts/convert-tracking-models.py` the trackers from their ONNX files.
 
 The tools and the format description live in FFmpegGpuFilter (`scripts/pack-packages.sh`,
 [docs/EFFECT_FORMAT.md](https://github.com/tqk2811/FFmpegGpuFilter/blob/master/docs/EFFECT_FORMAT.md)). The

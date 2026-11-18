@@ -1,0 +1,15 @@
+{
+  "format": "gpufx-nn-tracker",
+  "version": 1,
+  "kind": "siamese",
+  "backbone": "backbone",
+  "head": "head",
+  "template_size": 127,
+  "search_size": 255,
+  "stride": 16,
+  "channels": "bgr",
+  "context_amount": 0.5,
+  "window_influence": 0.455,
+  "penalty_k": 0.055,
+  "size_rate": 0.37
+}
