@@ -1,0 +1,17 @@
+{
+  "kind": "tracking",
+  "role": "face_detector",
+  "family": "yunet",
+  "inputs": { "image": "in0" },
+  "channels": "bgr",
+  "range": [0, 255],
+  "input_size": 640,
+  "multiple": 32,
+  "heads": [
+    { "stride": 8, "cls": "out0", "obj": "out3", "bbox": "out6" },
+    { "stride": 16, "cls": "out1", "obj": "out4", "bbox": "out7" },
+    { "stride": 32, "cls": "out2", "obj": "out5", "bbox": "out8" }
+  ],
+  "score_threshold": 0.6,
+  "nms_threshold": 0.3
+}

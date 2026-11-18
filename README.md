@@ -9,7 +9,7 @@ which mounts this repository as a git submodule at `packages/`.
 | `gpufx_ai_framerate/` | Model descriptions for `gpufx_ai_framerate` (RIFE) |
 | `gpufx_ai_matting/` | Model descriptions for background removal, `gpufx_ai_matting` (MODNet, PP-HumanSeg) |
 | `gpufx_ai_upscale/` | Model descriptions for `gpufx_ai_upscale` (Real-ESRGAN) |
-| `gpufx_ai_tracking/` | Tracker descriptions for object tracking, `gpufx_ai_tracking` (NanoTrack) |
+| `gpufx_ai_tracking/` | Tracker and face detector descriptions for object tracking and the face censor, `gpufx_ai_tracking` (NanoTrack, YuNet) |
 
 The model files themselves are not stored here: `scripts/fetch-models.sh` in FFmpegGpuFilter downloads and
 converts them from the pinned URLs in each `source.json`; the matting models have no ncnn release, so
