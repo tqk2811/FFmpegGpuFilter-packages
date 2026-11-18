@@ -1,0 +1,86 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.splatter-wipe",
+  "name": "Splatter Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Splats of paint land one after another, each popping in with a spiky outline, flung droplets and a few drips running down, revealing the second clip until they cover the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "splats",
+      "type": "float",
+      "default": 4.0,
+      "min": 2,
+      "max": 10,
+      "description": "Number of splats across the frame"
+    },
+    {
+      "name": "spikiness",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How long the spikes around each splat are"
+    },
+    {
+      "name": "droplets",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How many droplets are flung around each splat"
+    },
+    {
+      "name": "drips",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How far the paint drips run down"
+    },
+    {
+      "name": "rim",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How dark and glossy the rim of the splats is"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 3.0,
+      "description": "Random seed for the splats"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/splatter_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

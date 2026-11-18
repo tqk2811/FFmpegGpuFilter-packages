@@ -1,0 +1,93 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.rings-wipe",
+  "name": "Rings Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Concentric rings ripple out from the center and, one after another, each sweeps around like a clock hand in the opposite direction of its neighbors to reveal the second clip, or fills across its width, with optional colored borders between the rings. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "count",
+      "type": "int",
+      "default": 6,
+      "min": 1,
+      "max": 20,
+      "description": "Number of rings, from the center to the farthest corner"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Center of the rings (0..1, y down)"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Delay between the starts of two rings: 0 moves them all together, 1 starts each one when the previous one is done"
+    },
+    {
+      "name": "radial",
+      "type": "bool",
+      "default": false,
+      "description": "Each ring fills across its width, outward and inward in turn, instead of sweeping around"
+    },
+    {
+      "name": "border_width",
+      "type": "float",
+      "default": 0.008,
+      "min": 0,
+      "max": 0.05,
+      "description": "Width of the borders between the rings while they move, in frame heights (0 disables them)"
+    },
+    {
+      "name": "border_color",
+      "type": "color",
+      "default": "#ffffff",
+      "description": "Color of the borders between the rings"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.004,
+      "min": 0,
+      "max": 0.1,
+      "description": "Softness of the edges"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/rings_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.waterfall-wipe",
+  "name": "Waterfall Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Blocks of the second clip pour down from above the frame column after column, like a waterfall: in each column they fall one behind the other, land with a small bounce and stack up from the bottom, casting soft shadows on the first clip until the stack fills the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "columns",
+      "type": "int",
+      "default": 10,
+      "min": 2,
+      "max": 40,
+      "description": "Number of columns (the blocks stay about square, with at most 48 rows)"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.45,
+      "min": 0,
+      "max": 0.8,
+      "description": "Share of the transition over which the columns start one after another (0 pours them all together)"
+    },
+    {
+      "name": "bounce",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How high the blocks bounce as they land"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows and of the edges of the falling blocks"
+    },
+    {
+      "name": "reverse",
+      "type": "bool",
+      "default": false,
+      "description": "The columns pour from right to left instead of left to right"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/waterfall_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

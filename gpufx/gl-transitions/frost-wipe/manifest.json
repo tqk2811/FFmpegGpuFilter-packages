@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.frost-wipe",
+  "name": "Frost Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Ice crystals grow in from the edges of the frame with feathery, branching fronts, frosting the first clip white and blurry until it is covered, then thaw back out to the edges on the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "spread",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How far the crystal fingers reach ahead of the frost"
+    },
+    {
+      "name": "scale",
+      "type": "float",
+      "default": 5.0,
+      "min": 2,
+      "max": 12,
+      "description": "Size of the crystals: more, smaller ones with a larger value"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the frost blurs the picture under it"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#dbedff",
+      "description": "Color of the frost"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/frost_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
