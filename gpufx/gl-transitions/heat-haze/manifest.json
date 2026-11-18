@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.heat-haze",
+  "name": "Heat Haze",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Shimmering heat waves rise through the frame, strongest at the bottom, making the first clip wobble like the air over hot asphalt; the second clip shows through the haze and settles as it calms. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "strength",
+      "type": "float",
+      "default": 0.04,
+      "min": 0,
+      "max": 0.1,
+      "description": "How far the haze bends the picture, in frame heights (the strongest waves bend it about 1.5 times as far)"
+    },
+    {
+      "name": "scale",
+      "type": "float",
+      "default": 6.0,
+      "min": 1,
+      "max": 12,
+      "description": "Size of the heat waves: more, smaller ones with a larger value"
+    },
+    {
+      "name": "speed",
+      "type": "float",
+      "default": 2.0,
+      "min": 0,
+      "max": 6,
+      "description": "How fast the heat waves rise"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/heat_haze.wgsl"
+        }
+      ]
+    }
+  ]
+}
