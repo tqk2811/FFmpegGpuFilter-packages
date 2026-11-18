@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.bead-up",
+  "name": "Bead Up",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is a thin film of liquid on glass that pulls itself apart like water on a waxed surface: dry holes open and grow with glossy rolled rims, meet in a web of ridges, the ridges break into round beads that magnify the picture, and the beads dry up over the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "holes",
+      "type": "float",
+      "default": 2.5,
+      "min": 2,
+      "max": 6,
+      "description": "Number of rows of holes across the frame"
+    },
+    {
+      "name": "rim",
+      "type": "float",
+      "default": 0.026,
+      "min": 0.01,
+      "max": 0.06,
+      "description": "Radius of the rims and beads, in frame heights (at most a seventh of the space between holes)"
+    },
+    {
+      "name": "gloss",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the reflections and of the magnification in the liquid"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/bead_up.wgsl"
+        }
+      ]
+    }
+  ]
+}

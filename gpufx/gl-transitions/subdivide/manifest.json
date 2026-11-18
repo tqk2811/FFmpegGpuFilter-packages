@@ -1,0 +1,62 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.subdivide",
+  "name": "Subdivide",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is cut in quick beats like a sheet under a guillotine, each piece cut again across its longer side at its own uneven point and pushed apart into floating cards, then the cards flip over one by one to the second clip and the cuts close back in reverse order. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "gap",
+      "type": "float",
+      "default": 0.05,
+      "min": 0,
+      "max": 0.1,
+      "description": "Width of the first cut's gap, in frame heights (each following cut opens a narrower one)"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows the cards cast"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#ccccc7",
+      "description": "Color seen between the cards"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/subdivide.wgsl"
+        }
+      ]
+    }
+  ]
+}

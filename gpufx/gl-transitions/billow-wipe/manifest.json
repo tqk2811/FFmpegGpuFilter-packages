@@ -1,0 +1,73 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.billow-wipe",
+  "name": "Billow Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip flows over the first like one fluid sliding over another, its front rolling up into a row of curling spirals that wind the two clips into each other, tighten as they sweep across the frame and drift sideways, then leave it. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        -1.0
+      ],
+      "description": "Direction the front travels toward (x right, y up)"
+    },
+    {
+      "name": "spacing",
+      "type": "float",
+      "default": 0.55,
+      "min": 0.2,
+      "max": 1.2,
+      "description": "Distance between the curls, in frame heights"
+    },
+    {
+      "name": "winding",
+      "type": "float",
+      "default": 9.0,
+      "min": 0,
+      "max": 12,
+      "description": "How many radians the curls wind up while crossing the frame"
+    },
+    {
+      "name": "drift",
+      "type": "float",
+      "default": 0.35,
+      "min": -1,
+      "max": 1,
+      "description": "How far the curls drift sideways while crossing, in frame heights"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/billow_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
