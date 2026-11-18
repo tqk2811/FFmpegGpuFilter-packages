@@ -160,7 +160,7 @@ GPU ports of the transitions of [tqk2811/TqkLibrary.FFmpegTransition](tqk2811/Tq
 
 ## gl-transitions
 
-GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `pagecurl` is BSD 3-Clause).
+GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `pagecurl` is BSD 3-Clause, `stereo-viewer` BSD 2-Clause).
 
 - [cube](gl-transitions/cube/README.md)
 - [pagecurl](gl-transitions/pagecurl/README.md)
