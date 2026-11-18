@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.marbling-dissolve",
+  "name": "Marbling Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip floats onto the first in thin bands of ink that a rake drags into zigzags and a fine comb pulls into feathers, like marbled paper; the bands widen until they cover the frame and the combs pull back out, leaving the second clip clean. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tines",
+      "type": "float",
+      "default": 6.0,
+      "min": 2,
+      "max": 16,
+      "description": "Number of teeth of the rake dragged up and down, along the longer side of the frame"
+    },
+    {
+      "name": "pull",
+      "type": "float",
+      "default": 0.12,
+      "min": 0,
+      "max": 0.2,
+      "description": "How far the teeth of the rake drag the picture, in frame heights (the fine comb drags it 0.6 times as far)"
+    },
+    {
+      "name": "bands",
+      "type": "float",
+      "default": 12.0,
+      "min": 3,
+      "max": 30,
+      "description": "Number of bands of ink across the frame"
+    },
+    {
+      "name": "veins",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How dark the thin lines of ink between the two clips are"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/marbling_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

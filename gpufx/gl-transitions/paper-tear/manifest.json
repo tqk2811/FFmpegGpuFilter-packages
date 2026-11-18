@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.paper-tear",
+  "name": "Paper Tear",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip tears in two along a ragged line, and the halves are pulled apart to reveal the second one. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "roughness",
+      "type": "float",
+      "default": 0.12,
+      "min": 0,
+      "max": 0.3,
+      "description": "How far the tear wanders from the middle, relative to the frame height"
+    },
+    {
+      "name": "tilt",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 0.5,
+      "description": "How much the top of each half leans away first, so that the tear opens from the top"
+    },
+    {
+      "name": "rim",
+      "type": "float",
+      "default": 0.012,
+      "min": 0,
+      "max": 0.05,
+      "description": "Width of the white torn edge, relative to the frame height"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#fffaf0",
+      "description": "Color of the paper fibers on the torn edges"
+    },
+    {
+      "name": "shadow",
+      "type": "color",
+      "default": "#00000059",
+      "description": "Color of the shadow cast on the second clip (alpha: strength)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/paper_tear.wgsl"
+        }
+      ]
+    }
+  ]
+}
