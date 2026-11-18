@@ -142,6 +142,39 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [split-flap](split-flap/README.md) | [SplitFlap.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitFlap.glsl) | gre | MIT |
 | [vaporize](vaporize/README.md) | [Vaporize.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Vaporize.glsl) | gre | MIT |
 | [flame-wipe](flame-wipe/README.md) | [FlameWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FlameWipe.glsl) | gre | MIT |
+| [arrow-wipe](arrow-wipe/README.md) | [ArrowWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ArrowWipe.glsl) | gre | MIT |
+| [rings-wipe](rings-wipe/README.md) | [RingsWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/RingsWipe.glsl) | gre | MIT |
+| [truchet-wipe](truchet-wipe/README.md) | [TruchetWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TruchetWipe.glsl) | gre | MIT |
+| [waterfall-wipe](waterfall-wipe/README.md) | [WaterfallWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WaterfallWipe.glsl) | gre | MIT |
+| [frost-wipe](frost-wipe/README.md) | [FrostWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FrostWipe.glsl) | gre | MIT |
+| [splatter-wipe](splatter-wipe/README.md) | [SplatterWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplatterWipe.glsl) | gre | MIT |
+| [code-rain](code-rain/README.md) | [CodeRain.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CodeRain.glsl) | gre | MIT |
+| [led-wall](led-wall/README.md) | [LedWall.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LedWall.glsl) | gre | MIT |
+| [card-deal](card-deal/README.md) | [CardDeal.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CardDeal.glsl) | gre | MIT |
+| [light-wipe](light-wipe/README.md) | [LightWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LightWipe.glsl) | gre | MIT |
+| [heat-haze](heat-haze/README.md) | [HeatHaze.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HeatHaze.glsl) | gre | MIT |
+| [tile-shuffle](tile-shuffle/README.md) | [TileShuffle.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TileShuffle.glsl) | gre | MIT |
+| [slot-reels](slot-reels/README.md) | [SlotReels.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SlotReels.glsl) | gre | MIT |
+| [ascii](ascii/README.md) | [Ascii.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Ascii.glsl) | gre | MIT |
+| [vhs-tracking](vhs-tracking/README.md) | [VhsTracking.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/VhsTracking.glsl) | gre | MIT |
+| [brush-wipe](brush-wipe/README.md) | [BrushWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BrushWipe.glsl) | gre | MIT |
+| [domino-fall](domino-fall/README.md) | [DominoFall.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DominoFall.glsl) | gre | MIT |
+| [tumble](tumble/README.md) | [Tumble.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Tumble.glsl) | gre | MIT |
+| [lens-flare](lens-flare/README.md) | [LensFlare.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LensFlare.glsl) | gre | MIT |
+| [bokeh-dissolve](bokeh-dissolve/README.md) | [BokehDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BokehDissolve.glsl) | gre | MIT |
+| [light-rays](light-rays/README.md) | [LightRays.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LightRays.glsl) | gre | MIT |
+| [soap-drop](soap-drop/README.md) | [SoapDrop.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SoapDrop.glsl) | gre | MIT |
+| [speed-lines](speed-lines/README.md) | [SpeedLines.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SpeedLines.glsl) | gre | MIT |
+| [film-strip](film-strip/README.md) | [FilmStrip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FilmStrip.glsl) | gre | MIT |
+| [cylinder-roll](cylinder-roll/README.md) | [CylinderRoll.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CylinderRoll.glsl) | gre | MIT |
+| [dam-break](dam-break/README.md) | [DamBreak.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DamBreak.glsl) | gre | MIT |
+| [cymatics](cymatics/README.md) | [Cymatics.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Cymatics.glsl) | gre | MIT |
+| [glitter-dissolve](glitter-dissolve/README.md) | [GlitterDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GlitterDissolve.glsl) | gre | MIT |
+| [paper-tear](paper-tear/README.md) | [PaperTear.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PaperTear.glsl) | gre | MIT |
+| [marbling-dissolve](marbling-dissolve/README.md) | [MarblingDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/MarblingDissolve.glsl) | gre | MIT |
+| [disintegrate](disintegrate/README.md) | [Disintegrate.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Disintegrate.glsl) | gre | MIT |
+| [honey-drip](honey-drip/README.md) | [HoneyDrip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HoneyDrip.glsl) | gre | MIT |
+| [stop-motion](stop-motion/README.md) | [StopMotion.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StopMotion.glsl) | gre | MIT |
 
 Not ported because an existing package already does the same:
 

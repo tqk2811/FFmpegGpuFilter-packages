@@ -138,6 +138,39 @@ original file. Authors of the original files:
   split-flap              SplitFlap.glsl              gre                                     MIT
   vaporize                Vaporize.glsl               gre                                     MIT
   flame-wipe              FlameWipe.glsl              gre                                     MIT
+  arrow-wipe              ArrowWipe.glsl              gre                                     MIT
+  rings-wipe              RingsWipe.glsl              gre                                     MIT
+  truchet-wipe            TruchetWipe.glsl            gre                                     MIT
+  waterfall-wipe          WaterfallWipe.glsl          gre                                     MIT
+  frost-wipe              FrostWipe.glsl              gre                                     MIT
+  splatter-wipe           SplatterWipe.glsl           gre                                     MIT
+  code-rain               CodeRain.glsl               gre                                     MIT
+  led-wall                LedWall.glsl                gre                                     MIT
+  card-deal               CardDeal.glsl               gre                                     MIT
+  light-wipe              LightWipe.glsl              gre                                     MIT
+  heat-haze               HeatHaze.glsl               gre                                     MIT
+  tile-shuffle            TileShuffle.glsl            gre                                     MIT
+  slot-reels              SlotReels.glsl              gre                                     MIT
+  ascii                   Ascii.glsl                  gre                                     MIT
+  vhs-tracking            VhsTracking.glsl            gre                                     MIT
+  brush-wipe              BrushWipe.glsl              gre                                     MIT
+  domino-fall             DominoFall.glsl             gre                                     MIT
+  tumble                  Tumble.glsl                 gre                                     MIT
+  lens-flare              LensFlare.glsl              gre                                     MIT
+  bokeh-dissolve          BokehDissolve.glsl          gre                                     MIT
+  light-rays              LightRays.glsl              gre                                     MIT
+  soap-drop               SoapDrop.glsl               gre                                     MIT
+  speed-lines             SpeedLines.glsl             gre                                     MIT
+  film-strip              FilmStrip.glsl              gre                                     MIT
+  cylinder-roll           CylinderRoll.glsl           gre                                     MIT
+  dam-break               DamBreak.glsl               gre                                     MIT
+  cymatics                Cymatics.glsl               gre                                     MIT
+  glitter-dissolve        GlitterDissolve.glsl        gre                                     MIT
+  paper-tear              PaperTear.glsl              gre                                     MIT
+  marbling-dissolve       MarblingDissolve.glsl       gre                                     MIT
+  disintegrate            Disintegrate.glsl           gre                                     MIT
+  honey-drip              HoneyDrip.glsl              gre                                     MIT
+  stop-motion             StopMotion.glsl             gre                                     MIT
 
 --------------------------------------------------------------------------------
 MIT License
