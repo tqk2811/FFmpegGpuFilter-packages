@@ -5,13 +5,17 @@
   "used_for": ["gpufx"],
   "version": "1.0.0",
   "description": "Edge-preserving smoothing with a self-guided filter (box means of a local linear model).",
-  "inputs": [{ "name": "src" }],
+  "inputs": [{ "name": "src", "description": "Picture to filter, then the optional guide (FFmpeg's guidance=on), of the same size", "repeat": { "default": 1, "min": 1, "max": 2 } }],
   "params": [
     { "name": "radius", "type": "int", "default": 3, "min": 1, "max": 20, "description": "Radius of the box in pixels: the box is 2 * radius + 1 wide" },
-    { "name": "eps", "type": "float", "default": 0.01, "min": 0, "max": 1, "description": "Regularisation: larger values smooth across stronger edges (compared with the variance of 0..1 values)" }
+    { "name": "eps", "type": "float", "default": 0.01, "min": 0, "max": 1, "description": "Regularisation: larger values smooth across stronger edges (compared with the variance of 0..1 values)" },
+    { "name": "mode", "type": "enum", "values": ["basic", "fast"], "default": "basic", "description": "fast: compute the model on every `sub`-th pixel, with the radius divided by `sub`" },
+    { "name": "sub", "type": "int", "default": 4, "min": 2, "max": 64, "description": "Subsampling ratio of the fast mode" },
+    { "name": "planes", "type": "int", "default": 7, "min": 0, "max": 15, "description": "Channels to filter, FFmpeg's bits on gbrp: 1 green, 2 blue, 4 red" }
   ],
   "groups": [{ "passes": [
-    { "shader": "shaders/coeffs.wgsl", "inputs": ["src"], "outputs": ["a", "b"] },
-    { "shader": "shaders/apply.wgsl", "inputs": ["src", "a", "b"], "outputs": ["out"] }
+    { "shader": "shaders/coeffs.wgsl", "entry": "coef_a", "inputs": ["src"], "outputs": ["ar", "ag", "ab"] },
+    { "shader": "shaders/coeffs.wgsl", "entry": "coef_b", "inputs": ["src"], "outputs": ["br", "bg", "bb"] },
+    { "shader": "shaders/apply.wgsl", "inputs": ["src", "ar", "ag", "ab", "br", "bg", "bb"], "outputs": ["out"] }
   ] }]
 }
