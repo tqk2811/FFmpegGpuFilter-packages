@@ -209,6 +209,50 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [deinterleave](deinterleave/README.md) | [Deinterleave.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Deinterleave.glsl) | gre | MIT |
 | [block-cover](block-cover/README.md) | [BlockCover.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BlockCover.glsl) | gre | MIT |
 | [cell-dissolve](cell-dissolve/README.md) | [CellDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CellDissolve.glsl) | gre | MIT |
+| [color-coords](color-coords/README.md) | [ColorCoords.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ColorCoords.glsl) | haiyoucuv | MIT |
+| [directional-scaled](directional-scaled/README.md) | [DirectionalScaled.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DirectionalScaled.glsl) | Thibaut Foussard | MIT |
+| [flash-fade](flash-fade/README.md) | [FlashFade.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FlashFade.glsl) | gre | MIT |
+| [left-right](left-right/README.md) | [LeftRight.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LeftRight.glsl) | zhmy | MIT |
+| [top-bottom](top-bottom/README.md) | [TopBottom.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TopBottom.glsl) | zhmy | MIT |
+| [rectangle-cover](rectangle-cover/README.md) | [RectangleCover.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/RectangleCover.glsl) | martiniti | MIT |
+| [simple-zoom-out](simple-zoom-out/README.md) | [SimpleZoomOut.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SimpleZoomOut.glsl) | Tianshuo | MIT |
+| [slide-away-right](slide-away-right/README.md) | [SlideAwayRight.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SlideAwayRight.glsl) | lizhongjian | MIT |
+| [slides](slides/README.md) | [Slides.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Slides.glsl) | Mark Craig | MIT |
+| [zoom-wipe-left](zoom-wipe-left/README.md) | [ZoomWipeLeft.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomWipeLeft.glsl) | Handk | MIT |
+| [zoom-wipe-right](zoom-wipe-right/README.md) | [ZoomWipeRight.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ZoomWipeRight.glsl) | Handk | MIT |
+| [static-fade](static-fade/README.md) | [StaticFade.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StaticFade.glsl) | Ben Lucas | MIT |
+| [split-slide-in-horizontal](split-slide-in-horizontal/README.md) | [SplitSlideInHorizontal.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitSlideInHorizontal.glsl) | OllyOllyOlly | MIT |
+| [split-slide-in-vertical](split-slide-in-vertical/README.md) | [SplitSlideInVertical.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitSlideInVertical.glsl) | OllyOllyOlly | MIT |
+| [split-slide-out-horizontal](split-slide-out-horizontal/README.md) | [SplitSlideOutHorizontal.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitSlideOutHorizontal.glsl) | OllyOllyOlly | MIT |
+| [split-slide-out-vertical](split-slide-out-vertical/README.md) | [SplitSlideOutVertical.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitSlideOutVertical.glsl) | OllyOllyOlly | MIT |
+| [split-slide-in-out-horizontal](split-slide-in-out-horizontal/README.md) | [SplitSlideInOutHorizontal.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitSlideInOutHorizontal.glsl) | OllyOllyOlly | MIT |
+| [split-slide-in-out-vertical](split-slide-in-out-vertical/README.md) | [SplitSlideInOutVertical.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SplitSlideInOutVertical.glsl) | OllyOllyOlly | MIT |
+| [block-slide](block-slide/README.md) | [BlockSlide.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BlockSlide.glsl) | gre | MIT |
+| [duotone-fade](duotone-fade/README.md) | [DuotoneFade.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DuotoneFade.glsl) | gre | MIT |
+| [echo-slide](echo-slide/README.md) | [EchoSlide.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/EchoSlide.glsl) | gre | MIT |
+| [faint](faint/README.md) | [Faint.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Faint.glsl) | gre | MIT |
+| [flow-dissolve](flow-dissolve/README.md) | [FlowDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FlowDissolve.glsl) | gre | MIT |
+| [glass-relief](glass-relief/README.md) | [GlassRelief.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GlassRelief.glsl) | gre | MIT |
+| [flutter](flutter/README.md) | [Flutter.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Flutter.glsl) | gre | MIT |
+| [glint-dissolve](glint-dissolve/README.md) | [GlintDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GlintDissolve.glsl) | gre | MIT |
+| [herringbone-fold](herringbone-fold/README.md) | [HerringboneFold.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HerringboneFold.glsl) | gre | MIT |
+| [hinged-squares](hinged-squares/README.md) | [HingedSquares.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HingedSquares.glsl) | gre | MIT |
+| [horizontal-hold](horizontal-hold/README.md) | [HorizontalHold.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HorizontalHold.glsl) | gre | MIT |
+| [inchworm](inchworm/README.md) | [Inchworm.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Inchworm.glsl) | gre | MIT |
+| [inset-wipe](inset-wipe/README.md) | [InsetWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/InsetWipe.glsl) | gre | MIT |
+| [interlace-wipe](interlace-wipe/README.md) | [InterlaceWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/InterlaceWipe.glsl) | gre | MIT |
+| [layout-grid](layout-grid/README.md) | [LayoutGrid.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LayoutGrid.glsl) | gre | MIT |
+| [lens-push](lens-push/README.md) | [LensPush.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LensPush.glsl) | gre | MIT |
+| [light-streaks](light-streaks/README.md) | [LightStreaks.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LightStreaks.glsl) | gre | MIT |
+| [micro-brick-cascade](micro-brick-cascade/README.md) | [MicroBrickCascade.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/MicroBrickCascade.glsl) | Gilad Levi | MIT |
+| [outline-crumble](outline-crumble/README.md) | [OutlineCrumble.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/OutlineCrumble.glsl) | gre | MIT |
+| [outline-fill](outline-fill/README.md) | [OutlineFill.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/OutlineFill.glsl) | gre | MIT |
+| [outline-tear](outline-tear/README.md) | [OutlineTear.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/OutlineTear.glsl) | gre | MIT |
+| [paper-layers](paper-layers/README.md) | [PaperLayers.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PaperLayers.glsl) | gre | MIT |
+| [parallax-push](parallax-push/README.md) | [ParallaxPush.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ParallaxPush.glsl) | gre | MIT |
+| [pop-in](pop-in/README.md) | [PopIn.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PopIn.glsl) | gre | MIT |
+| [reflow](reflow/README.md) | [Reflow.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Reflow.glsl) | gre | MIT |
+| [stretch-slide](stretch-slide/README.md) | [StretchSlide.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StretchSlide.glsl) | gre | MIT |
 
 Not ported because an existing package already does the same:
 
@@ -216,3 +260,12 @@ Not ported because an existing package already does the same:
 - `WindowSlices.glsl` (windowslice): the `hlslice` mode of [xfade](../ffmpeg/xfade/README.md).
 - `SimpleZoom.glsl`: the `zoomin` mode of [xfade](../ffmpeg/xfade/README.md).
 - `Directional.glsl`, `DirectionalWipe.glsl`, `Fade.glsl`, `FadeColor.glsl`, `FadeGrayscale.glsl`, `CircleOpen.glsl`, `Pixelize.glsl`, `Wind.glsl`, `HorizontalOpen/Close.glsl`, `VerticalOpen/Close.glsl`: the slide, wipe, fade, fadeblack/fadewhite, fadegrays, circleopen, pixelize, wind, horzopen/horzclose and vertopen/vertclose modes of [xfade](../ffmpeg/xfade/README.md).
+- `ClockWipe.glsl`: [clock-wipe](../tqk2811/TqkLibrary.FFmpegTransition/clock-wipe/README.md) and the `radial` mode of [xfade](../ffmpeg/xfade/README.md).
+- `CircleIris.glsl`, `RectangleIris.glsl`: the `circlecrop` and `rectcrop` modes of [xfade](../ffmpeg/xfade/README.md).
+- `DirectionalEased.glsl`: the slide modes of [xfade](../ffmpeg/xfade/README.md) and [slide-transition](../ffmpeg/slide-transition/README.md); only the easing differs.
+- `NoiseDissolve.glsl`: the `dissolve` mode of [xfade](../ffmpeg/xfade/README.md).
+
+Not ported because they need an extra image input, which a gpufx transition does not take:
+
+- `DisplacementMap.glsl`: displaces the clips by a grayscale map image.
+- `LumaWipe.glsl`: wipes along the brightness of a luma image; the [OpenShot luma-wipe](../gpl3/openshot/luma-wipe/README.md) package does this with its own luma images.

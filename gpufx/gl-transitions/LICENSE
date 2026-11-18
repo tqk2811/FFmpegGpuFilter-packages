@@ -205,6 +205,50 @@ original file. Authors of the original files:
   deinterleave            Deinterleave.glsl           gre                                     MIT
   block-cover             BlockCover.glsl             gre                                     MIT
   cell-dissolve           CellDissolve.glsl           gre                                     MIT
+  color-coords            ColorCoords.glsl            haiyoucuv                               MIT
+  directional-scaled      DirectionalScaled.glsl      Thibaut Foussard                        MIT
+  flash-fade              FlashFade.glsl              gre                                     MIT
+  left-right              LeftRight.glsl              zhmy                                    MIT
+  top-bottom              TopBottom.glsl              zhmy                                    MIT
+  rectangle-cover         RectangleCover.glsl         martiniti                               MIT
+  simple-zoom-out         SimpleZoomOut.glsl          Tianshuo                                MIT
+  slide-away-right        SlideAwayRight.glsl         lizhongjian                             MIT
+  slides                  Slides.glsl                 Mark Craig                              MIT
+  zoom-wipe-left          ZoomWipeLeft.glsl           Handk                                   MIT
+  zoom-wipe-right         ZoomWipeRight.glsl          Handk                                   MIT
+  static-fade             StaticFade.glsl             Ben Lucas                               MIT
+  split-slide-in-horizontal SplitSlideInHorizontal.glsl OllyOllyOlly                            MIT
+  split-slide-in-vertical SplitSlideInVertical.glsl   OllyOllyOlly                            MIT
+  split-slide-out-horizontal SplitSlideOutHorizontal.glsl OllyOllyOlly                            MIT
+  split-slide-out-vertical SplitSlideOutVertical.glsl  OllyOllyOlly                            MIT
+  split-slide-in-out-horizontal SplitSlideInOutHorizontal.glsl OllyOllyOlly                            MIT
+  split-slide-in-out-vertical SplitSlideInOutVertical.glsl OllyOllyOlly                            MIT
+  block-slide             BlockSlide.glsl             gre                                     MIT
+  duotone-fade            DuotoneFade.glsl            gre                                     MIT
+  echo-slide              EchoSlide.glsl              gre                                     MIT
+  faint                   Faint.glsl                  gre                                     MIT
+  flow-dissolve           FlowDissolve.glsl           gre                                     MIT
+  glass-relief            GlassRelief.glsl            gre                                     MIT
+  flutter                 Flutter.glsl                gre                                     MIT
+  glint-dissolve          GlintDissolve.glsl          gre                                     MIT
+  herringbone-fold        HerringboneFold.glsl        gre                                     MIT
+  hinged-squares          HingedSquares.glsl          gre                                     MIT
+  horizontal-hold         HorizontalHold.glsl         gre                                     MIT
+  inchworm                Inchworm.glsl               gre                                     MIT
+  inset-wipe              InsetWipe.glsl              gre                                     MIT
+  interlace-wipe          InterlaceWipe.glsl          gre                                     MIT
+  layout-grid             LayoutGrid.glsl             gre                                     MIT
+  lens-push               LensPush.glsl               gre                                     MIT
+  light-streaks           LightStreaks.glsl           gre                                     MIT
+  micro-brick-cascade     MicroBrickCascade.glsl      Gilad Levi                              MIT
+  outline-crumble         OutlineCrumble.glsl         gre                                     MIT
+  outline-fill            OutlineFill.glsl            gre                                     MIT
+  outline-tear            OutlineTear.glsl            gre                                     MIT
+  paper-layers            PaperLayers.glsl            gre                                     MIT
+  parallax-push           ParallaxPush.glsl           gre                                     MIT
+  pop-in                  PopIn.glsl                  gre                                     MIT
+  reflow                  Reflow.glsl                 gre                                     MIT
+  stretch-slide           StretchSlide.glsl           gre                                     MIT
 
 --------------------------------------------------------------------------------
 MIT License
