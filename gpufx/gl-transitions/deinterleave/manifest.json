@@ -1,0 +1,54 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.deinterleave",
+  "name": "Deinterleave",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip comes apart like interlaced lines of data: its even rows slide up and its odd rows slide down into two half-height copies, each copy splits again into four, then eight; the copies flip over to the second clip, whose rows interleave back into one picture. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "stages",
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 4,
+      "description": "Number of splitting rounds: the picture ends up as 2, 4, 8 or 16 copies"
+    },
+    {
+      "name": "gap",
+      "type": "color",
+      "default": "#141417",
+      "description": "Color showing between the rows while they are apart"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/deinterleave.wgsl"
+        }
+      ]
+    }
+  ]
+}

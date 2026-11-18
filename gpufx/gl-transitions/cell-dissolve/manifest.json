@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.cell-dissolve",
+  "name": "Cell Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Irregular cells, like cracked mud or soap foam, switch to the second clip one by one, with an optional bright border glowing along the cracks between them. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "cells",
+      "type": "float",
+      "default": 8.0,
+      "min": 1,
+      "max": 40,
+      "description": "Number of cells across the height of the frame"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Duration of each cell's switch, as a part of the transition (0: each cell switches at once)"
+    },
+    {
+      "name": "border",
+      "type": "float",
+      "default": 0.006,
+      "min": 0,
+      "max": 0.05,
+      "description": "Width of the border along the cell edges, in frame heights (0: no border)"
+    },
+    {
+      "name": "border_color",
+      "type": "color",
+      "default": "#fff2cc",
+      "description": "Color of the border"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 0.0,
+      "description": "Random seed: another value gives other cells, switching in another order"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/cell_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}
