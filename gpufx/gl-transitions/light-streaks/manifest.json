@@ -1,0 +1,84 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.light-streaks",
+  "name": "Light Streaks",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The highlights of the first clip flare into long horizontal (or vertical) lens streaks while it smears with motion blur; at the peak the second clip takes over and its streaks shrink back into its highlights as it sharpens. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "reach",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 2,
+      "description": "Length of the streaks at the peak, in frame widths"
+    },
+    {
+      "name": "threshold",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness above which the picture flares"
+    },
+    {
+      "name": "intensity",
+      "type": "float",
+      "default": 1.5,
+      "min": 0,
+      "max": 4,
+      "description": "Brightness of the streaks"
+    },
+    {
+      "name": "tint",
+      "type": "color",
+      "default": "#73b3ff",
+      "description": "Tint of the streaks, toward their ends"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 0.5,
+      "description": "Length of the motion blur at the peak"
+    },
+    {
+      "name": "vertical",
+      "type": "bool",
+      "default": false,
+      "description": "Streak and smear vertically instead"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/light_streaks.wgsl"
+        }
+      ]
+    }
+  ]
+}

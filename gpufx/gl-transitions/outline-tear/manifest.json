@@ -1,0 +1,68 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.outline-tear",
+  "name": "Outline Tear",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip tears across along its own strongest outline, such as a horizon, showing white paper fibers; the torn top is pulled up and the bottom drops down, casting soft shadows on the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "rim",
+      "type": "float",
+      "default": 0.012,
+      "min": 0,
+      "max": 0.05,
+      "description": "Width of the white torn edge, relative to the frame height"
+    },
+    {
+      "name": "roughness",
+      "type": "float",
+      "default": 0.025,
+      "min": 0,
+      "max": 0.06,
+      "description": "How ragged the tear is around the outline, relative to the frame height"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#fffaf0",
+      "description": "Color of the paper fibers on the torn edges"
+    },
+    {
+      "name": "shadow",
+      "type": "color",
+      "default": "#00000066",
+      "description": "Color of the shadow cast on the second clip (alpha: strength)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/outline_tear.wgsl"
+        }
+      ]
+    }
+  ]
+}

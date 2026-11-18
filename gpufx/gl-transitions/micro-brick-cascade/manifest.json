@@ -1,0 +1,96 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.micro-brick-cascade",
+  "name": "Micro Brick Cascade",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip fractures into a dense wall of tiny square tiles; a diagonal cascade releases the tiles in staggered waves, so they fall and drift aside while the second clip is revealed beneath. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tile_size",
+      "type": "float",
+      "default": 0.018,
+      "min": 0.008,
+      "max": 0.06,
+      "description": "Size of each square tile, relative to the frame height"
+    },
+    {
+      "name": "fall",
+      "type": "float",
+      "default": 1.1,
+      "min": 0,
+      "max": 2,
+      "description": "Downward falling strength of released tiles"
+    },
+    {
+      "name": "drift",
+      "type": "float",
+      "default": 0.35,
+      "min": 0,
+      "max": 1.5,
+      "description": "Sideways drift while the tiles fall"
+    },
+    {
+      "name": "diagonal",
+      "type": "float",
+      "default": 0.82,
+      "min": 0,
+      "max": 1,
+      "description": "How diagonal the release wave is"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.45,
+      "min": 0,
+      "max": 1,
+      "description": "Random stagger between neighboring tiles"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.22,
+      "min": 0,
+      "max": 1,
+      "description": "Softness of the tiles' disappearance"
+    },
+    {
+      "name": "glow",
+      "type": "float",
+      "default": 0.45,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness of the highlight on the edges of the moving tiles"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/micro_brick_cascade.wgsl"
+        }
+      ]
+    }
+  ]
+}

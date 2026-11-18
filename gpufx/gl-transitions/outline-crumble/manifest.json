@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.outline-crumble",
+  "name": "Outline Crumble",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Thin cracks run through the first clip along its own outlines, then the pieces they cut sag loose and fall away one after another from the top, tumbling and shrinking into the second clip beneath. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "cells",
+      "type": "float",
+      "default": 4.0,
+      "min": 2,
+      "max": 10,
+      "description": "Pieces across the height of the frame"
+    },
+    {
+      "name": "follow",
+      "type": "float",
+      "default": 4.0,
+      "min": 0,
+      "max": 12,
+      "description": "How closely the cracks follow the outlines of the picture"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/outline_crumble.wgsl"
+        }
+      ]
+    }
+  ]
+}
