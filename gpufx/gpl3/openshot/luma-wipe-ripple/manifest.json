@@ -1,0 +1,131 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-ripple",
+  "name": "Luma Wipe: Ripple (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 31 OpenShot grayscale luma images (ripples, waves, fish eyes and stretches): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "fish-eyes_1",
+        "fish-eyes_10",
+        "fish-eyes_2",
+        "fish-eyes_4",
+        "fish-eyes_5",
+        "fish-eyes_6",
+        "fish-eyes_7",
+        "fish-eyes_8",
+        "fish-eyes_9",
+        "little_rippling_left",
+        "little_rippling_right",
+        "ondulation_1",
+        "ripple_1",
+        "ripple_2",
+        "ripple_3",
+        "ripple_4",
+        "ripple_low_arrow",
+        "ripple_luminous_low_arrow",
+        "ripple_luminous_top_arrow",
+        "ripple_top_arrow",
+        "sphere",
+        "sphere_2",
+        "stretched_1",
+        "stretched_2",
+        "stretched_3",
+        "stretched_4",
+        "stretched_5",
+        "wave_left_down",
+        "wave_left_up",
+        "wave_right_down",
+        "wave_right_up"
+      ],
+      "default": "fish-eyes_1",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/fish-eyes_1.png",
+        "textures/fish-eyes_10.png",
+        "textures/fish-eyes_2.png",
+        "textures/fish-eyes_4.png",
+        "textures/fish-eyes_5.png",
+        "textures/fish-eyes_6.png",
+        "textures/fish-eyes_7.png",
+        "textures/fish-eyes_8.png",
+        "textures/fish-eyes_9.png",
+        "textures/little_rippling_left.png",
+        "textures/little_rippling_right.png",
+        "textures/ondulation_1.png",
+        "textures/ripple_1.png",
+        "textures/ripple_2.png",
+        "textures/ripple_3.png",
+        "textures/ripple_4.png",
+        "textures/ripple_low_arrow.png",
+        "textures/ripple_luminous_low_arrow.png",
+        "textures/ripple_luminous_top_arrow.png",
+        "textures/ripple_top_arrow.png",
+        "textures/sphere.png",
+        "textures/sphere_2.png",
+        "textures/stretched_1.png",
+        "textures/stretched_2.png",
+        "textures/stretched_3.png",
+        "textures/stretched_4.png",
+        "textures/stretched_5.png",
+        "textures/wave_left_down.png",
+        "textures/wave_left_up.png",
+        "textures/wave_right_down.png",
+        "textures/wave_right_up.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-luminous",
+  "name": "Luma Wipe: Luminous (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 44 OpenShot grayscale luma images (glows, suns and stars): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "luminous_boxes_1",
+        "luminous_boxes_10",
+        "luminous_boxes_11",
+        "luminous_boxes_12",
+        "luminous_boxes_13",
+        "luminous_boxes_14",
+        "luminous_boxes_15",
+        "luminous_boxes_16",
+        "luminous_boxes_17",
+        "luminous_boxes_18",
+        "luminous_boxes_19",
+        "luminous_boxes_2",
+        "luminous_boxes_20",
+        "luminous_boxes_21",
+        "luminous_boxes_22",
+        "luminous_boxes_3",
+        "luminous_boxes_4",
+        "luminous_boxes_5",
+        "luminous_boxes_6",
+        "luminous_boxes_7",
+        "luminous_boxes_8",
+        "luminous_boxes_9",
+        "luminous_frame_1",
+        "luminous_frame_2",
+        "luminous_frame_3",
+        "luminous_frame_4",
+        "luminous_spiral_1",
+        "luminous_spiral_10",
+        "luminous_spiral_11",
+        "luminous_spiral_2",
+        "luminous_spiral_3",
+        "luminous_spiral_4",
+        "luminous_spiral_5",
+        "luminous_spiral_6",
+        "luminous_spiral_7",
+        "luminous_spiral_8",
+        "luminous_spiral_9",
+        "star_1",
+        "star_2",
+        "sun_shaking",
+        "sunlight_1",
+        "sunlight_2",
+        "sunlight_3",
+        "sunlight_4"
+      ],
+      "default": "luminous_boxes_1",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/luminous_boxes_1.png",
+        "textures/luminous_boxes_10.png",
+        "textures/luminous_boxes_11.png",
+        "textures/luminous_boxes_12.png",
+        "textures/luminous_boxes_13.png",
+        "textures/luminous_boxes_14.png",
+        "textures/luminous_boxes_15.png",
+        "textures/luminous_boxes_16.png",
+        "textures/luminous_boxes_17.png",
+        "textures/luminous_boxes_18.png",
+        "textures/luminous_boxes_19.png",
+        "textures/luminous_boxes_2.png",
+        "textures/luminous_boxes_20.png",
+        "textures/luminous_boxes_21.png",
+        "textures/luminous_boxes_22.png",
+        "textures/luminous_boxes_3.png",
+        "textures/luminous_boxes_4.png",
+        "textures/luminous_boxes_5.png",
+        "textures/luminous_boxes_6.png",
+        "textures/luminous_boxes_7.png",
+        "textures/luminous_boxes_8.png",
+        "textures/luminous_boxes_9.png",
+        "textures/luminous_frame_1.png",
+        "textures/luminous_frame_2.png",
+        "textures/luminous_frame_3.png",
+        "textures/luminous_frame_4.png",
+        "textures/luminous_spiral_1.png",
+        "textures/luminous_spiral_10.png",
+        "textures/luminous_spiral_11.png",
+        "textures/luminous_spiral_2.png",
+        "textures/luminous_spiral_3.png",
+        "textures/luminous_spiral_4.png",
+        "textures/luminous_spiral_5.png",
+        "textures/luminous_spiral_6.png",
+        "textures/luminous_spiral_7.png",
+        "textures/luminous_spiral_8.png",
+        "textures/luminous_spiral_9.png",
+        "textures/star_1.png",
+        "textures/star_2.png",
+        "textures/sun_shaking.png",
+        "textures/sunlight_1.png",
+        "textures/sunlight_2.png",
+        "textures/sunlight_3.png",
+        "textures/sunlight_4.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

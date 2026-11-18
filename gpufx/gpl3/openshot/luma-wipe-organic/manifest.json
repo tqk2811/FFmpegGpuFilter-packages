@@ -1,0 +1,159 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-organic",
+  "name": "Luma Wipe: Organic (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 45 OpenShot grayscale luma images (fog, clouds, flowers, fractals and stains): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "bubbles",
+        "clouds",
+        "clouds_2",
+        "dissolve",
+        "flower_1",
+        "flower_10",
+        "flower_2",
+        "flower_3",
+        "flower_4",
+        "flower_5",
+        "flower_6",
+        "flower_7",
+        "flower_8",
+        "flower_9",
+        "fogg_1",
+        "fogg_2",
+        "fogg_3",
+        "fogg_4",
+        "fogg_5",
+        "fogg_6",
+        "fogg_7",
+        "fractal_1",
+        "fractal_2",
+        "fractal_3",
+        "fractal_4",
+        "fractal_5",
+        "fractal_6",
+        "fractal_7",
+        "fractal_8",
+        "mountains",
+        "spots",
+        "stain_1",
+        "stain_2",
+        "wandering_1",
+        "wandering_10",
+        "wandering_11",
+        "wandering_12",
+        "wandering_2",
+        "wandering_3",
+        "wandering_4",
+        "wandering_5",
+        "wandering_6",
+        "wandering_7",
+        "wandering_8",
+        "wandering_9"
+      ],
+      "default": "bubbles",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/bubbles.png",
+        "textures/clouds.png",
+        "textures/clouds_2.png",
+        "textures/dissolve.png",
+        "textures/flower_1.png",
+        "textures/flower_10.png",
+        "textures/flower_2.png",
+        "textures/flower_3.png",
+        "textures/flower_4.png",
+        "textures/flower_5.png",
+        "textures/flower_6.png",
+        "textures/flower_7.png",
+        "textures/flower_8.png",
+        "textures/flower_9.png",
+        "textures/fogg_1.png",
+        "textures/fogg_2.png",
+        "textures/fogg_3.png",
+        "textures/fogg_4.png",
+        "textures/fogg_5.png",
+        "textures/fogg_6.png",
+        "textures/fogg_7.png",
+        "textures/fractal_1.png",
+        "textures/fractal_2.png",
+        "textures/fractal_3.png",
+        "textures/fractal_4.png",
+        "textures/fractal_5.png",
+        "textures/fractal_6.png",
+        "textures/fractal_7.png",
+        "textures/fractal_8.png",
+        "textures/mountains.png",
+        "textures/spots.png",
+        "textures/stain_1.png",
+        "textures/stain_2.png",
+        "textures/wandering_1.png",
+        "textures/wandering_10.png",
+        "textures/wandering_11.png",
+        "textures/wandering_12.png",
+        "textures/wandering_2.png",
+        "textures/wandering_3.png",
+        "textures/wandering_4.png",
+        "textures/wandering_5.png",
+        "textures/wandering_6.png",
+        "textures/wandering_7.png",
+        "textures/wandering_8.png",
+        "textures/wandering_9.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

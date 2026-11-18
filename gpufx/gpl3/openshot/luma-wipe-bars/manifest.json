@@ -1,0 +1,139 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-bars",
+  "name": "Luma Wipe: Bars (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 35 OpenShot grayscale luma images (bars, blinds and diagonal wipes): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "4_squares_leftt_barr",
+        "4_squares_right_barr",
+        "barr_ripple_1",
+        "barr_ripple_10",
+        "barr_ripple_11",
+        "barr_ripple_12",
+        "barr_ripple_13",
+        "barr_ripple_2",
+        "barr_ripple_3",
+        "barr_ripple_4",
+        "barr_ripple_5",
+        "barr_ripple_7",
+        "barr_ripple_8",
+        "barr_ripple_9",
+        "big_barr",
+        "big_barr_shaking2",
+        "big_barr_shaking_1",
+        "blinds_in_to_out",
+        "blinds_in_to_out_big",
+        "blinds_sliding",
+        "horizontal_barr_1",
+        "small_barr",
+        "square_left_barr",
+        "square_middle_left_barr",
+        "square_middle_right_barr",
+        "square_right_barr",
+        "strange_barr_1",
+        "strange_barr_2",
+        "vertical_bars",
+        "vertical_blinds_in_to_out",
+        "vertical_blinds_in_to_out_big",
+        "wipe_diagonal_1",
+        "wipe_diagonal_2",
+        "wipe_diagonal_3",
+        "wipe_diagonal_4"
+      ],
+      "default": "4_squares_leftt_barr",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/4_squares_leftt_barr.png",
+        "textures/4_squares_right_barr.png",
+        "textures/barr_ripple_1.png",
+        "textures/barr_ripple_10.png",
+        "textures/barr_ripple_11.png",
+        "textures/barr_ripple_12.png",
+        "textures/barr_ripple_13.png",
+        "textures/barr_ripple_2.png",
+        "textures/barr_ripple_3.png",
+        "textures/barr_ripple_4.png",
+        "textures/barr_ripple_5.png",
+        "textures/barr_ripple_7.png",
+        "textures/barr_ripple_8.png",
+        "textures/barr_ripple_9.png",
+        "textures/big_barr.png",
+        "textures/big_barr_shaking2.png",
+        "textures/big_barr_shaking_1.png",
+        "textures/blinds_in_to_out.png",
+        "textures/blinds_in_to_out_big.png",
+        "textures/blinds_sliding.png",
+        "textures/horizontal_barr_1.png",
+        "textures/small_barr.png",
+        "textures/square_left_barr.png",
+        "textures/square_middle_left_barr.png",
+        "textures/square_middle_right_barr.png",
+        "textures/square_right_barr.png",
+        "textures/strange_barr_1.png",
+        "textures/strange_barr_2.png",
+        "textures/vertical_bars.png",
+        "textures/vertical_blinds_in_to_out.png",
+        "textures/vertical_blinds_in_to_out_big.png",
+        "textures/wipe_diagonal_1.png",
+        "textures/wipe_diagonal_2.png",
+        "textures/wipe_diagonal_3.png",
+        "textures/wipe_diagonal_4.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

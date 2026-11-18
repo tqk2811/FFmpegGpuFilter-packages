@@ -1,0 +1,153 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-mosaic",
+  "name": "Luma Wipe: Mosaic (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 42 OpenShot grayscale luma images (boards, boxes and mosaics): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "board_1",
+        "board_10",
+        "board_11",
+        "board_12",
+        "board_13",
+        "board_14",
+        "board_2",
+        "board_3",
+        "board_4",
+        "board_5",
+        "board_6",
+        "board_7",
+        "board_8",
+        "board_9",
+        "boxes_1",
+        "boxes_10",
+        "boxes_11",
+        "boxes_12",
+        "boxes_13",
+        "boxes_2",
+        "boxes_4",
+        "boxes_5",
+        "boxes_6",
+        "boxes_8",
+        "boxes_9",
+        "central_mozaic",
+        "checked_1",
+        "checked_2",
+        "left_mozaic",
+        "mosaic_1",
+        "mosaic_2",
+        "mosaic_3",
+        "mosaic_4",
+        "mozaic_5",
+        "mozaic_6",
+        "mozaic_7",
+        "mozaic_8",
+        "mozaic_barr_left",
+        "mozaic_barr_right",
+        "puzzle",
+        "right_mozaic",
+        "right_mozaic_2"
+      ],
+      "default": "board_1",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/board_1.png",
+        "textures/board_10.png",
+        "textures/board_11.png",
+        "textures/board_12.png",
+        "textures/board_13.png",
+        "textures/board_14.png",
+        "textures/board_2.png",
+        "textures/board_3.png",
+        "textures/board_4.png",
+        "textures/board_5.png",
+        "textures/board_6.png",
+        "textures/board_7.png",
+        "textures/board_8.png",
+        "textures/board_9.png",
+        "textures/boxes_1.png",
+        "textures/boxes_10.png",
+        "textures/boxes_11.png",
+        "textures/boxes_12.png",
+        "textures/boxes_13.png",
+        "textures/boxes_2.png",
+        "textures/boxes_4.png",
+        "textures/boxes_5.png",
+        "textures/boxes_6.png",
+        "textures/boxes_8.png",
+        "textures/boxes_9.png",
+        "textures/central_mozaic.png",
+        "textures/checked_1.png",
+        "textures/checked_2.png",
+        "textures/left_mozaic.png",
+        "textures/mosaic_1.png",
+        "textures/mosaic_2.png",
+        "textures/mosaic_3.png",
+        "textures/mosaic_4.png",
+        "textures/mozaic_5.png",
+        "textures/mozaic_6.png",
+        "textures/mozaic_7.png",
+        "textures/mozaic_8.png",
+        "textures/mozaic_barr_left.png",
+        "textures/mozaic_barr_right.png",
+        "textures/puzzle.png",
+        "textures/right_mozaic.png",
+        "textures/right_mozaic_2.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
