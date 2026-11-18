@@ -171,6 +171,40 @@ original file. Authors of the original files:
   disintegrate            Disintegrate.glsl           gre                                     MIT
   honey-drip              HoneyDrip.glsl              gre                                     MIT
   stop-motion             StopMotion.glsl             gre                                     MIT
+  liquid-fill             LiquidFill.glsl             gre                                     MIT
+  refraction              Refraction.glsl             gre                                     MIT
+  subdivide               Subdivide.glsl              gre                                     MIT
+  quadtree-blocks         QuadtreeBlocks.glsl         gre                                     MIT
+  bead-up                 BeadUp.glsl                 gre                                     MIT
+  billow-wipe             BillowWipe.glsl             gre                                     MIT
+  ring-spin               RingSpin.glsl               gre                                     MIT
+  pinch-lift              PinchLift.glsl              gre                                     MIT
+  knead                   Knead.glsl                  gre                                     MIT
+  gallery                 Gallery.glsl                gre                                     MIT
+  swim                    Swim.glsl                   gre                                     MIT
+  shore-wash              ShoreWash.glsl              gre                                     MIT
+  crumple                 Crumple.glsl                gre                                     MIT
+  drape                   Drape.glsl                  gre                                     MIT
+  paint-dissolve          PaintDissolve.glsl          gre                                     MIT
+  watercolor-dissolve     WatercolorDissolve.glsl     gre                                     MIT
+  puzzle-cube             PuzzleCube.glsl             gre                                     MIT
+  clothesline             Clothesline.glsl            gre                                     MIT
+  poster-paste            PosterPaste.glsl            gre                                     MIT
+  geometric-collage       GeometricCollage.glsl       gre                                     MIT
+  film-leader             FilmLeader.glsl             gre                                     MIT
+  lightning-flash         LightningFlash.glsl         gre                                     MIT
+  glitch-flicker          GlitchFlicker.glsl          bread                                   MIT
+  strip-datamosh-glitch   StripDatamoshGlitch.glsl    bread                                   MIT
+  smoke-dissolve          SmokeDissolve.glsl          gre                                     MIT
+  diffuse-dissolve        DiffuseDissolve.glsl        gre                                     MIT
+  color-panel-wipe        ColorPanelWipe.glsl         gre                                     MIT
+  disc-cascade            DiscCascade.glsl            gre                                     MIT
+  corner-pin              CornerPin.glsl              gre                                     MIT
+  cleave                  Cleave.glsl                 gre                                     MIT
+  coin-settle             CoinSettle.glsl             gre                                     MIT
+  deinterleave            Deinterleave.glsl           gre                                     MIT
+  block-cover             BlockCover.glsl             gre                                     MIT
+  cell-dissolve           CellDissolve.glsl           gre                                     MIT
 
 --------------------------------------------------------------------------------
 MIT License

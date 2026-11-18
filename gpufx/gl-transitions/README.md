@@ -175,6 +175,40 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [disintegrate](disintegrate/README.md) | [Disintegrate.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Disintegrate.glsl) | gre | MIT |
 | [honey-drip](honey-drip/README.md) | [HoneyDrip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/HoneyDrip.glsl) | gre | MIT |
 | [stop-motion](stop-motion/README.md) | [StopMotion.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StopMotion.glsl) | gre | MIT |
+| [liquid-fill](liquid-fill/README.md) | [LiquidFill.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LiquidFill.glsl) | gre | MIT |
+| [refraction](refraction/README.md) | [Refraction.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Refraction.glsl) | gre | MIT |
+| [subdivide](subdivide/README.md) | [Subdivide.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Subdivide.glsl) | gre | MIT |
+| [quadtree-blocks](quadtree-blocks/README.md) | [QuadtreeBlocks.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/QuadtreeBlocks.glsl) | gre | MIT |
+| [bead-up](bead-up/README.md) | [BeadUp.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BeadUp.glsl) | gre | MIT |
+| [billow-wipe](billow-wipe/README.md) | [BillowWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BillowWipe.glsl) | gre | MIT |
+| [ring-spin](ring-spin/README.md) | [RingSpin.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/RingSpin.glsl) | gre | MIT |
+| [pinch-lift](pinch-lift/README.md) | [PinchLift.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PinchLift.glsl) | gre | MIT |
+| [knead](knead/README.md) | [Knead.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Knead.glsl) | gre | MIT |
+| [gallery](gallery/README.md) | [Gallery.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Gallery.glsl) | gre | MIT |
+| [swim](swim/README.md) | [Swim.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Swim.glsl) | gre | MIT |
+| [shore-wash](shore-wash/README.md) | [ShoreWash.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ShoreWash.glsl) | gre | MIT |
+| [crumple](crumple/README.md) | [Crumple.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Crumple.glsl) | gre | MIT |
+| [drape](drape/README.md) | [Drape.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Drape.glsl) | gre | MIT |
+| [paint-dissolve](paint-dissolve/README.md) | [PaintDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PaintDissolve.glsl) | gre | MIT |
+| [watercolor-dissolve](watercolor-dissolve/README.md) | [WatercolorDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WatercolorDissolve.glsl) | gre | MIT |
+| [puzzle-cube](puzzle-cube/README.md) | [PuzzleCube.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PuzzleCube.glsl) | gre | MIT |
+| [clothesline](clothesline/README.md) | [Clothesline.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Clothesline.glsl) | gre | MIT |
+| [poster-paste](poster-paste/README.md) | [PosterPaste.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PosterPaste.glsl) | gre | MIT |
+| [geometric-collage](geometric-collage/README.md) | [GeometricCollage.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GeometricCollage.glsl) | gre | MIT |
+| [film-leader](film-leader/README.md) | [FilmLeader.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FilmLeader.glsl) | gre | MIT |
+| [lightning-flash](lightning-flash/README.md) | [LightningFlash.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/LightningFlash.glsl) | gre | MIT |
+| [glitch-flicker](glitch-flicker/README.md) | [GlitchFlicker.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/GlitchFlicker.glsl) | bread | MIT |
+| [strip-datamosh-glitch](strip-datamosh-glitch/README.md) | [StripDatamoshGlitch.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StripDatamoshGlitch.glsl) | bread | MIT |
+| [smoke-dissolve](smoke-dissolve/README.md) | [SmokeDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SmokeDissolve.glsl) | gre | MIT |
+| [diffuse-dissolve](diffuse-dissolve/README.md) | [DiffuseDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DiffuseDissolve.glsl) | gre | MIT |
+| [color-panel-wipe](color-panel-wipe/README.md) | [ColorPanelWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ColorPanelWipe.glsl) | gre | MIT |
+| [disc-cascade](disc-cascade/README.md) | [DiscCascade.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/DiscCascade.glsl) | gre | MIT |
+| [corner-pin](corner-pin/README.md) | [CornerPin.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CornerPin.glsl) | gre | MIT |
+| [cleave](cleave/README.md) | [Cleave.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Cleave.glsl) | gre | MIT |
+| [coin-settle](coin-settle/README.md) | [CoinSettle.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CoinSettle.glsl) | gre | MIT |
+| [deinterleave](deinterleave/README.md) | [Deinterleave.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Deinterleave.glsl) | gre | MIT |
+| [block-cover](block-cover/README.md) | [BlockCover.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BlockCover.glsl) | gre | MIT |
+| [cell-dissolve](cell-dissolve/README.md) | [CellDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CellDissolve.glsl) | gre | MIT |
 
 Not ported because an existing package already does the same:
 
