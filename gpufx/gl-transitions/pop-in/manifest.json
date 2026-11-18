@@ -1,0 +1,73 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.pop-in",
+  "name": "Pop In",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip pops in as a rounded card over the first, with an elastic overshoot: too big, a bit small, then it settles into the full frame as its corners square off. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Point of the frame the second clip pops from (0..1, y down)"
+    },
+    {
+      "name": "bounce",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 1.5,
+      "description": "How far the card overshoots (too big, then a bit small) before it settles"
+    },
+    {
+      "name": "corner",
+      "type": "float",
+      "default": 0.12,
+      "min": 0,
+      "max": 0.5,
+      "description": "Corner radius of the card while it pops, relative to its shorter side"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the drop shadow the card casts on the first clip"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/pop_in.wgsl"
+        }
+      ]
+    }
+  ]
+}

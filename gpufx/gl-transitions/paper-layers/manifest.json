@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.paper-layers",
+  "name": "Paper Layers",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip is rebuilt as a stack of cut paper sheets, one per band of brightness: from the darkest to the lightest, each sheet slides in lifted above the stack, drops into place with a soft shadow on the sheets below, then the paper flattens into the photo. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "layers",
+      "type": "int",
+      "default": 5,
+      "min": 2,
+      "max": 8,
+      "description": "Number of paper sheets, one per band of brightness of the second clip"
+    },
+    {
+      "name": "colorful",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "How much of the second clip's colors the paper takes (0: plain paper in shades of the paper color)"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows the sheets cast on the ones below"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#f7f0e0",
+      "description": "Color of the lightest sheet of paper; the darker ones are shades of it"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/paper_layers.wgsl"
+        }
+      ]
+    }
+  ]
+}
