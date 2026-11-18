@@ -1,0 +1,91 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.color-panel-wipe",
+  "name": "Color Panel Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Solid color panels, slightly staggered, sweep across and cover the frame, then sweep off the far side and reveal the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction the panels sweep toward (x right, y up)"
+    },
+    {
+      "name": "panels",
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 3,
+      "description": "Number of panels"
+    },
+    {
+      "name": "color1",
+      "type": "color",
+      "default": "#fac238",
+      "description": "Color of the first panel"
+    },
+    {
+      "name": "color2",
+      "type": "color",
+      "default": "#ed545c",
+      "description": "Color of the second panel"
+    },
+    {
+      "name": "color3",
+      "type": "color",
+      "default": "#29336b",
+      "description": "Color of the third panel"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.35,
+      "min": 0,
+      "max": 1,
+      "description": "Delay between the panels, relative to the sweep of one panel (at 0, they move as one and only the last shows)"
+    },
+    {
+      "name": "skew",
+      "type": "float",
+      "default": 0.25,
+      "min": -1,
+      "max": 1,
+      "description": "Slant of the panels' edges"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/color_panel_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

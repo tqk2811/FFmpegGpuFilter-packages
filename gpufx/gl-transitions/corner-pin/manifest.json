@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.corner-pin",
+  "name": "Corner Pin",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip appears as a small card in the middle of the frame, then its corners are pinned out to the corners of the frame one after another, each snapping into place with a springy overshoot that skews the card in perspective, until it lies flat over the whole frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "start",
+      "type": "float",
+      "default": 0.2,
+      "min": 0.05,
+      "max": 0.5,
+      "description": "Size of the card before its corners are pulled out, relative to the frame"
+    },
+    {
+      "name": "overshoot",
+      "type": "float",
+      "default": 1.2,
+      "min": 0,
+      "max": 2,
+      "description": "Overshoot of each corner as it snaps into place"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadow the card casts on the first clip"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/corner_pin.wgsl"
+        }
+      ]
+    }
+  ]
+}
