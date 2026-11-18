@@ -1,0 +1,62 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.faint",
+  "name": "Faint",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The viewer faints: the first clip splits into two swaying copies of itself and blurs while the edges of the view darken and close in, in two heartbeat throbs, down to a last pinpoint of light; the second clip comes back blurred and doubled through a narrow tunnel, which widens again in throbs as the two copies drift together and lock. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "separation",
+      "type": "float",
+      "default": 0.07,
+      "min": 0,
+      "max": 0.15,
+      "description": "How far apart the two copies drift at the peak, in frame heights"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How out of focus the view gets"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#0d0d0d",
+      "description": "Color the view fades to"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/faint.wgsl"
+        }
+      ]
+    }
+  ]
+}

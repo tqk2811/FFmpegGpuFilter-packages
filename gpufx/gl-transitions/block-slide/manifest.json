@@ -1,0 +1,87 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.block-slide",
+  "name": "Block Slide",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame is cut into a grid of blocks that slide out one after another in a staggered cascade, some of them shrinking as they go, while the blocks of the second clip slide in behind them to take their place. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "columns",
+      "type": "int",
+      "default": 5,
+      "min": 1,
+      "max": 40,
+      "description": "Number of block columns (at most 40 along the direction)"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 4,
+      "min": 1,
+      "max": 40,
+      "description": "Number of block rows (at most 40 along the direction)"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction the blocks slide toward, rounded to the nearest axis (x right, y up)"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 0.95,
+      "description": "Part of the transition over which the blocks set off one after another (0: all together)"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 0.35,
+      "min": 0,
+      "max": 0.9,
+      "description": "How much the zooming blocks shrink on their way, as a part of their size"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#000000",
+      "description": "Color seen in the gaps between the blocks"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/block_slide.wgsl"
+        }
+      ]
+    }
+  ]
+}

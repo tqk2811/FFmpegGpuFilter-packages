@@ -1,0 +1,65 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.glass-relief",
+  "name": "Glass Relief",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The shapes of the second clip rise through the first as clear molded glass, bending it and catching the light along their outlines; then the glass fills with the second clip's colors, brightest parts first, and melts flat into it. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "refraction",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 2,
+      "description": "How strongly the glass bends the picture behind it"
+    },
+    {
+      "name": "shine",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 2,
+      "description": "Brightness of the light caught by the glass"
+    },
+    {
+      "name": "light",
+      "type": "vec2",
+      "default": [
+        -0.6,
+        0.8
+      ],
+      "description": "Direction the light comes from at the peak of the relief; it swings around it during the transition (x right, y up)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/glass_relief.wgsl"
+        }
+      ]
+    }
+  ]
+}
