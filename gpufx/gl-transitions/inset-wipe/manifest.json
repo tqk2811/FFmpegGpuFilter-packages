@@ -1,0 +1,77 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.inset-wipe",
+  "name": "Inset Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A rectangle anchored in a corner, on an edge or in the center grows until the second clip fills the frame, revealing it in place without scaling it; in reverse, the first clip shrinks into the rectangle. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "anchor",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Where the rectangle grows from: (0, 0) top left, (1, 1) bottom right, (0.5, 0.5) center (0..1, y down)"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.0,
+      "min": 0,
+      "max": 0.2,
+      "description": "Softness of the rectangle's edge"
+    },
+    {
+      "name": "border_width",
+      "type": "float",
+      "default": 0.0,
+      "min": 0,
+      "max": 0.1,
+      "description": "Width of a border drawn around the rectangle, in frame heights (0: no border)"
+    },
+    {
+      "name": "border_color",
+      "type": "color",
+      "default": "#ffffff",
+      "description": "Color of the border"
+    },
+    {
+      "name": "reverse",
+      "type": "bool",
+      "default": false,
+      "description": "The first clip shrinks into the rectangle instead, toward the anchor"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/inset_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
