@@ -18,6 +18,7 @@ Written inline after the package name: `morpho.zip=name=value`. Several options 
 | Name | Type | Default | Range | Description |
 |------|------|---------|-------|-------------|
 | `mode` | enum | `erode` | `erode`, `dilate`, `open`, `close`, `gradient`, `tophat`, `blackhat` | Morphological transform |
+| `planes` | int | `7` | 0 to 15 | Channels to filter, FFmpeg's bits on gbrp: 1 green, 2 blue, 4 red |
 
 ## Example
 
@@ -45,10 +46,10 @@ gpufx run '[0][1]morpho.zip=mode=open' -i in.png -i structure.png -o out.png
 
 Port of FFmpeg's `morpho` (`vf_morpho.c`). Two passes: the first writes the erosion (minimum over the element) and the dilation (maximum) to two intermediate textures; the second gives the erosion or dilation, the opening (dilation of the erosion), the closing (erosion of the dilation), the gradient (dilation - erosion), the top-hat (picture - opening) or the black-hat (closing - picture). Pixels of the element that fall outside the picture are left out, as in FFmpeg. Each pass reads the element directly, so the cost grows with its area. Alpha is passed through.
 
-Checked against FFmpeg's `morpho=planes=7` on `gbrap` for every mode, with an odd 5x3 asymmetric element and an even 8x6 one: identical.
+Checked against FFmpeg's `morpho=planes=7` on `gbrap` for every mode, with an odd 5x3 asymmetric element and an even 8x6 one: identical; also with `planes=5` and `planes=2`.
 
 Differences from FFmpeg:
 
-- `planes` is not ported: R, G and B are all filtered, each with its own channel of `structure`.
+- `planes` uses FFmpeg's bits for `gbrp` (1 green, 2 blue, 4 red); bit 8 (alpha) does nothing. Each channel uses its own channel of `structure`. YUV video is filtered in RGB, not per Y, U, V plane.
 - `structure=first` is not ported: the element is read from whatever frame the second input holds.
 - The element is limited to 63x63 pixels (FFmpeg uses the whole picture, with a faster algorithm for large elements).

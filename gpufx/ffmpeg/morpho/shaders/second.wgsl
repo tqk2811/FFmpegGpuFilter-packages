@@ -37,5 +37,7 @@ fn main(@builtin(global_invocation_id) id: vec3u) {
         case 5: { o = a.rgb - over(0, p, true); }
         default: { o = over(1, p, false) - a.rgb; }
     }
-    gpufx_write(id, vec4f(o, a.a));
+    // planes: FFmpeg's bits on gbrp, 1 green, 2 blue, 4 red; the other channels pass through.
+    let m = vec3<bool>((params.planes & 4) != 0, (params.planes & 1) != 0, (params.planes & 2) != 0);
+    gpufx_write(id, vec4f(select(a.rgb, o, m), a.a));
 }

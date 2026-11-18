@@ -10,7 +10,8 @@
     { "name": "structure", "description": "Structuring element: its pixels above 0 are part of it, centred on pixel ((w - 1) / 2, (h - 1) / 2); up to 63x63 is read" }
   ],
   "params": [
-    { "name": "mode", "type": "enum", "values": ["erode", "dilate", "open", "close", "gradient", "tophat", "blackhat"], "default": "erode", "description": "Morphological transform" }
+    { "name": "mode", "type": "enum", "values": ["erode", "dilate", "open", "close", "gradient", "tophat", "blackhat"], "default": "erode", "description": "Morphological transform" },
+    { "name": "planes", "type": "int", "default": 7, "min": 0, "max": 15, "description": "Channels to filter, FFmpeg's bits on gbrp: 1 green, 2 blue, 4 red" }
   ],
   "groups": [{ "passes": [
     { "shader": "shaders/first.wgsl", "inputs": ["src", "structure"], "outputs": ["eroded", "dilated"] },
