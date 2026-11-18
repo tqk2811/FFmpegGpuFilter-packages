@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.poster-paste",
+  "name": "Poster Paste",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip is pasted over the first as a poster, sheet after sheet: each wet sheet drops onto the wall hanging loose from its top edge with a soft shadow, then a brush smooths it on from top to bottom, leaving wrinkles and air bubbles that flatten out and seams that fade as the paste dries. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "sheets",
+      "type": "float",
+      "default": 4.0,
+      "min": 2,
+      "max": 8,
+      "description": "Number of poster sheets pasted side by side, from left to right"
+    },
+    {
+      "name": "wrinkles",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How wrinkled, blistered and billowing the wet paper is before the brush smooths it flat"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/poster_paste.wgsl"
+        }
+      ]
+    }
+  ]
+}

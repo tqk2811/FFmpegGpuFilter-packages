@@ -1,0 +1,88 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.glitch-flicker",
+  "name": "Glitch Flicker",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A flickering glitch with RGB offset, ghosting and scanlines that flashes back to the first clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "frame_rate",
+      "type": "float",
+      "default": 24.0,
+      "min": 6,
+      "max": 60,
+      "description": "Rate at which the glitch steps through its frames, per unit of progress"
+    },
+    {
+      "name": "rgb_offset",
+      "type": "float",
+      "default": 0.014,
+      "min": 0,
+      "max": 0.05,
+      "description": "Distance between the red and blue channels, as a part of the frame width"
+    },
+    {
+      "name": "block_amount",
+      "type": "float",
+      "default": 0.72,
+      "min": 0,
+      "max": 1,
+      "description": "How much the blocks break up the reveal"
+    },
+    {
+      "name": "ghost_amount",
+      "type": "float",
+      "default": 0.62,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the flashes back to the first clip"
+    },
+    {
+      "name": "red_cyan",
+      "type": "float",
+      "default": 0.58,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the red and cyan ghost washes"
+    },
+    {
+      "name": "scanline",
+      "type": "float",
+      "default": 0.075,
+      "min": 0,
+      "max": 0.3,
+      "description": "Strength of the scanlines"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/glitch_flicker.wgsl"
+        }
+      ]
+    }
+  ]
+}

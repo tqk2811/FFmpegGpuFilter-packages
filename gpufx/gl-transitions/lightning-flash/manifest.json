@@ -1,0 +1,86 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.lightning-flash",
+  "name": "Lightning Flash",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Forked lightning bolts crack down from the top of the frame, the screen flashes white in a few stuttering strobes, and the second clip appears lit by the last flickers as they fade out. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "bolts",
+      "type": "int",
+      "default": 2,
+      "min": 1,
+      "max": 3,
+      "description": "Number of bolts: the main one strikes the ground, the others fork out higher in the sky"
+    },
+    {
+      "name": "strike",
+      "type": "float",
+      "default": 0.55,
+      "min": 0,
+      "max": 1,
+      "description": "Where the main bolt strikes, from the left (0) to the right (1) of the frame"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 0.0,
+      "min": 0,
+      "max": 100,
+      "description": "Changes the shape of the bolts"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#bfd9ff",
+      "description": "Color of the light, added to the clips"
+    },
+    {
+      "name": "glow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Size and brightness of the glow around the bolts"
+    },
+    {
+      "name": "flashes",
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 4,
+      "description": "Number of strobes; the clips switch during the brightest one"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/lightning_flash.wgsl"
+        }
+      ]
+    }
+  ]
+}

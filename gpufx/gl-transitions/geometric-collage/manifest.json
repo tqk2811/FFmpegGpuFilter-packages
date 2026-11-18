@@ -1,0 +1,88 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.geometric-collage",
+  "name": "Geometric Collage",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip arrives cut into a geometric poster of quarter discs, half discs, triangles and their complements: piece after piece swings in around a corner of its cell, a flat plate of color just ahead of it, and lands flat with a soft paper shadow. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "cells",
+      "type": "int",
+      "default": 2,
+      "min": 1,
+      "max": 5,
+      "description": "Number of cells along the short side of the frame, the long side gets as many as keep them about square"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 1,
+      "description": "How spread out in time the pieces arrive: 0 swings them all in together, 1 lands them one after another"
+    },
+    {
+      "name": "plates",
+      "type": "bool",
+      "default": true,
+      "description": "Show a flat plate of color swinging in just ahead of each piece"
+    },
+    {
+      "name": "color1",
+      "type": "color",
+      "default": "#e3382b",
+      "description": "First plate color"
+    },
+    {
+      "name": "color2",
+      "type": "color",
+      "default": "#f7c426",
+      "description": "Second plate color"
+    },
+    {
+      "name": "color3",
+      "type": "color",
+      "default": "#2452a8",
+      "description": "Third plate color"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows the pieces cast while they swing in"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/geometric_collage.wgsl"
+        }
+      ]
+    }
+  ]
+}
