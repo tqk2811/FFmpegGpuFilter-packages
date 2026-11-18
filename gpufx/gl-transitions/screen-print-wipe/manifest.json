@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.screen-print-wipe",
+  "name": "Screen Print Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A squeegee sweeps back and forth across the frame four times, pushing a bead of ink ahead of its blade and printing the second clip one halftone ink at a time, yellow, magenta, cyan then black, slightly out of register and streaky, until the layers settle into register and the dots melt into the full picture. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "dots",
+      "type": "float",
+      "default": 70.0,
+      "min": 30,
+      "max": 160,
+      "description": "Number of halftone dots across the frame height: more makes a finer screen, which can shimmer at small sizes"
+    },
+    {
+      "name": "misregistration",
+      "type": "float",
+      "default": 0.01,
+      "min": 0,
+      "max": 0.03,
+      "description": "How far the ink layers are printed out of register, in frame heights"
+    },
+    {
+      "name": "grit",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of ink texture: squeegee streaks and ink-starved specks"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/screen_print_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

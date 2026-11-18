@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.brick-collapse",
+  "name": "Brick Collapse",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Faint mortar joints turn the first clip into a brick wall: one brick of the bottom course is yanked out downward, the steep wedge of bricks it held drops through the hole, and the collapse spreads sideways course by course until the last bricks at the edges tumble out and the second clip stands where the wall was. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 7,
+      "min": 3,
+      "max": 12,
+      "description": "Number of brick courses along the short side of the frame"
+    },
+    {
+      "name": "origin",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Horizontal position of the pulled brick (0: left, 1: right)"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the mortar joints, brick edges and shadows"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/brick_collapse.wgsl"
+        }
+      ]
+    }
+  ]
+}
