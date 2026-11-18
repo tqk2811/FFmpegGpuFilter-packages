@@ -24,7 +24,7 @@ Written inline after the package name: `fftdnoiz.zip=name=value`. Several option
 | `overlap` | float | `0.5` | 0.2 to 0.8 | Overlap of the blocks, as a fraction of the block size |
 | `method` | enum | `wiener` | `wiener`, `hard` | Scaling of each frequency: Wiener filter from its power, or hard threshold |
 | `planes` | int | `7` | 0 to 15 | Channels to filter, FFmpeg's bits on gbrp: 1 green, 2 blue, 4 red |
-| `window` | enum | `hanning` | `rect`, `bartlett`, `hann`, `hanning`, `hamming`, `blackman`, `welch`, `flattop`, `bharris`, `bnuttall`, `bhann`, `sine`, `nuttall`, `lanczos`, `gauss`, `tukey`, `cauchy`, `parzen`, `poisson`, `bohman`, `kaiser` | Window function of the blocks |
+| `window` | enum | `hanning` | `rect`, `bartlett`, `hann`, `hanning`, `hamming`, `blackman`, `welch`, `flattop`, `bharris`, `bnuttall`, `bhann`, `sine`, `nuttall`, `lanczos`, `gauss`, `tukey`, `dolph`, `cauchy`, `parzen`, `poisson`, `bohman`, `kaiser` | Window function of the blocks |
 
 ## Example
 
@@ -54,12 +54,12 @@ Port of FFmpeg's `fftdnoiz` (`vf_fftdnoiz.c`) with `prev=0:next=0`, on each R, G
 
 One pass per channel and a pass that merges them. A workgroup takes a block at a time and keeps half of its conjugate-symmetric spectrum (`block^2` floats) in workgroup memory; the transforms are plain DFTs spread over the 64 threads. About 78 ms for a 1920x1080 frame with the defaults on a laptop RTX 4060 (40 ms with `block=16`, 150 ms with `block=64`, 320 ms with `overlap=0.8`).
 
-Checked against FFmpeg's `format=gbrp,loop=1:1,fftdnoiz` on a noisy test picture (643x361 and 1920x1080; defaults; `sigma=10:block=24:overlap=0.3:method=hard:amount=0.8:window=blackman`; `sigma=6:block=64:overlap=0.8:planes=5:window=kaiser`; odd blocks 17 and 63; `block=8:overlap=0.8`; every window): identical except a few pixels 1 level apart. The `loop` makes FFmpeg work on a copy: on a writable frame it filters in place, so a block reads the already denoised rows of the block above, and its result depends on the number of threads (up to 6 levels apart between 1 and 8 threads); this package does not reproduce that.
+Checked against FFmpeg's `format=gbrp,loop=1:1,fftdnoiz` on a noisy test picture (643x361 and 1920x1080; defaults; `sigma=10:block=24:overlap=0.3:method=hard:amount=0.8:window=blackman`; `sigma=6:block=64:overlap=0.8:planes=5:window=kaiser`; odd blocks 17 and 63; `block=8:overlap=0.8`; every window, `dolph` also with `block=17` and `block=64:overlap=0.8`): identical except a few pixels 1 level apart. The `loop` makes FFmpeg work on a copy: on a writable frame it filters in place, so a block reads the already denoised rows of the block above, and its result depends on the number of threads (up to 6 levels apart between 1 and 8 threads); this package does not reproduce that.
 
 Differences from FFmpeg:
 
 - `prev` and `next` (temporal denoising with the neighbouring frames) are not ported: effects keep no frames.
 - `block` stops at 64 (FFmpeg allows 256): half the spectrum of a 64 x 64 block fills the 16 KiB of workgroup memory WebGPU guarantees. Larger blocks would need more workgroup memory or float intermediate textures of a size other than the frame.
-- The `dolph` window is not ported; `hann` is `hanning`.
+- `hann` is `hanning`.
 - `planes` uses FFmpeg's bits for `gbrp` (1 green, 2 blue, 4 red); bit 8 (alpha) does nothing. YUV video is filtered in RGB, not per Y, U, V plane.
 - Values are handled as 8-bit codes, also for video with more bits.

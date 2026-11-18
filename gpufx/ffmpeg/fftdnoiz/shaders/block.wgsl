@@ -23,6 +23,21 @@ fn bessel_i0(x: f32) -> f32 {
     }
     return sum;
 }
+// Dolph-Chebyshev point n (n <= (N - 1) / 2) before FFmpeg divides by the middle point.
+fn dolph(n: i32, N: i32) -> f32 {
+    let b0 = cosh(7.6009022095419887 / f32(N - 1));
+    let c = 1.0 - 1.0 / (b0 * b0);
+    var sum = select(0.0, 1.0, n == 0);
+    var b = 1.0;
+    var t = 1.0;
+    for (var j = 1; j <= n && sum != t; j++) {
+        t = sum;
+        b *= c * f32(N - n - j) / f32(j);
+        sum += b;
+        b *= f32(n - j) / f32(j);
+    }
+    return sum / f32(N - 1 - n);
+}
 fn lut(n: i32, bn: i32) -> f32 {
     let N = bn + 1;
     let m = f32(N - 1);
@@ -66,23 +81,24 @@ fn lut(n: i32, bn: i32) -> f32 {
             if (d >= 0.3 * M) { return 0.5 * (1.0 + cos(TAU * 0.5 * (d - 0.3 * M) / ((1.0 - 0.3) * M))); }
             return 1.0;
         }
-        case 16: {
+        case 16: { return dolph(min(n, N - 1 - n), N) / dolph((N - 1) / 2, N); }
+        case 17: {
             if (x <= -0.5 || x >= 0.5) { return 0.0; }
             return min(1.0, abs(1.0 / (1.0 + 64.0 * x * x)));
         }
-        case 17: {
+        case 18: {
             if (x > 0.25 && x <= 0.5) { let t = 2.0 * x - 1.0; return -2.0 * t * t * t; }
             if (x >= -0.5 && x < -0.25) { let t = 1.0 + 2.0 * x; return 2.0 * t * t * t; }
             if (x >= -0.25 && x < 0.0) { return 1.0 - 24.0 * x * x - 48.0 * x * x * x; }
             if (x >= 0.0 && x <= 0.25) { return 1.0 - 24.0 * x * x + 48.0 * x * x * x; }
             return 0.0;
         }
-        case 18: {
+        case 19: {
             if (x >= 0.0 && x <= 0.5) { return exp(-6.0 * x); }
             if (x < 0.0 && x >= -0.5) { return exp(6.0 * x); }
             return 0.0;
         }
-        case 19: {
+        case 20: {
             let t = abs(2.0 * fn_ / m - 1.0);
             return (1.0 - t) * cos(TAU * 0.5 * t) + sin(TAU * 0.5 * t) / (TAU * 0.5);
         }

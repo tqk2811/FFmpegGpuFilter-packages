@@ -13,7 +13,7 @@
     { "name": "overlap", "type": "float", "default": 0.5, "min": 0.2, "max": 0.8, "description": "Overlap of the blocks, as a fraction of the block size" },
     { "name": "method", "type": "enum", "values": ["wiener", "hard"], "default": "wiener", "description": "Scaling of each frequency: Wiener filter from its power, or hard threshold" },
     { "name": "planes", "type": "int", "default": 7, "min": 0, "max": 15, "description": "Channels to filter, FFmpeg's bits on gbrp: 1 green, 2 blue, 4 red" },
-    { "name": "window", "type": "enum", "values": ["rect", "bartlett", "hann", "hanning", "hamming", "blackman", "welch", "flattop", "bharris", "bnuttall", "bhann", "sine", "nuttall", "lanczos", "gauss", "tukey", "cauchy", "parzen", "poisson", "bohman", "kaiser"], "default": "hanning", "description": "Window function of the blocks" }
+    { "name": "window", "type": "enum", "values": ["rect", "bartlett", "hann", "hanning", "hamming", "blackman", "welch", "flattop", "bharris", "bnuttall", "bhann", "sine", "nuttall", "lanczos", "gauss", "tukey", "dolph", "cauchy", "parzen", "poisson", "bohman", "kaiser"], "default": "hanning", "description": "Window function of the blocks" }
   ],
   "groups": [{ "passes": [
     { "shader": "shaders/block.wgsl", "entry": "red", "inputs": ["src"], "outputs": ["dr"] },
