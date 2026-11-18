@@ -1,0 +1,92 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.glint-dissolve",
+  "name": "Glint Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The bright points of the first clip sparkle into crisp four-point star glints that swell and twinkle up to the cut, then shrink back into the highlights of the second clip, which stays sharp. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "size",
+      "type": "float",
+      "default": 0.15,
+      "min": 0.02,
+      "max": 0.3,
+      "description": "Length of the longest rays of the glints at the peak, in frame heights"
+    },
+    {
+      "name": "threshold",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness above which the picture sparkles"
+    },
+    {
+      "name": "intensity",
+      "type": "float",
+      "default": 2.0,
+      "min": 0,
+      "max": 4,
+      "description": "Brightness of the glints"
+    },
+    {
+      "name": "diagonals",
+      "type": "bool",
+      "default": false,
+      "description": "Add a shorter, softer pair of diagonal rays to each glint"
+    },
+    {
+      "name": "rotation",
+      "type": "float",
+      "default": 0.0,
+      "min": -45,
+      "max": 45,
+      "description": "Angle of the cross, in degrees"
+    },
+    {
+      "name": "rainbow",
+      "type": "float",
+      "default": 0.35,
+      "min": 0,
+      "max": 1,
+      "description": "Rainbow fringes along the rays"
+    },
+    {
+      "name": "tint",
+      "type": "color",
+      "default": "#fff2d9",
+      "description": "Tint of the glints, added as light"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/glint_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}
