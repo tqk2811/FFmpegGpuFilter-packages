@@ -1,0 +1,82 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.glitter-dissolve",
+  "name": "Glitter Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture becomes a shimmering field of tiny diamond sequins that flip over in 3D at random moments, each lifting and tilting on its own axis and flashing a glint of light, and land on the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tiles",
+      "type": "float",
+      "default": 20.0,
+      "min": 6,
+      "max": 60,
+      "description": "Number of tiles stacked across the height of the frame"
+    },
+    {
+      "name": "hexagons",
+      "type": "bool",
+      "default": false,
+      "description": "Hexagonal tiles instead of diamonds"
+    },
+    {
+      "name": "sparkle",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 2,
+      "description": "Strength of the glints the tiles catch as they turn"
+    },
+    {
+      "name": "glint",
+      "type": "color",
+      "default": "#fff7e6",
+      "description": "Color of the glints, added as light"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 0.0,
+      "min": 0,
+      "max": 100,
+      "description": "Changes the order and the axes of the flips (whole numbers)"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#0a0a0d",
+      "description": "Color seen behind a tile while it is edge-on"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/glitter_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

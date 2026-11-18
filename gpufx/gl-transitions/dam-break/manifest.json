@@ -1,0 +1,62 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.dam-break",
+  "name": "Dam Break",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is a body of water held back by a dam on one side: the dam gives way, its top sinks toward the open side into a long rippling slope with a glossy, foaming surface that rushes out of the frame, stretching the picture along the flow, and the rest drains away, revealing the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "gloss",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the glossy highlight along the water surface"
+    },
+    {
+      "name": "foam",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of foam on the surface, growing where the water runs fastest"
+    },
+    {
+      "name": "leftward",
+      "type": "bool",
+      "default": false,
+      "description": "Flow toward the left instead of the right"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/dam_break.wgsl"
+        }
+      ]
+    }
+  ]
+}

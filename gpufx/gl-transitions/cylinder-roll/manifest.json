@@ -1,0 +1,78 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.cylinder-roll",
+  "name": "Cylinder Roll",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame wraps around a drum that rolls up, the first clip turning away over its top in a motion blur and the second one coming around from below and unrolling flat. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "curvature",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "description": "How much the frame wraps around the drum"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Length of the motion blur at full speed"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the drum darkens as it turns away"
+    },
+    {
+      "name": "chroma",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of RGB split along the roll, growing with speed"
+    },
+    {
+      "name": "downward",
+      "type": "bool",
+      "default": false,
+      "description": "Roll downward instead, the second clip coming around from above"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/cylinder_roll.wgsl"
+        }
+      ]
+    }
+  ]
+}
