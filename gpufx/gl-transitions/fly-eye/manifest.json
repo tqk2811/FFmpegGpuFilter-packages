@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.fly-eye",
+  "name": "Fly Eye",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture breaks into a fly's-eye grid of lenses with color separation. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "size",
+      "type": "float",
+      "default": 0.04,
+      "min": 0,
+      "max": 0.2,
+      "description": "Strength of each lens"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 50.0,
+      "min": 1,
+      "max": 200,
+      "description": "Number of lenses"
+    },
+    {
+      "name": "color_separation",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "description": "Separation of the red and blue channels"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/fly_eye.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.stereo-viewer",
+  "name": "Stereo Viewer",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Both clips shrink into rounded cards that swap like the reels of a stereo viewer toy: the first card splits in two halves that swing up and down out of the frame, then two masks swing back in to uncover the second card, which zooms back to the full frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 0.88,
+      "min": 0.5,
+      "max": 1,
+      "description": "How much the clips zoom out into cards"
+    },
+    {
+      "name": "corner_radius",
+      "type": "float",
+      "default": 0.22,
+      "min": 0,
+      "max": 0.5,
+      "description": "Corner radius of the cards, as a part of the frame height"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/stereo_viewer.wgsl"
+        }
+      ]
+    }
+  ]
+}

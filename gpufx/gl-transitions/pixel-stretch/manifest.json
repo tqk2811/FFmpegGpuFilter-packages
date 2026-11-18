@@ -1,0 +1,81 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.pixel-stretch",
+  "name": "Pixel Stretch",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A line sweeps across the frame and drags the pixels of the first clip behind it as long streaks, which shorten as it goes and reveal the second. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction in which the line sweeps (x right, y up)"
+    },
+    {
+      "name": "stretch",
+      "type": "float",
+      "default": 0.45,
+      "min": 0,
+      "max": 1,
+      "description": "Length of the streaks at the middle of the sweep, as a part of the frame"
+    },
+    {
+      "name": "chroma",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of RGB split along the streaks"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.03,
+      "min": 0,
+      "max": 0.2,
+      "description": "Softness of the line and of the streaks' ends"
+    },
+    {
+      "name": "jitter",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the streaks jitter, each row at its own length"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/pixel_stretch.wgsl"
+        }
+      ]
+    }
+  ]
+}

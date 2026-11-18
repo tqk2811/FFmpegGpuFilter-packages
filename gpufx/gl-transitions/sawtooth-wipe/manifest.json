@@ -1,0 +1,79 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.sawtooth-wipe",
+  "name": "Sawtooth Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe whose edge is a row of sharp triangular teeth sweeps across the frame, or two toothed edges start interlocked and part from the middle like opening jaws. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction the toothed edge moves toward (with jaws, the axis along which the two edges part) (x right, y up)"
+    },
+    {
+      "name": "teeth",
+      "type": "int",
+      "default": 8,
+      "min": 1,
+      "max": 40,
+      "description": "Number of teeth along the edge"
+    },
+    {
+      "name": "depth",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 3,
+      "description": "Length of the teeth, relative to their width"
+    },
+    {
+      "name": "jaws",
+      "type": "bool",
+      "default": false,
+      "description": "Two toothed edges part from the middle instead of one sweeping across"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.004,
+      "min": 0,
+      "max": 0.1,
+      "description": "Softness of the edge"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/sawtooth_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.honeycomb",
+  "name": "Honeycomb",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip splits into hexagons that spin and shrink away in a wave from the center. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "size",
+      "type": "float",
+      "default": 6.0,
+      "min": 2,
+      "max": 30,
+      "description": "Number of hexagons across the shorter side"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/honeycomb.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.hinged-squares",
+  "name": "Hinged Squares",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture is cut into squares that turn in alternate directions while staying hinged at their corners, so the sheet opens into a checkerboard of diamonds showing the second clip; those diamonds then turn back into place and close the sheet. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "cells",
+      "type": "int",
+      "default": 5,
+      "min": 1,
+      "max": 20,
+      "description": "Number of squares across the height of the frame"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the bevel on the turning squares and of the soft shadow they cast into the gaps"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the view zooms out to keep the opening sheet in frame (0: the sheet grows past the frame edges)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/hinged_squares.wgsl"
+        }
+      ]
+    }
+  ]
+}

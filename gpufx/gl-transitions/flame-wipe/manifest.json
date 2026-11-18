@@ -1,0 +1,79 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.flame-wipe",
+  "name": "Flame Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wall of flames sweeps across the frame, scorching the first clip ahead of it and leaving the second clip under a fading warm glow. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        1.0
+      ],
+      "description": "Direction in which the flames sweep (x right, y up)"
+    },
+    {
+      "name": "height",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "Height of the flames, as a part of the frame height"
+    },
+    {
+      "name": "scorch",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "How much the first clip browns and chars ahead of the flames"
+    },
+    {
+      "name": "glow",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the warm glow left on the second clip"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#ff6614",
+      "description": "Tint of the body of the flames"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/flame_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

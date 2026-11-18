@@ -1,0 +1,68 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.slash-split",
+  "name": "Slash Split",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A bright blade stroke slashes diagonally across the first clip with a flash, then the two cut halves slip along the cut in opposite directions and fly off the frame, casting soft shadows on the second clip beneath. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "angle",
+      "type": "float",
+      "default": 25.0,
+      "min": -75,
+      "max": 75,
+      "description": "Angle of the cut against the horizontal, in degrees (counterclockwise)"
+    },
+    {
+      "name": "separation",
+      "type": "float",
+      "default": 0.06,
+      "min": 0,
+      "max": 0.3,
+      "description": "How far the halves move apart across the cut as they slide, relative to the frame height"
+    },
+    {
+      "name": "flash",
+      "type": "color",
+      "default": "#fff5e0",
+      "description": "Color of the blade stroke and its flash (alpha: intensity)"
+    },
+    {
+      "name": "shadow",
+      "type": "color",
+      "default": "#00000073",
+      "description": "Color of the shadow cast on the second clip (alpha: strength)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/slash_split.wgsl"
+        }
+      ]
+    }
+  ]
+}

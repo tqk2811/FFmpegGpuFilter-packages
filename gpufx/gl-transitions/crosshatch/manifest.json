@@ -1,0 +1,65 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.crosshatch",
+  "name": "Crosshatch",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip appears through a crosshatch of lines spreading from a point. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Point the lines spread from (0..1, y down)"
+    },
+    {
+      "name": "threshold",
+      "type": "float",
+      "default": 3.0,
+      "min": 0.1,
+      "max": 10,
+      "description": "How slowly the lines spread from the point"
+    },
+    {
+      "name": "fade_edge",
+      "type": "float",
+      "default": 0.1,
+      "min": 0.01,
+      "max": 0.5,
+      "description": "Part of the transition faded at each end"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/crosshatch.wgsl"
+        }
+      ]
+    }
+  ]
+}

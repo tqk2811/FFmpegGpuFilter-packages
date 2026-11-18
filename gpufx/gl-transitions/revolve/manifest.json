@@ -1,0 +1,121 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.revolve",
+  "name": "Revolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture swirls and zooms with motion blur into the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.46,
+        0.48
+      ],
+      "description": "Center of the swirl (0..1, y down)"
+    },
+    {
+      "name": "direction",
+      "type": "float",
+      "default": -1.0,
+      "min": -1,
+      "max": 1,
+      "description": "Direction of the turn (1 or -1)"
+    },
+    {
+      "name": "max_rotation",
+      "type": "float",
+      "default": 1.95,
+      "min": 0,
+      "max": 6.3,
+      "description": "Turn of the edges at the peak, in radians"
+    },
+    {
+      "name": "peak_zoom",
+      "type": "float",
+      "default": 2.22,
+      "min": 1,
+      "max": 5,
+      "description": "Zoom at the peak"
+    },
+    {
+      "name": "swirl",
+      "type": "float",
+      "default": 2.85,
+      "min": 0,
+      "max": 10,
+      "description": "Extra turn at the center, in radians"
+    },
+    {
+      "name": "barrel",
+      "type": "float",
+      "default": 0.38,
+      "min": 0,
+      "max": 1,
+      "description": "Barrel distortion at the peak"
+    },
+    {
+      "name": "motion_blur",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 3,
+      "description": "Amount of motion blur"
+    },
+    {
+      "name": "switch_start",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 1,
+      "description": "Progress at which the switch to the second clip starts"
+    },
+    {
+      "name": "switch_end",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Progress at which the switch ends"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.16,
+      "min": 0,
+      "max": 1,
+      "description": "Darkening of the edges at the peak"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/revolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

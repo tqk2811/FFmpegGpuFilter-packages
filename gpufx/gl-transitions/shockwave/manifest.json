@@ -1,0 +1,80 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.shockwave",
+  "name": "Shockwave",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A diagonal shockwave breaks the first clip into falling glass tiles with a chromatic split and neon edge glow. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tile_size",
+      "type": "float",
+      "default": 0.035,
+      "min": 0.012,
+      "max": 0.1,
+      "description": "Size of each tile, relative to the frame height"
+    },
+    {
+      "name": "scatter",
+      "type": "float",
+      "default": 0.85,
+      "min": 0,
+      "max": 1.5,
+      "description": "How far the tiles slide and fall"
+    },
+    {
+      "name": "diagonal",
+      "type": "float",
+      "default": 0.9,
+      "min": 0,
+      "max": 1,
+      "description": "0: horizontal sweep, 1: strongly diagonal"
+    },
+    {
+      "name": "prism",
+      "type": "float",
+      "default": 0.65,
+      "min": 0,
+      "max": 1,
+      "description": "Red/blue separation at the moving edges"
+    },
+    {
+      "name": "glow",
+      "type": "float",
+      "default": 0.75,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness of the colored tile edges"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/shockwave.wgsl"
+        }
+      ]
+    }
+  ]
+}

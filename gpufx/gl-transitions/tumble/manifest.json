@@ -1,0 +1,81 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.tumble",
+  "name": "Tumble",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is thrown away like a rigid card, tumbling end over end with a slight spin as it flies off into the distance in perspective, its darker back showing on every flip and its soft shadow shrinking on the second clip behind it. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "flips",
+      "type": "float",
+      "default": 2.0,
+      "min": -4,
+      "max": 4,
+      "description": "Number of turns end over end, negative to tumble the other way"
+    },
+    {
+      "name": "spin",
+      "type": "float",
+      "default": 0.15,
+      "min": -1,
+      "max": 1,
+      "description": "Turns of the secondary spin around the line of sight"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        0.3
+      ],
+      "description": "Where the card flies toward on screen, in frame heights from the center (x right, y up)"
+    },
+    {
+      "name": "perspective",
+      "type": "float",
+      "default": 0.6,
+      "min": 0.1,
+      "max": 1,
+      "description": "Strength of the perspective"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Shading of the card as it turns, darkness of its back and of its shadow"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/tumble.wgsl"
+        }
+      ]
+    }
+  ]
+}

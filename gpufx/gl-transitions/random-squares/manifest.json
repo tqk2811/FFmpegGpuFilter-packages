@@ -1,0 +1,57 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.random-squares",
+  "name": "Random Squares",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip appears in squares at random. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "size",
+      "type": "vec2",
+      "default": [
+        10.0,
+        10.0
+      ],
+      "description": "Number of squares (columns, rows)"
+    },
+    {
+      "name": "smoothness",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Softness of each square's switch"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/random_squares.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.quadtree-blocks",
+  "name": "Quadtree Blocks",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip breaks into a quadtree of flat color blocks, small where it is detailed and large where it is plain; the blocks merge into a few big squares that change color one by one, then split again, finer and finer, into the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tolerance",
+      "type": "float",
+      "default": 0.05,
+      "min": 0,
+      "max": 0.2,
+      "description": "How different the colors inside a block may be before it splits (larger gives bigger blocks)"
+    },
+    {
+      "name": "seams",
+      "type": "float",
+      "default": 0.35,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the thin seams between the blocks"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/quadtree_blocks.wgsl"
+        }
+      ]
+    }
+  ]
+}

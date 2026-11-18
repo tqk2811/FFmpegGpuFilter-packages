@@ -1,0 +1,81 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.water-drop",
+  "name": "Water Drop",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A drop falls into the picture like into still water: round ripples spread out, bending the picture with glints, the second clip shows inside the leading ripple, and the water calms down. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "amplitude",
+      "type": "float",
+      "default": 30.0,
+      "min": 10,
+      "max": 80,
+      "description": "Frequency of the ripples (higher: closer together)"
+    },
+    {
+      "name": "speed",
+      "type": "float",
+      "default": 30.0,
+      "min": 0,
+      "max": 80,
+      "description": "Speed of the ripples through the spreading rings"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Where the drop falls (0..1, y down)"
+    },
+    {
+      "name": "refraction",
+      "type": "float",
+      "default": 0.015,
+      "min": 0,
+      "max": 0.08,
+      "description": "How far the ripples bend the picture, in frame heights"
+    },
+    {
+      "name": "highlight",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness of the glints"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/water_drop.wgsl"
+        }
+      ]
+    }
+  ]
+}

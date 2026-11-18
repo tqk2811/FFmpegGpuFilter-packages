@@ -1,0 +1,93 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.led-wall",
+  "name": "LED Wall",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture zooms into a giant LED screen of round glowing diodes on a dark panel; a refresh wave sweeps across it, each diode flicking with a bright pop as it switches to the second clip, then the diodes melt back into the plain picture. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "cells",
+      "type": "float",
+      "default": 24.0,
+      "min": 6,
+      "max": 80,
+      "description": "Number of diodes across the shorter side"
+    },
+    {
+      "name": "glow",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the glow bleeding from the diodes into the dark panel"
+    },
+    {
+      "name": "flash",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Brightness of the flash of each diode as it switches"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 0.15,
+      "min": 0,
+      "max": 0.5,
+      "description": "How much the picture zooms in while it is a screen"
+    },
+    {
+      "name": "triads",
+      "type": "bool",
+      "default": false,
+      "description": "Each diode is made of red, green and blue sub-diodes"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction in which the refresh wave sweeps across the screen (x right, y up)"
+    },
+    {
+      "name": "panel",
+      "type": "color",
+      "default": "#050506",
+      "description": "Color of the panel between the diodes"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/led_wall.wgsl"
+        }
+      ]
+    }
+  ]
+}

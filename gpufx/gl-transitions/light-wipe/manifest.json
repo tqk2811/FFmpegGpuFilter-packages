@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.light-wipe",
+  "name": "Light Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A band of intense light sweeps across the frame like a glint on glass, blooming the highlights of both clips, and leaves the second clip behind it. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        -0.35
+      ],
+      "description": "Direction the band of light moves toward (x right, y up)"
+    },
+    {
+      "name": "width",
+      "type": "float",
+      "default": 0.04,
+      "min": 0.005,
+      "max": 0.2,
+      "description": "Width of the bright core of the band, in frame heights"
+    },
+    {
+      "name": "intensity",
+      "type": "float",
+      "default": 1.2,
+      "min": 0,
+      "max": 3,
+      "description": "Brightness of the light"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#ffdba8",
+      "description": "Tint of the light toward the edges of the band (its core burns white)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/light_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

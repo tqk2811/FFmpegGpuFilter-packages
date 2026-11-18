@@ -1,0 +1,73 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.sphere",
+  "name": "Sphere",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip wraps onto a shaded ball that shrinks and rolls away, revealing the second under its shadow. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction the ball rolls (x right, y up)"
+    },
+    {
+      "name": "size",
+      "type": "float",
+      "default": 0.3,
+      "min": 0.1,
+      "max": 0.5,
+      "description": "Radius of the wrapped ball, relative to the shorter side"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the light on the ball"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the ball shadow"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/sphere.wgsl"
+        }
+      ]
+    }
+  ]
+}

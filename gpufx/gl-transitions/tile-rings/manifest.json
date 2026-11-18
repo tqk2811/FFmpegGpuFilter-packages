@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.tile-rings",
+  "name": "Tile Rings",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture is cut into tiles that ride concentric rectangular rings like the dials of a combination lock: the rings turn a quarter of the way round in alternating directions, the tiles turning the corners like links of a chain, then the tiles flip over to the second clip in a ripple running round each ring, and the rings turn back until every tile clicks home. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "rings",
+      "type": "int",
+      "default": 3,
+      "min": 2,
+      "max": 4,
+      "description": "Number of rings, from the border to the center"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.15,
+      "min": 0,
+      "max": 0.4,
+      "description": "Delay between the innermost ring and the outermost one, as a part of the transition"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows cast by the lifted tiles"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#1a1a1c",
+      "description": "Color of the tray seen between the tiles"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/tile_rings.wgsl"
+        }
+      ]
+    }
+  ]
+}

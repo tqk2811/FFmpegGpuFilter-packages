@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.spotlight-wipe",
+  "name": "Spotlight Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The stage lights go down on the first clip and an oval spotlight searches across it, comes to rest and lights the second clip inside it, then widens until the lights come back up. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Point where the spotlight comes to rest and opens from (0..1, y down)"
+    },
+    {
+      "name": "size",
+      "type": "float",
+      "default": 0.3,
+      "min": 0.08,
+      "max": 0.45,
+      "description": "Width of the spotlight while it searches, in frame heights"
+    },
+    {
+      "name": "darkness",
+      "type": "float",
+      "default": 0.85,
+      "min": 0,
+      "max": 1,
+      "description": "How dark the stage gets around the spotlight"
+    },
+    {
+      "name": "warmth",
+      "type": "color",
+      "default": "#ffedcc",
+      "description": "Tint of the spotlight"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/spotlight_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

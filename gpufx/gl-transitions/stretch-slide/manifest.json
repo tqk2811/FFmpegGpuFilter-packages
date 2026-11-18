@@ -1,0 +1,65 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.stretch-slide",
+  "name": "Stretch Slide",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip stretches out long as it shoots away to one side, pulling in the second clip squashed behind it, which overshoots and springs back to its shape. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        -1.0,
+        0.0
+      ],
+      "description": "Direction in which the clips slide (x right, y up)"
+    },
+    {
+      "name": "stretch",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How long the first clip stretches and how much the squashed second clip bulges"
+    },
+    {
+      "name": "bounce",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How far the second clip overshoots before it springs back to its shape"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/stretch_slide.wgsl"
+        }
+      ]
+    }
+  ]
+}

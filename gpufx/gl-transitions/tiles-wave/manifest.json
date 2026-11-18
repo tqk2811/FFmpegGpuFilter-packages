@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.tiles-wave",
+  "name": "Tiles Wave",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The tiles of the first clip turn over in a wave, up each column and then across, each showing the second clip on its back. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "columns",
+      "type": "int",
+      "default": 8,
+      "min": 1,
+      "max": 40,
+      "description": "Number of tile columns"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 8,
+      "min": 1,
+      "max": 40,
+      "description": "Number of tile rows"
+    },
+    {
+      "name": "flip_x",
+      "type": "bool",
+      "default": true,
+      "description": "Turn the tiles around a vertical axis"
+    },
+    {
+      "name": "flip_y",
+      "type": "bool",
+      "default": false,
+      "description": "Turn the tiles around a horizontal axis"
+    },
+    {
+      "name": "duration",
+      "type": "float",
+      "default": 8.0,
+      "min": 0.5,
+      "max": 40,
+      "description": "How long each tile takes to turn over, in tile steps"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/tiles_wave.wgsl"
+        }
+      ]
+    }
+  ]
+}

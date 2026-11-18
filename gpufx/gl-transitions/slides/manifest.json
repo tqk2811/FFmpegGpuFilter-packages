@@ -1,0 +1,54 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.slides",
+  "name": "Slides",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip shrinks away toward an edge, a corner or the center, or the second clip grows in from there. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "position",
+      "type": "int",
+      "default": 0,
+      "min": 0,
+      "max": 8,
+      "description": "Where the picture shrinks to or grows from: 0 top, 1 right, 2 bottom, 3 left, 4 top right, 5 bottom right, 6 bottom left, 7 top left, 8 center"
+    },
+    {
+      "name": "slide_in",
+      "type": "bool",
+      "default": false,
+      "description": "Grow the second clip in instead of shrinking the first out"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/slides.wgsl"
+        }
+      ]
+    }
+  ]
+}

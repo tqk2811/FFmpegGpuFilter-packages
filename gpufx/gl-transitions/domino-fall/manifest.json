@@ -1,0 +1,86 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.domino-fall",
+  "name": "Domino Fall",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is cut into standing slats that topple backward like dominoes in a chain reaction across the frame, each one leaning onto the next and knocking it over, until they all lie flat and reveal the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "count",
+      "type": "int",
+      "default": 12,
+      "min": 2,
+      "max": 40,
+      "description": "Number of slats"
+    },
+    {
+      "name": "reverse",
+      "type": "bool",
+      "default": false,
+      "description": "The chain runs from right to left instead of left to right"
+    },
+    {
+      "name": "knock",
+      "type": "float",
+      "default": 0.2,
+      "min": 0.05,
+      "max": 1,
+      "description": "Part of a slat's fall after which it knocks the next one: lower runs the chain faster, with more slats falling at once"
+    },
+    {
+      "name": "lean",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "description": "How far each slat's top leans sideways onto the next one, as a part of a slat's width"
+    },
+    {
+      "name": "perspective",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the perspective"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the slats darken as they fall, and the shadows they cast"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/domino_fall.wgsl"
+        }
+      ]
+    }
+  ]
+}

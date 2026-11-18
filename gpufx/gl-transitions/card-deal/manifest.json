@@ -1,0 +1,81 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.card-deal",
+  "name": "Card Deal",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip is dealt onto the frame like a hand of cards: tile after tile is flicked from below the frame, spinning through the air with a lifting shadow, and slides to a stop in its place until the picture is complete. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "columns",
+      "type": "int",
+      "default": 4,
+      "min": 1,
+      "max": 6,
+      "description": "Number of card columns"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 6,
+      "description": "Number of card rows"
+    },
+    {
+      "name": "deck",
+      "type": "vec2",
+      "default": [
+        0.5,
+        1.4
+      ],
+      "description": "Point the cards are dealt from, can be outside the frame (0..1, y down)"
+    },
+    {
+      "name": "spin",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 2,
+      "description": "Turns a card makes on its way, before it settles straight"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows the cards cast"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/card_deal.wgsl"
+        }
+      ]
+    }
+  ]
+}

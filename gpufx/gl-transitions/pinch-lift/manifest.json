@@ -1,0 +1,81 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.pinch-lift",
+  "name": "Pinch Lift",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is pinched at one point like a handkerchief: its sides drop and swing in under the pinch, gathering into hanging pleats, then it is let go and falls down out of the frame, revealing the second clip behind its shadow. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.2
+      ],
+      "description": "Point where the cloth is pinched (0..1, y down)"
+    },
+    {
+      "name": "pleats",
+      "type": "float",
+      "default": 9.0,
+      "min": 4,
+      "max": 24,
+      "description": "Number of pleats hanging from the pinch"
+    },
+    {
+      "name": "depth",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "description": "Depth of the pleats and of their shading"
+    },
+    {
+      "name": "swing",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How far the hanging cloth swings before it settles"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the soft shadow cast on the second clip"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/pinch_lift.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.coin-settle",
+  "name": "Coin Settle",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip settles onto the first like a spun coin coming to rest: it starts standing on its edge, then leans over while its lifted side whirls around faster and faster with a sweeping shadow, rocking on its corners in a quickening rattle, until it drops flat and still over the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "whirls",
+      "type": "float",
+      "default": 4.5,
+      "min": 1,
+      "max": 6,
+      "description": "Number of whirls of the lifted side"
+    },
+    {
+      "name": "twist",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1.5,
+      "description": "In-plane turn of the picture when it stands up, undone as it settles"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Shading of the coin and darkness of its shadow"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/coin_settle.wgsl"
+        }
+      ]
+    }
+  ]
+}

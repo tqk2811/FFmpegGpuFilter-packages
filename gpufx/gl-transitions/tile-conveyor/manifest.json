@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.tile-conveyor",
+  "name": "Tile Conveyor",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Gaps open between the tiles of the first clip over a track that winds through every tile; the tiles glide along it like a train, the first clip's tiles leaving at the bottom right while the second clip's enter at the bottom left and wind through the frame until they settle in place. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "order",
+      "type": "int",
+      "default": 2,
+      "min": 1,
+      "max": 3,
+      "description": "Size of the track: 2 to the power of order tiles along each side"
+    },
+    {
+      "name": "gap",
+      "type": "float",
+      "default": 0.26,
+      "min": 0.05,
+      "max": 0.4,
+      "description": "Width of the gaps between the tiles, as a part of a tile"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the bevel and of the shadow the tiles cast on the track"
+    },
+    {
+      "name": "tray",
+      "type": "color",
+      "default": "#1c1c21",
+      "description": "Color of the tray under the tiles"
+    },
+    {
+      "name": "track",
+      "type": "color",
+      "default": "#9e998c",
+      "description": "Color of the track"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/tile_conveyor.wgsl"
+        }
+      ]
+    }
+  ]
+}

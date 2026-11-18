@@ -1,0 +1,62 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.photo-develop",
+  "name": "Photo Develop",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip washes out to a blank card, then the second develops on it like an instant photo. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "card",
+      "type": "color",
+      "default": "#ede8d9",
+      "description": "Color of the blank card"
+    },
+    {
+      "name": "wash",
+      "type": "float",
+      "default": 0.35,
+      "min": 0,
+      "max": 1,
+      "description": "How long the first clip takes to wash out"
+    },
+    {
+      "name": "tint",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the cast while the picture develops"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/photo_develop.wgsl"
+        }
+      ]
+    }
+  ]
+}

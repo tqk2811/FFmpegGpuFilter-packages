@@ -1,0 +1,71 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.flow-dissolve",
+  "name": "Flow Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Both clips ride one current full of eddies: a sharp front sweeps across it and is wound into curls by every eddy it crosses, the first clip carried downstream ahead of it while the second pours in behind, until the second clip settles sharp. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction of the current (x right, y up)"
+    },
+    {
+      "name": "travel",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "How far the current carries the clips (1: half the frame's short side)"
+    },
+    {
+      "name": "swirl",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 2,
+      "description": "Strength of the eddies compared with the drift (0: a straight front and drift)"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 0.0,
+      "description": "Random seed: another value gives other eddies"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/flow_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

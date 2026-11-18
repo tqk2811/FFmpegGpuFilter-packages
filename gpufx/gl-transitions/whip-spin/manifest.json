@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.whip-spin",
+  "name": "Whip Spin",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The camera rolls faster and faster in a spin blur, then the second clip takes over mid-spin and slows to a stop. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "turns",
+      "type": "float",
+      "default": 1.0,
+      "min": -3,
+      "max": 3,
+      "description": "Total rotation, in turns (negative: clockwise)"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Length of the motion blur"
+    },
+    {
+      "name": "chroma",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the color channels split as the spin speeds up"
+    },
+    {
+      "name": "zoom",
+      "type": "float",
+      "default": 0.25,
+      "min": 0,
+      "max": 1,
+      "description": "Zoom at the fastest point"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/whip_spin.wgsl"
+        }
+      ]
+    }
+  ]
+}

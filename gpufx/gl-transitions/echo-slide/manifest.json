@@ -1,0 +1,73 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.echo-slide",
+  "name": "Echo Slide",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip slides away leaving a trail of discrete fading copies of itself, a stroboscopic echo, and the echoes of the second clip converge into place. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.0
+      ],
+      "description": "Direction in which the clips slide (x right, y up)"
+    },
+    {
+      "name": "echoes",
+      "type": "int",
+      "default": 4,
+      "min": 1,
+      "max": 7,
+      "description": "Number of echoes between the two clips"
+    },
+    {
+      "name": "trail",
+      "type": "float",
+      "default": 0.25,
+      "min": 0.05,
+      "max": 0.6,
+      "description": "How long the echoes trail behind each clip, as a part of the transition"
+    },
+    {
+      "name": "decay",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How fast the echoes of the first clip fade out into those of the second"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/echo_slide.wgsl"
+        }
+      ]
+    }
+  ]
+}

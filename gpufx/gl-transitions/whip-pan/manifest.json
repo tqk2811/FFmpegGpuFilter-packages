@@ -1,0 +1,57 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.whip-pan",
+  "name": "Whip Pan",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A fast camera pan that streaks both clips with motion blur, the second arriving from the opposite side. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        -1.0,
+        0.0
+      ],
+      "description": "Direction in which the clips move (x right, y up)"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "Length of the motion blur at full speed"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/whip_pan.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.simple-zoom-out",
+  "name": "Simple Zoom Out",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip zooms out into place from a close-up while it fades in over the first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "zoom_quickness",
+      "type": "float",
+      "default": 0.8,
+      "min": 0.2,
+      "max": 1,
+      "description": "Part of the transition spent zooming"
+    },
+    {
+      "name": "fade",
+      "type": "bool",
+      "default": true,
+      "description": "Fade the second clip in instead of cutting to it"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/simple_zoom_out.wgsl"
+        }
+      ]
+    }
+  ]
+}

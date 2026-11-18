@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.shutter-wipe",
+  "name": "Shutter Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A camera's focal-plane shutter fires across the frame seen through the camera's gate: metal blades fan down until they cover the frame, then run on and stack below it, uncovering the second clip from the top. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "blades",
+      "type": "int",
+      "default": 5,
+      "min": 3,
+      "max": 10,
+      "description": "Number of metal blades"
+    },
+    {
+      "name": "tilt",
+      "type": "float",
+      "default": 0.06,
+      "min": 0,
+      "max": 0.2,
+      "description": "How much the blades tilt on their arms while they travel"
+    },
+    {
+      "name": "gate",
+      "type": "float",
+      "default": 0.035,
+      "min": 0,
+      "max": 0.08,
+      "description": "Width of the camera's gate framing the picture while the shutter fires, in frame heights"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#17171a",
+      "description": "Color of the metal blades"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/shutter_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

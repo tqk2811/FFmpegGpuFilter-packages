@@ -1,0 +1,79 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.parallax-push",
+  "name": "Parallax Push",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The camera tracks sideways past a dark, out-of-focus pillar standing close to the lens: the pillar rushes across the frame while the clips far behind it drift slowly the same way with a slight push in, and the cut to the second clip happens hidden behind it. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        -1.0,
+        0.0
+      ],
+      "description": "Direction in which everything moves, snapped to its main axis (x right, y up)"
+    },
+    {
+      "name": "parallax",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 0.25,
+      "description": "How far each clip drifts behind the pillar, as a part of the frame"
+    },
+    {
+      "name": "width",
+      "type": "float",
+      "default": 0.45,
+      "min": 0.1,
+      "max": 1,
+      "description": "Width of the pillar, as a part of the shorter side of the frame"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How out of focus the pillar is, and how much it blurs as it rushes past"
+    },
+    {
+      "name": "pillar",
+      "type": "color",
+      "default": "#332b26",
+      "description": "Color of the pillar, lit from the side it moves toward"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/parallax_push.wgsl"
+        }
+      ]
+    }
+  ]
+}

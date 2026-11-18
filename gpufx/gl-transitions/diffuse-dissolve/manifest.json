@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.diffuse-dissolve",
+  "name": "Diffuse Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip diffuses into a shimmering, grainy haze, as if its pixels were scattered further and further from where they belong, and the second clip condenses back out of the haze as they settle into place. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "radius",
+      "type": "float",
+      "default": 0.06,
+      "min": 0.01,
+      "max": 0.2,
+      "description": "How far the pixels scatter at the peak, in frame heights"
+    },
+    {
+      "name": "grain_size",
+      "type": "float",
+      "default": 0.004,
+      "min": 0.002,
+      "max": 0.02,
+      "description": "Size of a grain, in frame heights"
+    },
+    {
+      "name": "shimmer",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the grains swirl around while they are scattered"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/diffuse_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

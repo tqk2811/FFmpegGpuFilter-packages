@@ -1,0 +1,73 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.cleave",
+  "name": "Cleave",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip is driven into the first like a wedge into a log: a crack runs ahead of its point, the two halves are shoved aside and bunch up against its sides, then fall apart out of the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        -1.0
+      ],
+      "description": "Direction the wedge is driven in, snapped to the nearest of the four edge-to-edge directions (x right, y up)"
+    },
+    {
+      "name": "opening",
+      "type": "float",
+      "default": 18.0,
+      "min": 5,
+      "max": 40,
+      "description": "Half angle of the wedge, in degrees"
+    },
+    {
+      "name": "squash",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the halves bunch up against the wedge instead of sliding away rigidly"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the ridge and shadow shading along the split"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/cleave.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.doom-melt",
+  "name": "Doom Melt",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip melts down in uneven columns, like the Doom screen wipe. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "bars",
+      "type": "int",
+      "default": 30,
+      "min": 2,
+      "max": 500,
+      "description": "Number of columns"
+    },
+    {
+      "name": "amplitude",
+      "type": "float",
+      "default": 2.0,
+      "min": 0,
+      "max": 10,
+      "description": "Speed difference between columns (0: all fall together)"
+    },
+    {
+      "name": "noise",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Random part of the speed differences"
+    },
+    {
+      "name": "frequency",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 5,
+      "description": "Speed variation across the frame (higher: shorter waves)"
+    },
+    {
+      "name": "drip_scale",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the middle columns run first"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/doom_melt.wgsl"
+        }
+      ]
+    }
+  ]
+}

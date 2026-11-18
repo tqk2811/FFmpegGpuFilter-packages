@@ -1,0 +1,73 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.triangle-flip",
+  "name": "Triangle Flip",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture is cut into a mosaic of triangles that turn over in perspective in a wave spreading from a point, each one rolling away from it about one of its three axes, catching a glint of light and casting a soft shadow, and showing its part of the second clip on its back. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "default": 6,
+      "min": 2,
+      "max": 20,
+      "description": "Number of rows of triangles across the height of the frame"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.0,
+        0.0
+      ],
+      "description": "Point the wave of flips spreads from (0..1, y down)"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.75,
+      "min": 0,
+      "max": 0.9,
+      "description": "How long the wave takes to cross the frame, as a part of the transition: 0 turns every triangle at once"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the light and shadows on the turning triangles and of the shade in the holes they leave"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/triangle_flip.wgsl"
+        }
+      ]
+    }
+  ]
+}

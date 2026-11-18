@@ -20,6 +20,257 @@ original file. Authors of the original files:
   heart           HeartWipe.glsl         gre                         MIT
   bounce          Bounce.glsl            Adrian Purser               MIT
   film-burn       FilmBurn.glsl          Anastasia Dunbar            MIT
+  butterfly-wave-scrawler ButterflyWaveScrawler.glsl  mandubian                               MIT
+  color-distance          ColorDistance.glsl          P-Seebauer                              MIT
+  color-phase             ColorPhase.glsl             gre                                     MIT
+  crazy-parametric-fun    CrazyParametricFun.glsl     mandubian                               MIT
+  crosshatch              Crosshatch.glsl             pthrasher                               MIT
+  directional-warp        DirectionalWarp.glsl        pschroen                                MIT
+  fly-eye                 FlyEye.glsl                 gre                                     MIT
+  glitch-memories         GlitchMemories.glsl         Gunnar Roth (based on work by natewave) MIT
+  multiply-blend          MultiplyBlend.glsl          Fernando Kuteken                        MIT
+  pinwheel                Pinwheel.glsl               Mr Speaker                              MIT
+  polka-dots-curtain      PolkaDotsCurtain.glsl       bobylito                                MIT
+  random-squares          RandomSquares.glsl          gre                                     MIT
+  window-blinds           WindowBlinds.glsl           Fabien Benetou                          MIT
+  squares-wipe            SquaresWipe.glsl            gre                                     MIT
+  bowtie                  BowTie.glsl                 KMojek                                  MIT
+  bowtie-horizontal       BowTieHorizontal.glsl       huynx                                   MIT
+  doom-melt               DoomMelt.glsl               Zeh Fernando                            MIT
+  dreamy-zoom             DreamyZoom.glsl             Zeh Fernando                            MIT
+  hexagonalize            Hexagonalize.glsl           Fernando Kuteken                        MIT
+  perlin                  PerlinDissolve.glsl         Rich Harris                             MIT
+  rotate-scale-fade       RotateScaleFade.glsl        Fernando Kuteken                        MIT
+  rolls                   Rolls.glsl                  Mark Craig                              MIT
+  swap                    Swap.glsl                   gre                                     MIT
+  tv-static               TvStatic.glsl               Brandon Anzaldi                         MIT
+  undulating-burn-out     UndulatingBurnOut.glsl      pthrasher                               MIT
+  water-drop              WaterDrop.glsl              Paweł Płóciennik                        MIT
+  zoom-in-circles         ZoomInCircles.glsl          dycm8009                                MIT
+  color-wrap              ColorWrap.glsl              Yoni Maltsman                           MIT
+  hsv-fade                HsvFade.glsl                nwoeanhinnogaehr                        MIT
+  overexposure            Overexposure.glsl           Ben Zhang                               MIT
+  glitch-bands            GlitchBands.glsl            Yoni Maltsman                           MIT
+  diamond-wipe            DiamondWipe.glsl            gre                                     MIT
+  leaf-wipe               LeafWipe.glsl               @Flexi23                                MIT
+  spiral-wipe             SpiralWipe.glsl             gre                                     MIT
+  star-wipe               StarWipe.glsl               Ben Lucas                               MIT
+  keyhole-wipe            KeyholeWipe.glsl            gre                                     MIT
+  static-wipe             StaticWipe.glsl             Ben Lucas                               MIT
+  luminance-melt          LuminanceMelt.glsl          0gust1                                  MIT
+  fisheye                 Fisheye.glsl                gre                                     MIT
+  zoom-in-out             ZoomInOut.glsl              OllyOllyOlly                            MIT
+  tunnel                  Tunnel.glsl                 gre                                     MIT
+  revolve                 Revolve.glsl                bread                                   MIT
+  whip-pan                WhipPan.glsl                gre                                     MIT
+  rotate-scale-vanish     RotateScaleVanish.glsl      Mark Craig                              MIT
+  tv-turn-off             TvTurnOff.glsl              gre                                     MIT
+  tv-roll                 TvRoll.glsl                 gre                                     MIT
+  eye-blink               EyeBlink.glsl               gre                                     MIT
+  simple-flip             SimpleFlip.glsl             nwoeanhinnogaehr                        MIT
+  fold                    Fold.glsl                   nwoeanhinnogaehr                        MIT
+  accordion               Accordion.glsl              gre                                     MIT
+  book-flip               BookFlip.glsl               hong                                    MIT
+  card-swipe              CardSwipe.glsl              gre                                     MIT
+  curtains                Curtains.glsl               gre                                     MIT
+  inside-cube             InsideCube.glsl             gre                                     MIT
+  prisms                  Prisms.glsl                 gre                                     MIT
+  sphere                  Sphere.glsl                 gre                                     MIT
+  grid-flip               GridFlip.glsl               TimDonselaar                            MIT
+  vortex                  Vortex.glsl                 gre                                     MIT
+  shockwave               Shockwave.glsl              Gilad Levi                              MIT
+  shatter                 Shatter.glsl                lbl                                     MIT
+  tile-blast              TileBlast.glsl              gre                                     MIT
+  puzzle                  Puzzle.glsl                 gre                                     MIT
+  paper-fold              PaperFold.glsl              gre                                     MIT
+  unbox                   Unbox.glsl                  gre                                     MIT
+  whittle                 Whittle.glsl                gre                                     MIT
+  shred                   Shred.glsl                  gre                                     MIT
+  fall-over               FallOver.glsl               gre                                     MIT
+  ribbon-twist            RibbonTwist.glsl            gre                                     MIT
+  camera-shake            CameraShake.glsl            gre                                     MIT
+  warp-speed              WarpSpeed.glsl              gre                                     MIT
+  tangent-motion-blur     TangentMotionBlur.glsl      chenkai                                 MIT
+  whip-spin               WhipSpin.glsl               gre                                     MIT
+  gravity-lens            GravityLens.glsl            gre                                     MIT
+  bottleneck              Bottleneck.glsl             gre                                     MIT
+  power-kaleido           PowerKaleido.glsl           Boundless                               MIT
+  lissajous-tiles         LissajousTiles.glsl         Boundless                               MIT
+  comb                    Comb.glsl                   gre                                     MIT
+  tv-lost-signal          TvLostSignal.glsl           mernking                                MIT
+  plus-wipe               PlusWipe.glsl               gre                                     MIT
+  xor-wipe                XorWipe.glsl                gre                                     MIT
+  circle-burst            CircleBurst.glsl            gre                                     MIT
+  dither-dissolve         DitherDissolve.glsl         gre                                     MIT
+  film-dissolve           FilmDissolve.glsl           gre                                     MIT
+  plasma-dissolve         PlasmaDissolve.glsl         gre                                     MIT
+  honeycomb               Honeycomb.glsl              gre                                     MIT
+  defocus-blur            DefocusBlur.glsl            Sergey Kosarevsky                       MIT
+  halftone                Halftone.glsl               gre                                     MIT
+  photo-develop           PhotoDevelop.glsl           gre                                     MIT
+  chessboard              Chessboard.glsl             lql                                     MIT
+  wedge-wipe              WedgeWipe.glsl              gre                                     MIT
+  snake-block-wipe        SnakeBlockWipe.glsl         gre                                     MIT
+  aperture-wipe           ApertureWipe.glsl           gre                                     MIT
+  curved-wipe             CurvedWipe.glsl             gre                                     MIT
+  shutter-wipe            ShutterWipe.glsl            gre                                     MIT
+  iris-fold               IrisFold.glsl               gre                                     MIT
+  moire-wipe              MoireWipe.glsl              gre                                     MIT
+  tiles-wave              TilesWave.glsl              numb3r23                                MIT
+  glow-dissolve           GlowDissolve.glsl           hjm1fb                                  MIT
+  edge-glow               EdgeGlow.glsl               Woohyun Kim                             MIT
+  spotlight-wipe          SpotlightWipe.glsl          gre                                     MIT
+  curtain-rise            CurtainRise.glsl            gre                                     MIT
+  projector-throw         ProjectorThrow.glsl         gre                                     MIT
+  reeded-glass            ReededGlass.glsl            gre                                     MIT
+  pixel-stretch           PixelStretch.glsl           gre                                     MIT
+  funnel                  Funnel.glsl                 gre                                     MIT
+  nightfall               Nightfall.glsl              gre                                     MIT
+  band-wipe               BandWipe.glsl               gre                                     MIT
+  sawtooth-wipe           SawtoothWipe.glsl           gre                                     MIT
+  lens-wipe               LensWipe.glsl               gre                                     MIT
+  ink-bleed               InkBleed.glsl               gre                                     MIT
+  bloom-dissolve          BloomDissolve.glsl          gre                                     MIT
+  gooey-wipe              GooeyWipe.glsl              gre                                     MIT
+  equalizer-wipe          EqualizerWipe.glsl          gre                                     MIT
+  hologram                Hologram.glsl               gre                                     MIT
+  snapshot                Snapshot.glsl               gre                                     MIT
+  split-flap              SplitFlap.glsl              gre                                     MIT
+  vaporize                Vaporize.glsl               gre                                     MIT
+  flame-wipe              FlameWipe.glsl              gre                                     MIT
+  arrow-wipe              ArrowWipe.glsl              gre                                     MIT
+  rings-wipe              RingsWipe.glsl              gre                                     MIT
+  truchet-wipe            TruchetWipe.glsl            gre                                     MIT
+  waterfall-wipe          WaterfallWipe.glsl          gre                                     MIT
+  frost-wipe              FrostWipe.glsl              gre                                     MIT
+  splatter-wipe           SplatterWipe.glsl           gre                                     MIT
+  code-rain               CodeRain.glsl               gre                                     MIT
+  led-wall                LedWall.glsl                gre                                     MIT
+  card-deal               CardDeal.glsl               gre                                     MIT
+  light-wipe              LightWipe.glsl              gre                                     MIT
+  heat-haze               HeatHaze.glsl               gre                                     MIT
+  tile-shuffle            TileShuffle.glsl            gre                                     MIT
+  slot-reels              SlotReels.glsl              gre                                     MIT
+  ascii                   Ascii.glsl                  gre                                     MIT
+  vhs-tracking            VhsTracking.glsl            gre                                     MIT
+  brush-wipe              BrushWipe.glsl              gre                                     MIT
+  domino-fall             DominoFall.glsl             gre                                     MIT
+  tumble                  Tumble.glsl                 gre                                     MIT
+  lens-flare              LensFlare.glsl              gre                                     MIT
+  bokeh-dissolve          BokehDissolve.glsl          gre                                     MIT
+  light-rays              LightRays.glsl              gre                                     MIT
+  soap-drop               SoapDrop.glsl               gre                                     MIT
+  speed-lines             SpeedLines.glsl             gre                                     MIT
+  film-strip              FilmStrip.glsl              gre                                     MIT
+  cylinder-roll           CylinderRoll.glsl           gre                                     MIT
+  dam-break               DamBreak.glsl               gre                                     MIT
+  cymatics                Cymatics.glsl               gre                                     MIT
+  glitter-dissolve        GlitterDissolve.glsl        gre                                     MIT
+  paper-tear              PaperTear.glsl              gre                                     MIT
+  marbling-dissolve       MarblingDissolve.glsl       gre                                     MIT
+  disintegrate            Disintegrate.glsl           gre                                     MIT
+  honey-drip              HoneyDrip.glsl              gre                                     MIT
+  stop-motion             StopMotion.glsl             gre                                     MIT
+  liquid-fill             LiquidFill.glsl             gre                                     MIT
+  refraction              Refraction.glsl             gre                                     MIT
+  subdivide               Subdivide.glsl              gre                                     MIT
+  quadtree-blocks         QuadtreeBlocks.glsl         gre                                     MIT
+  bead-up                 BeadUp.glsl                 gre                                     MIT
+  billow-wipe             BillowWipe.glsl             gre                                     MIT
+  ring-spin               RingSpin.glsl               gre                                     MIT
+  pinch-lift              PinchLift.glsl              gre                                     MIT
+  knead                   Knead.glsl                  gre                                     MIT
+  gallery                 Gallery.glsl                gre                                     MIT
+  swim                    Swim.glsl                   gre                                     MIT
+  shore-wash              ShoreWash.glsl              gre                                     MIT
+  crumple                 Crumple.glsl                gre                                     MIT
+  drape                   Drape.glsl                  gre                                     MIT
+  paint-dissolve          PaintDissolve.glsl          gre                                     MIT
+  watercolor-dissolve     WatercolorDissolve.glsl     gre                                     MIT
+  puzzle-cube             PuzzleCube.glsl             gre                                     MIT
+  clothesline             Clothesline.glsl            gre                                     MIT
+  poster-paste            PosterPaste.glsl            gre                                     MIT
+  geometric-collage       GeometricCollage.glsl       gre                                     MIT
+  film-leader             FilmLeader.glsl             gre                                     MIT
+  lightning-flash         LightningFlash.glsl         gre                                     MIT
+  glitch-flicker          GlitchFlicker.glsl          bread                                   MIT
+  strip-datamosh-glitch   StripDatamoshGlitch.glsl    bread                                   MIT
+  smoke-dissolve          SmokeDissolve.glsl          gre                                     MIT
+  diffuse-dissolve        DiffuseDissolve.glsl        gre                                     MIT
+  color-panel-wipe        ColorPanelWipe.glsl         gre                                     MIT
+  disc-cascade            DiscCascade.glsl            gre                                     MIT
+  corner-pin              CornerPin.glsl              gre                                     MIT
+  cleave                  Cleave.glsl                 gre                                     MIT
+  coin-settle             CoinSettle.glsl             gre                                     MIT
+  deinterleave            Deinterleave.glsl           gre                                     MIT
+  block-cover             BlockCover.glsl             gre                                     MIT
+  cell-dissolve           CellDissolve.glsl           gre                                     MIT
+  color-coords            ColorCoords.glsl            haiyoucuv                               MIT
+  directional-scaled      DirectionalScaled.glsl      Thibaut Foussard                        MIT
+  flash-fade              FlashFade.glsl              gre                                     MIT
+  left-right              LeftRight.glsl              zhmy                                    MIT
+  top-bottom              TopBottom.glsl              zhmy                                    MIT
+  rectangle-cover         RectangleCover.glsl         martiniti                               MIT
+  simple-zoom-out         SimpleZoomOut.glsl          Tianshuo                                MIT
+  slide-away-right        SlideAwayRight.glsl         lizhongjian                             MIT
+  slides                  Slides.glsl                 Mark Craig                              MIT
+  zoom-wipe-left          ZoomWipeLeft.glsl           Handk                                   MIT
+  zoom-wipe-right         ZoomWipeRight.glsl          Handk                                   MIT
+  static-fade             StaticFade.glsl             Ben Lucas                               MIT
+  split-slide-in-horizontal SplitSlideInHorizontal.glsl OllyOllyOlly                            MIT
+  split-slide-in-vertical SplitSlideInVertical.glsl   OllyOllyOlly                            MIT
+  split-slide-out-horizontal SplitSlideOutHorizontal.glsl OllyOllyOlly                            MIT
+  split-slide-out-vertical SplitSlideOutVertical.glsl  OllyOllyOlly                            MIT
+  split-slide-in-out-horizontal SplitSlideInOutHorizontal.glsl OllyOllyOlly                            MIT
+  split-slide-in-out-vertical SplitSlideInOutVertical.glsl OllyOllyOlly                            MIT
+  block-slide             BlockSlide.glsl             gre                                     MIT
+  duotone-fade            DuotoneFade.glsl            gre                                     MIT
+  echo-slide              EchoSlide.glsl              gre                                     MIT
+  faint                   Faint.glsl                  gre                                     MIT
+  flow-dissolve           FlowDissolve.glsl           gre                                     MIT
+  glass-relief            GlassRelief.glsl            gre                                     MIT
+  flutter                 Flutter.glsl                gre                                     MIT
+  glint-dissolve          GlintDissolve.glsl          gre                                     MIT
+  herringbone-fold        HerringboneFold.glsl        gre                                     MIT
+  hinged-squares          HingedSquares.glsl          gre                                     MIT
+  horizontal-hold         HorizontalHold.glsl         gre                                     MIT
+  inchworm                Inchworm.glsl               gre                                     MIT
+  inset-wipe              InsetWipe.glsl              gre                                     MIT
+  interlace-wipe          InterlaceWipe.glsl          gre                                     MIT
+  layout-grid             LayoutGrid.glsl             gre                                     MIT
+  lens-push               LensPush.glsl               gre                                     MIT
+  light-streaks           LightStreaks.glsl           gre                                     MIT
+  micro-brick-cascade     MicroBrickCascade.glsl      Gilad Levi                              MIT
+  outline-crumble         OutlineCrumble.glsl         gre                                     MIT
+  outline-fill            OutlineFill.glsl            gre                                     MIT
+  outline-tear            OutlineTear.glsl            gre                                     MIT
+  paper-layers            PaperLayers.glsl            gre                                     MIT
+  parallax-push           ParallaxPush.glsl           gre                                     MIT
+  pop-in                  PopIn.glsl                  gre                                     MIT
+  reflow                  Reflow.glsl                 gre                                     MIT
+  stretch-slide           StretchSlide.glsl           gre                                     MIT
+  slash-split             SlashSplit.glsl             gre                                     MIT
+  slit-stretch            SlitStretch.glsl            gre                                     MIT
+  snap                    Snap.glsl                   gre                                     MIT
+  source-sink             SourceSink.glsl             gre                                     MIT
+  spiral-block-wipe       SpiralBlockWipe.glsl        gre                                     MIT
+  whip-tilt               WhipTilt.glsl               gre                                     MIT
+  faceted-glass           FacetedGlass.glsl           gre                                     MIT
+  sketch-dissolve         SketchDissolve.glsl         gre                                     MIT
+  slide-projector         SlideProjector.glsl         gre                                     MIT
+  stereo-viewer           StereoViewer.glsl           Ted Schundler                           BSD 2-Clause (below)
+  sticky-split            StickySplit.glsl            gre                                     MIT
+  viscous-fingers         ViscousFingers.glsl         gre                                     MIT
+  brick-collapse          BrickCollapse.glsl          gre                                     MIT
+  comic-panels            ComicPanels.glsl            gre                                     MIT
+  quad-turn               QuadTurn.glsl               gre                                     MIT
+  reassemble              Reassemble.glsl             gre                                     MIT
+  screen-print-wipe       ScreenPrintWipe.glsl        gre                                     MIT
+  tile-conveyor           TileConveyor.glsl           gre                                     MIT
+  tile-rings              TileRings.glsl              gre                                     MIT
+  triangle-flip           TriangleFlip.glsl           gre                                     MIT
+  unstack                 Unstack.glsl                gre                                     MIT
+  wave-wipe               WaveWipe.glsl               gre                                     MIT
 
 --------------------------------------------------------------------------------
 MIT License
@@ -73,4 +324,33 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
 DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+stereo-viewer (StereoViewer.glsl)
+
+Copyright (c) 2016, Theodore K Schundler
+All rights reserved.
+
+Free for use and modification by anyone with credit.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

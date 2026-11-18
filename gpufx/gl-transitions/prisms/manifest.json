@@ -1,0 +1,84 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.prisms",
+  "name": "Prisms",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame is cut into 3D prisms that turn in a cascade, like a rotating billboard, from the first clip to the second. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "slats",
+      "type": "int",
+      "default": 8,
+      "min": 2,
+      "max": 40,
+      "description": "Number of prisms"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.45,
+      "min": 0,
+      "max": 0.9,
+      "description": "Delay of the last prism, as a part of the transition"
+    },
+    {
+      "name": "perspective",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 4,
+      "description": "Amount of perspective"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the faces darken as they turn"
+    },
+    {
+      "name": "horizontal",
+      "type": "bool",
+      "default": false,
+      "description": "Cut the frame into horizontal prisms"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#000000",
+      "description": "Color where the turning prisms leave the frame uncovered"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/prisms.wgsl"
+        }
+      ]
+    }
+  ]
+}

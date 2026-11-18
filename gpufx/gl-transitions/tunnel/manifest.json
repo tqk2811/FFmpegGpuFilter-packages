@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.tunnel",
+  "name": "Tunnel",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The camera flies down a tunnel lined with the first clip toward the second, which opens at the far end and grows to fill the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "speed",
+      "type": "float",
+      "default": 6.0,
+      "min": 0.5,
+      "max": 10,
+      "description": "How far and fast the camera flies"
+    },
+    {
+      "name": "twist",
+      "type": "float",
+      "default": 0.5,
+      "min": -2,
+      "max": 2,
+      "description": "How much the walls spiral as they rush by"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/tunnel.wgsl"
+        }
+      ]
+    }
+  ]
+}

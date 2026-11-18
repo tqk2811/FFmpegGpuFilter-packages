@@ -1,0 +1,79 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.smoke-dissolve",
+  "name": "Smoke Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Billowing smoke drifts in across the first clip, with lit tops, darker folds and wispy edges, and thickens until it covers the frame; as it thins out and drifts away, the second clip shows through. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.1
+      ],
+      "description": "Direction the smoke drifts toward (it comes in from the opposite side); its length is how far it drifts, in frame heights (x right, y up)"
+    },
+    {
+      "name": "scale",
+      "type": "float",
+      "default": 2.5,
+      "min": 1,
+      "max": 8,
+      "description": "Size of the billows: more, smaller ones with a larger value"
+    },
+    {
+      "name": "spread",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "How much the smoke rolls in from one side rather than everywhere at once"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.5,
+      "min": 0.05,
+      "max": 1,
+      "description": "Softness of the smoke: wispier, more see-through edges with a larger value"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "default": "#dbdbe0",
+      "description": "Color of the smoke, lit from above"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/smoke_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

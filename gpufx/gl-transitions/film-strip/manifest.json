@@ -1,0 +1,84 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.film-strip",
+  "name": "Film Strip",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture slips like film in a projector gate: it shrinks to show the sprocket holes, the strip runs down with motion blur and a slight weave, then the second clip's frame lands in place. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "frames",
+      "type": "int",
+      "default": 2,
+      "min": 1,
+      "max": 6,
+      "description": "Number of frames that slip by"
+    },
+    {
+      "name": "shrink",
+      "type": "float",
+      "default": 0.2,
+      "min": 0,
+      "max": 0.4,
+      "description": "How much the picture shrinks during the slip, showing the film's edges"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Length of the motion blur at full speed"
+    },
+    {
+      "name": "weave",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of horizontal weave and vertical jitter"
+    },
+    {
+      "name": "film_color",
+      "type": "color",
+      "default": "#0f0d0d",
+      "description": "Color of the film around the pictures and of the line between frames"
+    },
+    {
+      "name": "hole_color",
+      "type": "color",
+      "default": "#f5edd9",
+      "description": "Color of the light through the sprocket holes"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/film_strip.wgsl"
+        }
+      ]
+    }
+  ]
+}

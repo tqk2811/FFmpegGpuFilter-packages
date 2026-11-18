@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.projector-throw",
+  "name": "Projector Throw",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The lights go down on the first clip and a projector throws the second onto it: a small, blurred, keystoned picture of light lands on the scene, then grows, comes into focus and squares up until it fills the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "darkness",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "description": "How dark the first clip gets once the lights go down"
+    },
+    {
+      "name": "keystone",
+      "type": "float",
+      "default": 0.45,
+      "min": 0,
+      "max": 0.8,
+      "description": "How much wider the top of the projected picture is than its bottom when it lands"
+    },
+    {
+      "name": "blur",
+      "type": "float",
+      "default": 0.015,
+      "min": 0,
+      "max": 0.05,
+      "description": "How out of focus the projected picture is when it lands, in frame heights"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/projector_throw.wgsl"
+        }
+      ]
+    }
+  ]
+}

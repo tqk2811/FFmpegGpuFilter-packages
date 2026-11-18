@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.curtain-rise",
+  "name": "Curtain Rise",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip rises like a theater festoon curtain: cords lift its hem into scalloped swags while the fabric gathers into shaded ruffles, and it is drawn up out of the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "swags",
+      "type": "float",
+      "default": 3.0,
+      "min": 1,
+      "max": 8,
+      "description": "Number of swags across a 16:9 frame (fewer in portrait)"
+    },
+    {
+      "name": "sag",
+      "type": "float",
+      "default": 0.14,
+      "min": 0,
+      "max": 0.3,
+      "description": "How low each swag droops between two cords, as a part of the frame height"
+    },
+    {
+      "name": "ruffles",
+      "type": "float",
+      "default": 14.0,
+      "min": 4,
+      "max": 30,
+      "description": "Number of gathered ruffles in the fabric"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Depth of the shading on the ruffles and swags, and of the shadow under the hem"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/curtain_rise.wgsl"
+        }
+      ]
+    }
+  ]
+}

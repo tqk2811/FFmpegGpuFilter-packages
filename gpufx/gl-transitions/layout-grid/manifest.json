@@ -1,0 +1,84 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.layout-grid",
+  "name": "Layout Grid",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame splits into an asymmetric magazine grid as paper gutters open between the panels; panel after panel in reading order, the second clip pushes the first out of its panel from a different side, a colored accent band between them, then the gutters close over the full second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "gutter",
+      "type": "float",
+      "default": 0.04,
+      "min": 0,
+      "max": 0.08,
+      "description": "Width of the gutters at their widest, as a part of the frame's shorter side"
+    },
+    {
+      "name": "overlap",
+      "type": "float",
+      "default": 0.55,
+      "min": 0,
+      "max": 0.9,
+      "description": "How much the panels' pushes overlap in time (0: one strictly after another)"
+    },
+    {
+      "name": "band",
+      "type": "float",
+      "default": 0.22,
+      "min": 0,
+      "max": 0.6,
+      "description": "Length of the accent band between the two clips, as a part of the panel's length along its push"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the soft shadows the panels cast on the paper and on the band"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#f5f2e8",
+      "description": "Color of the paper seen in the gutters"
+    },
+    {
+      "name": "accent",
+      "type": "color",
+      "default": "#ed4533",
+      "description": "Color of the accent band between the two clips"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/layout_grid.wgsl"
+        }
+      ]
+    }
+  ]
+}

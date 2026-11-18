@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.sketch-dissolve",
+  "name": "Sketch Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip fades back to blank paper while the second is drawn on it in pencil, outlines first and then hatching in the shadows, before its shading and colors fill in until the picture is complete. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "line_width",
+      "type": "float",
+      "default": 1.5,
+      "min": 0.5,
+      "max": 4,
+      "description": "Thickness of the pencil outlines, in thousandths of the frame height"
+    },
+    {
+      "name": "edges",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 2,
+      "description": "How many outlines are drawn: higher also traces the fainter edges of the picture"
+    },
+    {
+      "name": "hatching",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of diagonal hatching drawn in the shadows"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#f5f0e3",
+      "description": "Color of the paper"
+    },
+    {
+      "name": "ink",
+      "type": "color",
+      "default": "#292933",
+      "description": "Color of the pencil"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/sketch_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

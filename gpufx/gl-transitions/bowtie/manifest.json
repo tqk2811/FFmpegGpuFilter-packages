@@ -1,0 +1,54 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.bowtie",
+  "name": "Bow Tie",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Two triangles grow from the top and bottom edges into a bow tie that reveals the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "adjust",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Horizontal position of the tips"
+    },
+    {
+      "name": "reverse",
+      "type": "bool",
+      "default": false,
+      "description": "Run the wipe in reverse"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/bowtie.wgsl"
+        }
+      ]
+    }
+  ]
+}

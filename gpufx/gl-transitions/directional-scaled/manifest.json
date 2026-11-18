@@ -1,0 +1,63 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.directional-scaled",
+  "name": "Directional Scaled",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip pushes the first out of the frame, both scaled down while they slide and back up as the push ends. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        0.0,
+        1.0
+      ],
+      "description": "Direction of the movement; only the sign of each component counts (x right, y up)"
+    },
+    {
+      "name": "scale",
+      "type": "float",
+      "default": 0.7,
+      "min": 0.1,
+      "max": 1,
+      "description": "Size of the clips in the middle of the push"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#0d0d0d",
+      "description": "Color around the scaled clips"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/directional_scaled.wgsl"
+        }
+      ]
+    }
+  ]
+}

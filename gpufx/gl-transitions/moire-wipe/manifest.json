@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.moire-wipe",
+  "name": "Moire Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Two sets of fine concentric rings drift toward each other over the picture and interfere into wide moire bands, which open onto the second clip and widen until it fills the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "density",
+      "type": "float",
+      "default": 36.0,
+      "min": 10,
+      "max": 80,
+      "description": "Number of rings per frame height in each set"
+    },
+    {
+      "name": "bands",
+      "type": "float",
+      "default": 3.0,
+      "min": 1,
+      "max": 8,
+      "description": "How many moire bands the rings make at the start"
+    },
+    {
+      "name": "drift",
+      "type": "float",
+      "default": 0.25,
+      "min": -1,
+      "max": 1,
+      "description": "How far the two centers turn around each other, in turns"
+    },
+    {
+      "name": "lines",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the ring lines drawn over the picture"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/moire_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.quad-turn",
+  "name": "Quad Turn",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture is cut into square tiles that turn in blocks of four like little turntables, a quarter turn at a time on two staggered grids, lifting over their neighbours and scrambling the first clip; a wave flips the tiles over to the second clip, then the blocks turn back the same way until every tile is home. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tiles",
+      "type": "int",
+      "default": 4,
+      "min": 3,
+      "max": 8,
+      "description": "Number of tiles along the short side of the frame"
+    },
+    {
+      "name": "stagger",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 0.8,
+      "description": "Delay between the first and the last block of each turn, as a part of the turn"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows cast by the lifted tiles"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#1f1f21",
+      "description": "Color of the tray seen under the turning blocks"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/quad_turn.wgsl"
+        }
+      ]
+    }
+  ]
+}

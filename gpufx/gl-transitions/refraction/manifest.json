@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.refraction",
+  "name": "Refraction",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame is seen through flowing liquid glass that bends the first clip more and more, with rainbow fringes, flares up as the second clip takes over, then calms down and clears. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "strength",
+      "type": "float",
+      "default": 0.15,
+      "min": 0,
+      "max": 0.3,
+      "description": "How far the glass bends the picture at the peak"
+    },
+    {
+      "name": "scale",
+      "type": "float",
+      "default": 2.5,
+      "min": 0.5,
+      "max": 8,
+      "description": "Size of the flowing waves: higher makes smaller waves"
+    },
+    {
+      "name": "dispersion",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Spread of the rainbow fringes"
+    },
+    {
+      "name": "brightness",
+      "type": "float",
+      "default": 1.0,
+      "min": 0,
+      "max": 3,
+      "description": "Brightness of the flare at the peak"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/refraction.wgsl"
+        }
+      ]
+    }
+  ]
+}

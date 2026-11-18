@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.vhs-tracking",
+  "name": "VHS Tracking",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Tape-tracking bands of white snow roll down the frame, tearing the lines around them, with smeared color, wobbling lines, a jittering strip at the bottom and a dropout flash, as the second clip is recorded over the first under the densest band. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "bands",
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 4,
+      "description": "Number of noise bands rolling down (the first one carries the cut)"
+    },
+    {
+      "name": "noise",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of snow and tearing in the bands"
+    },
+    {
+      "name": "bleed",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How far the color smears to the right of the picture"
+    },
+    {
+      "name": "wobble",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the lines wobble sideways"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/vhs_tracking.wgsl"
+        }
+      ]
+    }
+  ]
+}

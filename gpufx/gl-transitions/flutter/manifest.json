@@ -1,0 +1,64 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.flutter",
+  "name": "Flutter",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is let go and falls like a sheet of paper: it tips back and sinks while gliding from side to side, its leading edge dipping and rising at the end of each swing, until it drops out of the bottom of the frame, casting a shadow on the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "swings",
+      "type": "float",
+      "default": 1.5,
+      "min": 0.5,
+      "max": 3,
+      "description": "Number of side-to-side swings"
+    },
+    {
+      "name": "sway",
+      "type": "float",
+      "default": 0.3,
+      "min": 0,
+      "max": 0.5,
+      "description": "Width of each swing, in frame heights"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.7,
+      "min": 0,
+      "max": 1,
+      "description": "Shading of the sheet and darkness of its shadow"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/flutter.wgsl"
+        }
+      ]
+    }
+  ]
+}

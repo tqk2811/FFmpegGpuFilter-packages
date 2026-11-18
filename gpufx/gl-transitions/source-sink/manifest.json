@@ -1,0 +1,82 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.source-sink",
+  "name": "Source Sink",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip wells up from one point as a round bubble while the first streams away along curved field lines and drains into a second point, both pictures flowing like a field between two charges. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "source",
+      "type": "vec2",
+      "default": [
+        0.1,
+        0.5
+      ],
+      "description": "Point the second clip wells up from (0..1, y down)"
+    },
+    {
+      "name": "sink",
+      "type": "vec2",
+      "default": [
+        0.9,
+        0.5
+      ],
+      "description": "Point the first clip drains into (0..1, y down)"
+    },
+    {
+      "name": "flow",
+      "type": "float",
+      "default": 1.4,
+      "min": 0.5,
+      "max": 4,
+      "description": "How far the pictures travel along the field lines"
+    },
+    {
+      "name": "swirl",
+      "type": "float",
+      "default": 0.0,
+      "min": -2.5,
+      "max": 2.5,
+      "description": "Spin of the flow around the two points, 0 for straight field lines"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Shadow and highlight along the rim of the bubble"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/source_sink.wgsl"
+        }
+      ]
+    }
+  ]
+}

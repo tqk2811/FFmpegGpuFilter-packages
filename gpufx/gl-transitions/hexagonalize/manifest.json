@@ -1,0 +1,56 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.hexagonalize",
+  "name": "Hexagonalize",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "Both clips turn into hexagons, crossfade, then sharpen again. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "steps",
+      "type": "int",
+      "default": 50,
+      "min": 0,
+      "max": 500,
+      "description": "Number of hexagon sizes it steps through (0: smooth)"
+    },
+    {
+      "name": "horizontal_hexagons",
+      "type": "float",
+      "default": 20.0,
+      "min": 1,
+      "max": 200,
+      "description": "Number of hexagons across at the coarsest"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/hexagonalize.wgsl"
+        }
+      ]
+    }
+  ]
+}

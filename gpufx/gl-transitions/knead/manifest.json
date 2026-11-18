@@ -1,0 +1,62 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.knead",
+  "name": "Knead",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is kneaded like dough: its two halves squeeze and slide past each other into two rows, again and again, until the picture is drawn out into thin layers; the layers of the second clip are pressed in between them, then the second clip is unkneaded back into one picture. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "kneads",
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 5,
+      "description": "Number of kneads on each side (each one stacks the picture into twice as many layers)"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Depth of the shading on the layers and of the shadow the sliding half casts"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#1a1a1a",
+      "description": "Color seen in the corners the halves uncover while they slide"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/knead.wgsl"
+        }
+      ]
+    }
+  ]
+}

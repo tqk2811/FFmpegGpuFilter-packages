@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.ribbon-twist",
+  "name": "Ribbon Twist",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture twists like a ribbon around its center line, the twist travelling across it, the first clip on the front and the second on the back. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "spread",
+      "type": "float",
+      "default": 0.8,
+      "min": 0.1,
+      "max": 2,
+      "description": "Length of the twisted section, as a part of the frame"
+    },
+    {
+      "name": "perspective",
+      "type": "float",
+      "default": 0.4,
+      "min": 0,
+      "max": 0.8,
+      "description": "Amount of perspective"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the ribbon darkens as it turns"
+    },
+    {
+      "name": "vertical",
+      "type": "bool",
+      "default": false,
+      "description": "Twist around the vertical center line, travelling from top to bottom"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#000000",
+      "description": "Color where the ribbon leaves the frame uncovered"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/ribbon_twist.wgsl"
+        }
+      ]
+    }
+  ]
+}

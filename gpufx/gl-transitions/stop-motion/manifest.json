@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.stop-motion",
+  "name": "Stop Motion",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is a paper cutout that jerks off the frame in choppy stop-motion steps, with a tiny new tilt and offset each step and a drop shadow, while the second cutout jerks in the same way and lands. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "steps",
+      "type": "int",
+      "default": 12,
+      "min": 6,
+      "max": 30,
+      "description": "Number of held poses during the transition: fewer is choppier"
+    },
+    {
+      "name": "jitter",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Size of the small random tilt and offset given to the cutouts at each step"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the drop shadow the cutouts cast"
+    },
+    {
+      "name": "back_color",
+      "type": "color",
+      "default": "#ccb58f",
+      "description": "Color of the background behind the cutouts"
+    },
+    {
+      "name": "rim_color",
+      "type": "color",
+      "default": "#f7f5ed",
+      "description": "Color of the paper rim around the cutouts"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/stop_motion.wgsl"
+        }
+      ]
+    }
+  ]
+}
