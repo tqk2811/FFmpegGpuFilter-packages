@@ -1,0 +1,57 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.viscous-fingers",
+  "name": "Viscous Fingers",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip is pushed into the first like air into oil squeezed between two glass plates: a bubble grows into a few rounded fingers that keep splitting in two at their tips, shoving the old picture aside into thin glossy threads, until the fingers swell and close the last gaps. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "description": "Point where the second clip is pushed in (0..1, y down)"
+    },
+    {
+      "name": "fingers",
+      "type": "int",
+      "default": 5,
+      "min": 3,
+      "max": 8,
+      "description": "Number of fingers leaving the first bubble"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/viscous_fingers.wgsl"
+        }
+      ]
+    }
+  ]
+}

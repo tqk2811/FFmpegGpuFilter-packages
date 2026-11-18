@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.slide-projector",
+  "name": "Slide Projector",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A slide projector changes slides: the first picture is jerked up out of the frame, blurring as it leaves the focal plane, the bare lamp flickers on the screen for an instant, then the second picture drops in from the top, bounces and hunts for focus before it sharpens. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "bounce",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How high the second slide bounces when it lands in the gate"
+    },
+    {
+      "name": "defocus",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How out of focus the slides get while they move"
+    },
+    {
+      "name": "flicker",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the lamp flickers during the change"
+    },
+    {
+      "name": "lamp_color",
+      "type": "color",
+      "default": "#fff2d6",
+      "description": "Color of the lamp light on the screen while the gate is empty"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/slide_projector.wgsl"
+        }
+      ]
+    }
+  ]
+}

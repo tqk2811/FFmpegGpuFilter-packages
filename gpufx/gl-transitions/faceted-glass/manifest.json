@@ -1,0 +1,76 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.faceted-glass",
+  "name": "Faceted Glass",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame is seen through a pane of irregular cut-glass facets, each one showing its own shifted, zoomed and tilted view of the picture, with bright beveled edges and thin dark seams; the facets turn to the second clip one by one, then the glass flattens out and clears. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "facets",
+      "type": "float",
+      "default": 5.0,
+      "min": 2,
+      "max": 20,
+      "description": "Number of facets across the height of the frame"
+    },
+    {
+      "name": "refraction",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 0.3,
+      "description": "How far each facet shifts its view of the picture at the peak"
+    },
+    {
+      "name": "bevel",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "Strength of the highlights and shadows along the beveled edges, and of the glint as each facet turns"
+    },
+    {
+      "name": "highlight",
+      "type": "color",
+      "default": "#fffaeb",
+      "description": "Color of the light caught by the bevels (alpha: strength)"
+    },
+    {
+      "name": "seed",
+      "type": "float",
+      "default": 0.0,
+      "description": "Random seed: another value gives other facets, turning in another order"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/faceted_glass.wgsl"
+        }
+      ]
+    }
+  ]
+}
