@@ -1,0 +1,57 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.soap-drop",
+  "name": "Soap Drop",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A drop of soap touches the first clip, which floats on water like a skin: the skin rushes away from the drop and piles up into a glossy, wrinkled rim that is shoved out of the frame, leaving the second clip under clear, rippling water. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "center",
+      "type": "vec2",
+      "default": [
+        0.42,
+        0.44
+      ],
+      "description": "Where the drop touches the skin (0..1, y down)"
+    },
+    {
+      "name": "crumple",
+      "type": "float",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "description": "How much the piled-up skin wrinkles"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/soap_drop.wgsl"
+        }
+      ]
+    }
+  ]
+}
