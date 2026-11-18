@@ -2,7 +2,7 @@
 
 GPU ports of transitions from [gl-transitions](https://github.com/gl-transitions/gl-transitions). Each package is a `progress` (0 to 1) driven transition between two clips of the same size. The GLSL of each original is rewritten in WGSL, keeping its coordinates (y up) and its look; at `progress` 0 and 1 the packages show the exact clips. Parameters that are points (`center`) are given y down, as in the other gpufx packages.
 
-Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Clause, Hewlett-Packard). The texts and the author of each file are in [LICENSE](LICENSE).
+Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Clause, Hewlett-Packard) and `StereoViewer.glsl` (BSD 2-Clause, Ted Schundler). The texts and the author of each file are in [LICENSE](LICENSE).
 
 | Package | Original file | Author | License |
 | --- | --- | --- | --- |
@@ -253,13 +253,35 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [pop-in](pop-in/README.md) | [PopIn.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/PopIn.glsl) | gre | MIT |
 | [reflow](reflow/README.md) | [Reflow.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Reflow.glsl) | gre | MIT |
 | [stretch-slide](stretch-slide/README.md) | [StretchSlide.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StretchSlide.glsl) | gre | MIT |
+| [slash-split](slash-split/README.md) | [SlashSplit.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SlashSplit.glsl) | gre | MIT |
+| [slit-stretch](slit-stretch/README.md) | [SlitStretch.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SlitStretch.glsl) | gre | MIT |
+| [snap](snap/README.md) | [Snap.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Snap.glsl) | gre | MIT |
+| [source-sink](source-sink/README.md) | [SourceSink.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SourceSink.glsl) | gre | MIT |
+| [spiral-block-wipe](spiral-block-wipe/README.md) | [SpiralBlockWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SpiralBlockWipe.glsl) | gre | MIT |
+| [whip-tilt](whip-tilt/README.md) | [WhipTilt.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WhipTilt.glsl) | gre | MIT |
+| [faceted-glass](faceted-glass/README.md) | [FacetedGlass.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/FacetedGlass.glsl) | gre | MIT |
+| [sketch-dissolve](sketch-dissolve/README.md) | [SketchDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SketchDissolve.glsl) | gre | MIT |
+| [slide-projector](slide-projector/README.md) | [SlideProjector.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/SlideProjector.glsl) | gre | MIT |
+| [stereo-viewer](stereo-viewer/README.md) | [StereoViewer.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StereoViewer.glsl) | Ted Schundler | BSD 2-Clause |
+| [sticky-split](sticky-split/README.md) | [StickySplit.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StickySplit.glsl) | gre | MIT |
+| [viscous-fingers](viscous-fingers/README.md) | [ViscousFingers.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ViscousFingers.glsl) | gre | MIT |
+| [brick-collapse](brick-collapse/README.md) | [BrickCollapse.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BrickCollapse.glsl) | gre | MIT |
+| [comic-panels](comic-panels/README.md) | [ComicPanels.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ComicPanels.glsl) | gre | MIT |
+| [quad-turn](quad-turn/README.md) | [QuadTurn.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/QuadTurn.glsl) | gre | MIT |
+| [reassemble](reassemble/README.md) | [Reassemble.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Reassemble.glsl) | gre | MIT |
+| [screen-print-wipe](screen-print-wipe/README.md) | [ScreenPrintWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/ScreenPrintWipe.glsl) | gre | MIT |
+| [tile-conveyor](tile-conveyor/README.md) | [TileConveyor.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TileConveyor.glsl) | gre | MIT |
+| [tile-rings](tile-rings/README.md) | [TileRings.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TileRings.glsl) | gre | MIT |
+| [triangle-flip](triangle-flip/README.md) | [TriangleFlip.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/TriangleFlip.glsl) | gre | MIT |
+| [unstack](unstack/README.md) | [Unstack.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Unstack.glsl) | gre | MIT |
+| [wave-wipe](wave-wipe/README.md) | [WaveWipe.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/WaveWipe.glsl) | gre | MIT |
 
 Not ported because an existing package already does the same:
 
 - `RadialWipe.glsl` (Radial): the `radial` mode of [xfade](../ffmpeg/xfade/README.md) and [clock-wipe](../tqk2811/TqkLibrary.FFmpegTransition/clock-wipe/README.md).
 - `WindowSlices.glsl` (windowslice): the `hlslice` mode of [xfade](../ffmpeg/xfade/README.md).
 - `SimpleZoom.glsl`: the `zoomin` mode of [xfade](../ffmpeg/xfade/README.md).
-- `Directional.glsl`, `DirectionalWipe.glsl`, `Fade.glsl`, `FadeColor.glsl`, `FadeGrayscale.glsl`, `CircleOpen.glsl`, `Pixelize.glsl`, `Wind.glsl`, `HorizontalOpen/Close.glsl`, `VerticalOpen/Close.glsl`: the slide, wipe, fade, fadeblack/fadewhite, fadegrays, circleopen, pixelize, wind, horzopen/horzclose and vertopen/vertclose modes of [xfade](../ffmpeg/xfade/README.md).
+- `Directional.glsl`, `DirectionalWipe.glsl`, `Fade.glsl`, `FadeColor.glsl`, `FadeGrayscale.glsl`, `CircleOpen.glsl`, `Pixelize.glsl`, `Wind.glsl`, `HorizontalOpen.glsl`, `HorizontalClose.glsl`, `VerticalOpen.glsl`, `VerticalClose.glsl`: the slide, wipe, fade, fadeblack/fadewhite, fadegrays, circleopen, pixelize, wind, horzopen/horzclose and vertopen/vertclose modes of [xfade](../ffmpeg/xfade/README.md).
 - `ClockWipe.glsl`: [clock-wipe](../tqk2811/TqkLibrary.FFmpegTransition/clock-wipe/README.md) and the `radial` mode of [xfade](../ffmpeg/xfade/README.md).
 - `CircleIris.glsl`, `RectangleIris.glsl`: the `circlecrop` and `rectcrop` modes of [xfade](../ffmpeg/xfade/README.md).
 - `DirectionalEased.glsl`: the slide modes of [xfade](../ffmpeg/xfade/README.md) and [slide-transition](../ffmpeg/slide-transition/README.md); only the easing differs.
