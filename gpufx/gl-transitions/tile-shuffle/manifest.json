@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.tile-shuffle",
+  "name": "Tile Shuffle",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame is cut into tiles that swap places in pairs, round after round along the rows then along the columns, one tile of each pair lifting to swing over the other with a soft shadow; each tile turns to the second clip during one of its swaps, so the second picture arrives scrambled and the last rounds sort it out. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "tiles",
+      "type": "int",
+      "default": 5,
+      "min": 2,
+      "max": 8,
+      "description": "Number of tiles along the longer side of the frame (the tiles stay about square)"
+    },
+    {
+      "name": "gap",
+      "type": "float",
+      "default": 0.05,
+      "min": 0,
+      "max": 0.15,
+      "description": "Width of the gaps that open between the tiles, as a part of a tile"
+    },
+    {
+      "name": "shadow",
+      "type": "float",
+      "default": 0.55,
+      "min": 0,
+      "max": 1,
+      "description": "Darkness of the shadows the tiles cast"
+    },
+    {
+      "name": "tray",
+      "type": "color",
+      "default": "#121214",
+      "description": "Color of the tray seen under the tiles"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/tile_shuffle.wgsl"
+        }
+      ]
+    }
+  ]
+}

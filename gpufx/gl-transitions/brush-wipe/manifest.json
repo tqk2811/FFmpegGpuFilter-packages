@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.brush-wipe",
+  "name": "Brush Wipe",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A few broad brush strokes sweep across the frame in turn, back and forth, painting in the second clip with streaky bristle edges and dry, ragged ends. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "strokes",
+      "type": "float",
+      "default": 4.0,
+      "min": 1,
+      "max": 8,
+      "description": "Number of brush strokes needed to cover the frame"
+    },
+    {
+      "name": "angle",
+      "type": "float",
+      "default": -7.0,
+      "min": -45,
+      "max": 45,
+      "description": "Angle of the strokes, in degrees"
+    },
+    {
+      "name": "roughness",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How rough the bristles make the edges and ends of the strokes"
+    },
+    {
+      "name": "waviness",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the strokes wave along their way"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/brush_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.ascii",
+  "name": "ASCII",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The picture turns into text-mode characters, denser where it is brighter, the characters scramble into those of the second clip, then resolve back into it. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "cell_size",
+      "type": "float",
+      "default": 0.04,
+      "min": 0.01,
+      "max": 0.1,
+      "description": "Height of a character, in frame heights"
+    },
+    {
+      "name": "colored",
+      "type": "bool",
+      "default": true,
+      "description": "Color the characters with the picture (otherwise, with the ink color)"
+    },
+    {
+      "name": "ink",
+      "type": "color",
+      "default": "#4dff73",
+      "description": "Color of the characters when they are not colored with the picture"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#000000",
+      "description": "Color behind the characters"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/ascii.wgsl"
+        }
+      ]
+    }
+  ]
+}
