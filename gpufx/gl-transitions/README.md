@@ -2,7 +2,7 @@
 
 GPU ports of transitions from [gl-transitions](https://github.com/gl-transitions/gl-transitions). Each package is a `progress` (0 to 1) driven transition between two clips of the same size. The GLSL of each original is rewritten in WGSL, keeping its coordinates (y up) and its look; at `progress` 0 and 1 the packages show the exact clips. Parameters that are points (`center`) are given y down, as in the other gpufx packages.
 
-Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Clause, Hewlett-Packard). The texts and the author of each file are in [LICENSE](LICENSE).
+Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Clause, Hewlett-Packard) and `StereoViewer.glsl` (BSD 2-Clause, Ted Schundler). The texts and the author of each file are in [LICENSE](LICENSE).
 
 | Package | Original file | Author | License |
 | --- | --- | --- | --- |
@@ -209,6 +209,7 @@ Licenses: every original here is MIT except `InvertedPageCurl.glsl` (BSD 3-Claus
 | [deinterleave](deinterleave/README.md) | [Deinterleave.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/Deinterleave.glsl) | gre | MIT |
 | [block-cover](block-cover/README.md) | [BlockCover.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/BlockCover.glsl) | gre | MIT |
 | [cell-dissolve](cell-dissolve/README.md) | [CellDissolve.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/CellDissolve.glsl) | gre | MIT |
+| [stereo-viewer](stereo-viewer/README.md) | [StereoViewer.glsl](https://github.com/gl-transitions/gl-transitions/blob/master/transitions/StereoViewer.glsl) | Ted Schundler | BSD 2-Clause |
 
 Not ported because an existing package already does the same:
 

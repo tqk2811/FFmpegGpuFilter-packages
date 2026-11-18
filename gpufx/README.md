@@ -138,7 +138,7 @@ GPU ports of the transitions of [tqk2811/TqkLibrary.FFmpegTransition](tqk2811/Tq
 
 ## gl-transitions
 
-GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `pagecurl` is BSD 3-Clause).
+GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `pagecurl` is BSD 3-Clause, `stereo-viewer` BSD 2-Clause).
 
 - [cube](gl-transitions/cube/README.md)
 - [pagecurl](gl-transitions/pagecurl/README.md)
@@ -349,6 +349,7 @@ Packages under the GNU GPL version 3 or later, each in its own folder with its L
 - [deinterleave](gl-transitions/deinterleave/README.md)
 - [block-cover](gl-transitions/block-cover/README.md)
 - [cell-dissolve](gl-transitions/cell-dissolve/README.md)
+- [stereo-viewer](gl-transitions/stereo-viewer/README.md)
 
 ## standalone
 
