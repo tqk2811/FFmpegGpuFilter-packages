@@ -1,0 +1,77 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.crumple",
+  "name": "Crumple",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip crumples into a creased paper ball, shaded along its folds, which is then tossed away to reveal the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "creases",
+      "type": "int",
+      "default": 16,
+      "min": 1,
+      "max": 32,
+      "description": "Number of folds creasing the paper"
+    },
+    {
+      "name": "size",
+      "type": "float",
+      "default": 0.2,
+      "min": 0.05,
+      "max": 0.4,
+      "description": "Radius of the paper ball, relative to the frame height"
+    },
+    {
+      "name": "direction",
+      "type": "vec2",
+      "default": [
+        1.0,
+        0.4
+      ],
+      "description": "Direction the ball is tossed toward (x right, y up)"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#f5f2e8",
+      "description": "Color of the bare paper showing through the ink along the sharpest creases"
+    },
+    {
+      "name": "shadow",
+      "type": "color",
+      "default": "#00000073",
+      "description": "Color of the shadow cast on the second clip (alpha: strength)"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/crumple.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.clothesline",
+  "name": "Clothesline",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The camera pulls back to show the first clip as a print hung by two clothespins on a line in front of a wall, the line is pulled sideways and carries it away while the second print slides in, both prints swinging and tilting like hanging paper, then the camera moves back in on the second print until it fills the frame. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "reverse",
+      "type": "bool",
+      "default": false,
+      "description": "Bring the second print in from the left instead of the right"
+    },
+    {
+      "name": "sway",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the prints swing and tilt as the line moves"
+    },
+    {
+      "name": "size",
+      "type": "float",
+      "default": 0.72,
+      "min": 0.4,
+      "max": 0.95,
+      "description": "Size of the prints when the camera is farthest, as a part of the frame"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#dbd6cc",
+      "description": "Color of the wall behind the line"
+    },
+    {
+      "name": "line_color",
+      "type": "color",
+      "default": "#6b5742",
+      "description": "Color of the line"
+    },
+    {
+      "name": "pin_color",
+      "type": "color",
+      "default": "#d6ad78",
+      "description": "Color of the clothespins"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/clothesline.wgsl"
+        }
+      ]
+    }
+  ]
+}

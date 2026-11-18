@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.puzzle-cube",
+  "name": "Puzzle Cube",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The frame becomes the face of a twisty cube puzzle: dark gaps open between its cubies, then whole columns and rows of cubies turn a quarter turn around the cube one after another in 3D, each bringing the second clip from the cube's side to the front, until the gaps close on the second clip. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "size",
+      "type": "int",
+      "default": 3,
+      "min": 2,
+      "max": 8,
+      "description": "Number of cubies along each side of the face"
+    },
+    {
+      "name": "gap",
+      "type": "float",
+      "default": 0.012,
+      "min": 0,
+      "max": 0.05,
+      "description": "Width of the gaps between the cubies, as a part of the frame's height"
+    },
+    {
+      "name": "shading",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How much the turning sides darken away from the light, and the shadows inside the cube"
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "default": "#0a0a0d",
+      "description": "Color of the cubies' body, seen in the gaps, on their inner sides and around the cube"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/puzzle_cube.wgsl"
+        }
+      ]
+    }
+  ]
+}

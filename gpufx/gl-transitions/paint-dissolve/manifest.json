@@ -1,0 +1,72 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.paint-dissolve",
+  "name": "Paint Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The second clip is painted over the first in layers of brush strokes, broad flat strokes of its colors first, then smaller and smaller ones, until the last fine strokes lay down its full detail. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "brush_size",
+      "type": "float",
+      "default": 0.3,
+      "min": 0.12,
+      "max": 0.5,
+      "description": "Length of the broadest brush strokes, in frame heights"
+    },
+    {
+      "name": "angle",
+      "type": "float",
+      "default": 25.0,
+      "min": -90,
+      "max": 90,
+      "description": "Main direction of the brush strokes, in degrees"
+    },
+    {
+      "name": "crossing",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the direction of the strokes changes from one layer to the next"
+    },
+    {
+      "name": "impasto",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How thick the paint looks: relief and shine of the brush marks while it is wet"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/paint_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}

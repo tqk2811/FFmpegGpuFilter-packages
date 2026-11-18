@@ -1,0 +1,70 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gl-transitions.watercolor-dissolve",
+  "name": "Watercolor Dissolve",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "The first clip is washed off into wet paper, then the second one is painted in watercolor: pale washes spread first, blooming where the paint is still wet and drying with darker edges and grainy pigment, then deeper glazes go on, darkest tones first, until the picture is complete. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "edges",
+      "type": "float",
+      "default": 0.6,
+      "min": 0,
+      "max": 1,
+      "description": "How dark the edges of the washes dry, where the pigment gathers"
+    },
+    {
+      "name": "blooms",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Amount of blooms: lighter flowers of paint with frilly dark edges, where water runs back into a wet wash"
+    },
+    {
+      "name": "granulation",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "How much the pigment settles into the grain of the paper"
+    },
+    {
+      "name": "paper",
+      "type": "color",
+      "default": "#faf5eb",
+      "description": "Color of the paper"
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/watercolor_dissolve.wgsl"
+        }
+      ]
+    }
+  ]
+}
