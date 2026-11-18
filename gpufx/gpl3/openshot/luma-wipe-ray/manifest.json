@@ -1,0 +1,127 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-ray",
+  "name": "Luma Wipe: Ray (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 29 OpenShot grayscale luma images (rays and blurred bars): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "blur_left_barr",
+        "blur_ray_left",
+        "blur_ray_right",
+        "blur_right_barr",
+        "ray_1",
+        "ray_light_1",
+        "ray_light_10",
+        "ray_light_11",
+        "ray_light_12",
+        "ray_light_13",
+        "ray_light_14",
+        "ray_light_15",
+        "ray_light_16",
+        "ray_light_17",
+        "ray_light_18",
+        "ray_light_19",
+        "ray_light_2",
+        "ray_light_20",
+        "ray_light_3",
+        "ray_light_4",
+        "ray_light_5",
+        "ray_light_6",
+        "ray_light_7",
+        "ray_light_8",
+        "ray_light_9",
+        "ray_light_left",
+        "ray_light_left_2",
+        "ray_light_right",
+        "ray_light_right_2"
+      ],
+      "default": "blur_left_barr",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/blur_left_barr.png",
+        "textures/blur_ray_left.png",
+        "textures/blur_ray_right.png",
+        "textures/blur_right_barr.png",
+        "textures/ray_1.png",
+        "textures/ray_light_1.png",
+        "textures/ray_light_10.png",
+        "textures/ray_light_11.png",
+        "textures/ray_light_12.png",
+        "textures/ray_light_13.png",
+        "textures/ray_light_14.png",
+        "textures/ray_light_15.png",
+        "textures/ray_light_16.png",
+        "textures/ray_light_17.png",
+        "textures/ray_light_18.png",
+        "textures/ray_light_19.png",
+        "textures/ray_light_2.png",
+        "textures/ray_light_20.png",
+        "textures/ray_light_3.png",
+        "textures/ray_light_4.png",
+        "textures/ray_light_5.png",
+        "textures/ray_light_6.png",
+        "textures/ray_light_7.png",
+        "textures/ray_light_8.png",
+        "textures/ray_light_9.png",
+        "textures/ray_light_left.png",
+        "textures/ray_light_left_2.png",
+        "textures/ray_light_right.png",
+        "textures/ray_light_right_2.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-shapes",
+  "name": "Luma Wipe: Shapes (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 49 OpenShot grayscale luma images (crosses, triangles, arrows and other shapes): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "big_cross_left_barr",
+        "big_cross_right_barr",
+        "big_losange",
+        "clock_left_to_right",
+        "clock_right_to_left",
+        "cross_1",
+        "cross_10",
+        "cross_11",
+        "cross_12",
+        "cross_13",
+        "cross_14",
+        "cross_15",
+        "cross_16",
+        "cross_17",
+        "cross_2",
+        "cross_3",
+        "cross_4",
+        "cross_5",
+        "cross_6",
+        "cross_7",
+        "cross_8",
+        "cross_9",
+        "crossed_barr",
+        "frame_1",
+        "frame_2",
+        "frame_barr_left",
+        "frame_barr_right",
+        "frame_cross_left_barr",
+        "hatched_1",
+        "hatched_2",
+        "hatched_3",
+        "hourglass_1",
+        "hourglass_2",
+        "hourglass_3",
+        "hourglass_4",
+        "lateral_left_triangle",
+        "lateral_right_triangle",
+        "left_arrow",
+        "rectangle_in_to_out",
+        "rectangle_out_to_in",
+        "right_arrow",
+        "small_cross_left_barr",
+        "small_cross_right_barr",
+        "small_losange",
+        "small_low_arrow",
+        "small_top_arrow",
+        "triangle_1",
+        "triangle_2",
+        "triangle_3"
+      ],
+      "default": "big_cross_left_barr",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/big_cross_left_barr.png",
+        "textures/big_cross_right_barr.png",
+        "textures/big_losange.png",
+        "textures/clock_left_to_right.png",
+        "textures/clock_right_to_left.png",
+        "textures/cross_1.png",
+        "textures/cross_10.png",
+        "textures/cross_11.png",
+        "textures/cross_12.png",
+        "textures/cross_13.png",
+        "textures/cross_14.png",
+        "textures/cross_15.png",
+        "textures/cross_16.png",
+        "textures/cross_17.png",
+        "textures/cross_2.png",
+        "textures/cross_3.png",
+        "textures/cross_4.png",
+        "textures/cross_5.png",
+        "textures/cross_6.png",
+        "textures/cross_7.png",
+        "textures/cross_8.png",
+        "textures/cross_9.png",
+        "textures/crossed_barr.png",
+        "textures/frame_1.png",
+        "textures/frame_2.png",
+        "textures/frame_barr_left.png",
+        "textures/frame_barr_right.png",
+        "textures/frame_cross_left_barr.png",
+        "textures/hatched_1.png",
+        "textures/hatched_2.png",
+        "textures/hatched_3.png",
+        "textures/hourglass_1.png",
+        "textures/hourglass_2.png",
+        "textures/hourglass_3.png",
+        "textures/hourglass_4.png",
+        "textures/lateral_left_triangle.png",
+        "textures/lateral_right_triangle.png",
+        "textures/left_arrow.png",
+        "textures/rectangle_in_to_out.png",
+        "textures/rectangle_out_to_in.png",
+        "textures/right_arrow.png",
+        "textures/small_cross_left_barr.png",
+        "textures/small_cross_right_barr.png",
+        "textures/small_losange.png",
+        "textures/small_low_arrow.png",
+        "textures/small_top_arrow.png",
+        "textures/triangle_1.png",
+        "textures/triangle_2.png",
+        "textures/triangle_3.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

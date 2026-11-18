@@ -190,7 +190,16 @@ GPU ports of transitions from [gl-transitions](gl-transitions/README.md) (MIT; `
 
 Packages under the GNU GPL version 3 or later, each in its own folder with its LICENSE and source README. Unlike the rest of this folder they are not MIT.
 
-- [openshot/luma-wipe](gpl3/openshot/luma-wipe/README.md): luma wipe over the 405 OpenShot luma images
+- [openshot/luma-wipe-twirl](gpl3/openshot/luma-wipe-twirl/README.md): luma wipe over 53 OpenShot luma images (twirls, whirlpools and spirals)
+- [openshot/luma-wipe-luminous](gpl3/openshot/luma-wipe-luminous/README.md): luma wipe over 44 OpenShot luma images (glows, suns and stars)
+- [openshot/luma-wipe-ray](gpl3/openshot/luma-wipe-ray/README.md): luma wipe over 29 OpenShot luma images (rays and blurred bars)
+- [openshot/luma-wipe-distortion](gpl3/openshot/luma-wipe-distortion/README.md): luma wipe over 42 OpenShot luma images (distortions and deformations)
+- [openshot/luma-wipe-ripple](gpl3/openshot/luma-wipe-ripple/README.md): luma wipe over 31 OpenShot luma images (ripples, waves, fish eyes and stretches)
+- [openshot/luma-wipe-bars](gpl3/openshot/luma-wipe-bars/README.md): luma wipe over 35 OpenShot luma images (bars, blinds and diagonal wipes)
+- [openshot/luma-wipe-shapes](gpl3/openshot/luma-wipe-shapes/README.md): luma wipe over 49 OpenShot luma images (crosses, triangles, arrows and other shapes)
+- [openshot/luma-wipe-mosaic](gpl3/openshot/luma-wipe-mosaic/README.md): luma wipe over 42 OpenShot luma images (boards, boxes and mosaics)
+- [openshot/luma-wipe-organic](gpl3/openshot/luma-wipe-organic/README.md): luma wipe over 45 OpenShot luma images (fog, clouds, flowers, fractals and stains)
+- [openshot/luma-wipe-abstract](gpl3/openshot/luma-wipe-abstract/README.md): luma wipe over 35 OpenShot luma images (middle, future, postime and inspiration patterns)
 - [color-wrap](gl-transitions/color-wrap/README.md)
 - [hsv-fade](gl-transitions/hsv-fade/README.md)
 - [overexposure](gl-transitions/overexposure/README.md)

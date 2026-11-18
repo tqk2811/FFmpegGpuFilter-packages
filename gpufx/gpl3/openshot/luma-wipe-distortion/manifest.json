@@ -1,0 +1,153 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-distortion",
+  "name": "Luma Wipe: Distortion (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 42 OpenShot grayscale luma images (distortions and deformations): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "deform_1",
+        "deform_10",
+        "deform_11",
+        "deform_12",
+        "deform_13",
+        "deform_14",
+        "deform_15",
+        "deform_2",
+        "deform_25",
+        "deform_26",
+        "deform_27",
+        "deform_3",
+        "deform_4",
+        "deform_5",
+        "deform_6",
+        "deform_7",
+        "deform_8",
+        "deform_9",
+        "distortion_1",
+        "distortion_10",
+        "distortion_11",
+        "distortion_12",
+        "distortion_13",
+        "distortion_14",
+        "distortion_15",
+        "distortion_16",
+        "distortion_17",
+        "distortion_18",
+        "distortion_19",
+        "distortion_2",
+        "distortion_20",
+        "distortion_21",
+        "distortion_22",
+        "distortion_23",
+        "distortion_24",
+        "distortion_3",
+        "distortion_4",
+        "distortion_5",
+        "distortion_6",
+        "distortion_7",
+        "distortion_8",
+        "distortion_9"
+      ],
+      "default": "deform_1",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/deform_1.png",
+        "textures/deform_10.png",
+        "textures/deform_11.png",
+        "textures/deform_12.png",
+        "textures/deform_13.png",
+        "textures/deform_14.png",
+        "textures/deform_15.png",
+        "textures/deform_2.png",
+        "textures/deform_25.png",
+        "textures/deform_26.png",
+        "textures/deform_27.png",
+        "textures/deform_3.png",
+        "textures/deform_4.png",
+        "textures/deform_5.png",
+        "textures/deform_6.png",
+        "textures/deform_7.png",
+        "textures/deform_8.png",
+        "textures/deform_9.png",
+        "textures/distortion_1.png",
+        "textures/distortion_10.png",
+        "textures/distortion_11.png",
+        "textures/distortion_12.png",
+        "textures/distortion_13.png",
+        "textures/distortion_14.png",
+        "textures/distortion_15.png",
+        "textures/distortion_16.png",
+        "textures/distortion_17.png",
+        "textures/distortion_18.png",
+        "textures/distortion_19.png",
+        "textures/distortion_2.png",
+        "textures/distortion_20.png",
+        "textures/distortion_21.png",
+        "textures/distortion_22.png",
+        "textures/distortion_23.png",
+        "textures/distortion_24.png",
+        "textures/distortion_3.png",
+        "textures/distortion_4.png",
+        "textures/distortion_5.png",
+        "textures/distortion_6.png",
+        "textures/distortion_7.png",
+        "textures/distortion_8.png",
+        "textures/distortion_9.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

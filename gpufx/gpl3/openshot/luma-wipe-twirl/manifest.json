@@ -1,0 +1,175 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-twirl",
+  "name": "Luma Wipe: Twirl (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 53 OpenShot grayscale luma images (twirls, whirlpools and spirals): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "foggy_spiral_1",
+        "spiral_1",
+        "spiral_2",
+        "spiral_abstract_1",
+        "spiral_abstract_2",
+        "spiral_big",
+        "spiral_big_2",
+        "spiral_medium",
+        "spiral_small",
+        "spiral_small_2",
+        "twirl_1",
+        "twirl_10",
+        "twirl_11",
+        "twirl_12",
+        "twirl_13",
+        "twirl_14",
+        "twirl_15",
+        "twirl_16",
+        "twirl_17",
+        "twirl_18",
+        "twirl_19",
+        "twirl_2",
+        "twirl_20",
+        "twirl_21",
+        "twirl_22",
+        "twirl_23",
+        "twirl_24",
+        "twirl_25",
+        "twirl_26",
+        "twirl_27",
+        "twirl_28",
+        "twirl_29",
+        "twirl_3",
+        "twirl_30",
+        "twirl_31",
+        "twirl_32",
+        "twirl_33",
+        "twirl_34",
+        "twirl_35",
+        "twirl_36",
+        "twirl_37",
+        "twirl_38",
+        "twirl_39",
+        "twirl_4",
+        "twirl_5",
+        "twirl_6",
+        "twirl_7",
+        "twirl_8",
+        "twirl_9",
+        "whirpool_1",
+        "whirpool_2",
+        "whirpool_3",
+        "whirpool_4"
+      ],
+      "default": "foggy_spiral_1",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/foggy_spiral_1.png",
+        "textures/spiral_1.png",
+        "textures/spiral_2.png",
+        "textures/spiral_abstract_1.png",
+        "textures/spiral_abstract_2.png",
+        "textures/spiral_big.png",
+        "textures/spiral_big_2.png",
+        "textures/spiral_medium.png",
+        "textures/spiral_small.png",
+        "textures/spiral_small_2.png",
+        "textures/twirl_1.png",
+        "textures/twirl_10.png",
+        "textures/twirl_11.png",
+        "textures/twirl_12.png",
+        "textures/twirl_13.png",
+        "textures/twirl_14.png",
+        "textures/twirl_15.png",
+        "textures/twirl_16.png",
+        "textures/twirl_17.png",
+        "textures/twirl_18.png",
+        "textures/twirl_19.png",
+        "textures/twirl_2.png",
+        "textures/twirl_20.png",
+        "textures/twirl_21.png",
+        "textures/twirl_22.png",
+        "textures/twirl_23.png",
+        "textures/twirl_24.png",
+        "textures/twirl_25.png",
+        "textures/twirl_26.png",
+        "textures/twirl_27.png",
+        "textures/twirl_28.png",
+        "textures/twirl_29.png",
+        "textures/twirl_3.png",
+        "textures/twirl_30.png",
+        "textures/twirl_31.png",
+        "textures/twirl_32.png",
+        "textures/twirl_33.png",
+        "textures/twirl_34.png",
+        "textures/twirl_35.png",
+        "textures/twirl_36.png",
+        "textures/twirl_37.png",
+        "textures/twirl_38.png",
+        "textures/twirl_39.png",
+        "textures/twirl_4.png",
+        "textures/twirl_5.png",
+        "textures/twirl_6.png",
+        "textures/twirl_7.png",
+        "textures/twirl_8.png",
+        "textures/twirl_9.png",
+        "textures/whirpool_1.png",
+        "textures/whirpool_2.png",
+        "textures/whirpool_3.png",
+        "textures/whirpool_4.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}

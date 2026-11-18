@@ -1,0 +1,139 @@
+{
+  "api": 1,
+  "id": "io.github.tqk2811.gpl3.openshot.luma-wipe-abstract",
+  "name": "Luma Wipe: Abstract (OpenShot)",
+  "used_for": [
+    "gpufx"
+  ],
+  "version": "1.0.0",
+  "description": "A wipe that follows the brightness of one of 35 OpenShot grayscale luma images (middle, future, postime and inspiration patterns): dark areas switch to the second clip first. Drive `progress` from 0 to 1.",
+  "inputs": [
+    {
+      "name": "first",
+      "description": "Outgoing clip"
+    },
+    {
+      "name": "second",
+      "description": "Incoming clip (same size as the first)",
+      "same_size": true
+    }
+  ],
+  "params": [
+    {
+      "name": "progress",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "0 = first clip, 1 = second clip"
+    },
+    {
+      "name": "pattern",
+      "type": "enum",
+      "values": [
+        "free_inspiration_right",
+        "free_left_inspiration",
+        "future_1",
+        "future_10",
+        "future_11",
+        "future_2",
+        "future_3",
+        "future_4",
+        "future_5",
+        "future_6",
+        "future_7",
+        "future_8",
+        "future_9",
+        "little_left_inspiration",
+        "little_right_inspiration",
+        "middle_barr",
+        "middle_barr_ripple_1",
+        "middle_barr_ripple_2",
+        "middle_black_barr",
+        "middle_cross_left_barr",
+        "middle_cross_right_barr",
+        "middle_left_inspiration",
+        "middle_losange",
+        "middle_low_arrow",
+        "middle_right_inspiration",
+        "middle_top_arrow",
+        "openshot_logo",
+        "postime_1",
+        "postime_2",
+        "postime_3",
+        "postime_5",
+        "postime_6",
+        "postime_7",
+        "postime_8",
+        "postime_9"
+      ],
+      "default": "free_inspiration_right",
+      "description": "Luma image (file name of the OpenShot original)"
+    },
+    {
+      "name": "softness",
+      "type": "float",
+      "default": 0.1,
+      "min": 0,
+      "max": 1,
+      "description": "Width of the soft edge, in luma steps"
+    },
+    {
+      "name": "invert",
+      "type": "bool",
+      "default": false,
+      "description": "Bright areas switch first"
+    }
+  ],
+  "textures": [
+    {
+      "name": "lumas",
+      "layers": [
+        "textures/free_inspiration_right.png",
+        "textures/free_left_inspiration.png",
+        "textures/future_1.png",
+        "textures/future_10.png",
+        "textures/future_11.png",
+        "textures/future_2.png",
+        "textures/future_3.png",
+        "textures/future_4.png",
+        "textures/future_5.png",
+        "textures/future_6.png",
+        "textures/future_7.png",
+        "textures/future_8.png",
+        "textures/future_9.png",
+        "textures/little_left_inspiration.png",
+        "textures/little_right_inspiration.png",
+        "textures/middle_barr.png",
+        "textures/middle_barr_ripple_1.png",
+        "textures/middle_barr_ripple_2.png",
+        "textures/middle_black_barr.png",
+        "textures/middle_cross_left_barr.png",
+        "textures/middle_cross_right_barr.png",
+        "textures/middle_left_inspiration.png",
+        "textures/middle_losange.png",
+        "textures/middle_low_arrow.png",
+        "textures/middle_right_inspiration.png",
+        "textures/middle_top_arrow.png",
+        "textures/openshot_logo.png",
+        "textures/postime_1.png",
+        "textures/postime_2.png",
+        "textures/postime_3.png",
+        "textures/postime_5.png",
+        "textures/postime_6.png",
+        "textures/postime_7.png",
+        "textures/postime_8.png",
+        "textures/postime_9.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "passes": [
+        {
+          "shader": "shaders/luma_wipe.wgsl"
+        }
+      ]
+    }
+  ]
+}
