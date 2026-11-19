@@ -247,39 +247,49 @@ fn main(@builtin(global_invocation_id) id: vec3u) {
     let p_c = array<i32, 9>(8, 7, 6, 5, 4, 3, 2, 1, 0);
     let p_r = array<i32, 9>(2, 5, 8, 1, 4, 7, 0, 3, 6);
     let p_l = array<i32, 9>(6, 3, 0, 7, 4, 1, 8, 5, 2);
+    // One call of each rule set, with the permutation picked first: every call site is
+    // inlined, and sixteen copies made the shader too big for some Metal compilers.
     var r: u32;
     if (n == 2) {
-        let i = sub.y * 2 + sub.x;
-        switch i {
-            case 0: { r = hq2(k, p_id); }
-            case 1: { r = hq2(k, p_v); }
-            case 2: { r = hq2(k, p_h); }
-            default: { r = hq2(k, p_c); }
+        var p = p_id;
+        switch sub.y * 2 + sub.x {
+            case 0: { p = p_id; }
+            case 1: { p = p_v; }
+            case 2: { p = p_h; }
+            default: { p = p_c; }
         }
+        r = hq2(k, p);
     } else if (n == 3) {
-        let i = sub.y * 3 + sub.x;
-        switch i {
-            case 0: { r = hq3(k, p_id, false, false); }
-            case 1: { r = hq3(k, p_id, false, true); }
-            case 2: { r = hq3(k, p_r, true, false); }
-            case 5: { r = hq3(k, p_r, true, true); }
-            case 6: { r = hq3(k, p_l, true, false); }
-            case 3: { r = hq3(k, p_l, true, true); }
-            case 8: { r = hq3(k, p_c, false, false); }
-            case 7: { r = hq3(k, p_c, false, true); }
-            default: { r = W[4]; }
+        var p = p_id;
+        var rot = false;
+        var second = false;
+        var centre = false;
+        switch sub.y * 3 + sub.x {
+            case 0: { p = p_id; }
+            case 1: { p = p_id; second = true; }
+            case 2: { p = p_r; rot = true; }
+            case 5: { p = p_r; rot = true; second = true; }
+            case 6: { p = p_l; rot = true; }
+            case 3: { p = p_l; rot = true; second = true; }
+            case 8: { p = p_c; }
+            case 7: { p = p_c; second = true; }
+            default: { centre = true; }
         }
+        r = select(hq3(k, p, rot, second), W[4], centre);
     } else {
         // Quadrant q, then the position inside it; FFmpeg's pos lists give for each quadrant
         // which output (00, 01, 10, 11) lands at each of its four places.
         let q = (sub.y / 2) * 2 + sub.x / 2;
         let pos = (sub.y % 2) * 2 + sub.x % 2;
+        var p = p_id;
+        var which = pos;
         switch q {
-            case 0: { r = hq4(k, p_id, pos); }
-            case 1: { r = hq4(k, p_v, array<i32, 4>(1, 0, 3, 2)[pos]); }
-            case 2: { r = hq4(k, p_h, array<i32, 4>(2, 3, 0, 1)[pos]); }
-            default: { r = hq4(k, p_c, array<i32, 4>(3, 2, 1, 0)[pos]); }
+            case 0: { p = p_id; which = pos; }
+            case 1: { p = p_v; which = array<i32, 4>(1, 0, 3, 2)[pos]; }
+            case 2: { p = p_h; which = array<i32, 4>(2, 3, 0, 1)[pos]; }
+            default: { p = p_c; which = array<i32, 4>(3, 2, 1, 0)[pos]; }
         }
+        r = hq4(k, p, which);
     }
     gpufx_write(id, vec4f(f32((r >> 16u) & 255u), f32((r >> 8u) & 255u), f32(r & 255u), f32(r >> 24u)) / 255.0);
 }
